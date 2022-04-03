@@ -3,8 +3,9 @@
 REPORTE DE ISSUES PRUEBAS AUTOMATIZADAS (MISO - Uniandes)
 
 Integrantes:
-Juan Carlos Pineda:
+
+-Juan Carlos Pineda:
 jc.pineda@uniandes.edu.co
 
-Nicolay Joya G:
+-Nicolay Joya G:
 y.joyag@uniandes.edu.co
