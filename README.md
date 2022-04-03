@@ -1,5 +1,10 @@
 # MISW-PRUEBAS-AUTOMATIZADAS-ISSUES-JN
-jc.pineda@uniandes.edu.co
-y.joyag@uniandes.edu.co
 
 REPORTE DE ISSUES PRUEBAS AUTOMATIZADAS (MISO - Uniandes)
+
+Integrantes:
+Juan Carlos Pineda:
+jc.pineda@uniandes.edu.co
+
+Nicolay Joya G:
+y.joyag@uniandes.edu.co
