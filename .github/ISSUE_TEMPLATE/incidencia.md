@@ -7,7 +7,7 @@ assignees: ''
 
 ---
 
-** TÍTULO**
+**TÍTULO**
 
 **C​OMPORTAMIENTO ESPERADO**
 A clear and concise description of what you expected to happen.
