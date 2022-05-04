@@ -9,3 +9,9 @@ jc.pineda@uniandes.edu.co
 
 -Nicolay Joya G:
 y.joyag@uniandes.edu.co
+
+-Lesly Campo
+
+
+-Luis Correa
+l.correaz@uniandez.edu.co
