@@ -2,7 +2,7 @@ Feature: Crear y publicar un post con TAG
 
 @user1 @web
 Scenario: Como usuario administrador creo un post con un TAG
-  Given I navigate to page "http://localhost:2368/ghost/"
+  Given I navigate to page "<URL>"
   And I wait for 5 seconds
   When I enter email "<USERNAME1>"
   And I enter password "<PASSWORD1>"

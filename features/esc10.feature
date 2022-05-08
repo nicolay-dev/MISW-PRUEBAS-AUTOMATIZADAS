@@ -2,7 +2,7 @@ Feature: Cambiar el nombre del perfil propio
 
 @user1 @web
 Scenario: Como usuario administrador quiero cambiar mi nombre en mi perfil
-  Given I navigate to page "http://localhost:2368/ghost/"
+  Given I navigate to page "<URL>"
   And I wait for 5 seconds
   When I enter email "<USERNAME1>"
   And I enter password "<PASSWORD1>"

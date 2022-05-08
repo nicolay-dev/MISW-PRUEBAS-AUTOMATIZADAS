@@ -2,7 +2,7 @@ Feature: Crear, publicar un post y "des-publicarlo"
 
 @user1 @web
 Scenario: Como usuario inicio sesión, creo un post, lo publico y los "des-publico"
-  Given I navigate to page "http://localhost:2368/ghost/"
+  Given I navigate to page "<URL>"
   And I wait for 5 seconds
   When I enter email "<USERNAME1>"
   And I enter password "<PASSWORD1>"
