@@ -33,7 +33,7 @@ Then('I click on the redact title inputbox', async function () {
 
     return await element.click();
 
-  });
+});
   
 Then('I click on the redact paragraph inputbox', async function () {
 
@@ -163,6 +163,55 @@ Then('I click on created TAG', async function () {
 Then('I click on post from TAG', async function () {
 
     let element = await this.driver.$("h1=Post Escenario 6");
+    
+    return await element.click();
+    
+});
+Then('I go the Staff section', async function () {
+
+    let element = await this.driver.$("a[href=\"#/staff/\"]");
+    
+    return await element.click();
+    
+});
+Then('I click on my profile with name {kraken-string}', async function (bName) {
+
+    let element = await this.driver.$("h3="+bName);
+
+    return await element.click();
+
+});
+Then('I click on redact full name inputbox', async function () {
+
+    let element = await this.driver.$("input[placeholder=\"Full Name\"]");
+    
+    return await element.click();
+    
+});
+Then('I clear the value of the Full name inputbox', async function () {
+
+    let element = await this.driver.$("input[placeholder=\"Full Name\"]");
+    
+    return await element.clearValue();
+    
+});
+Then('I click save', async function () {
+
+    let element = await this.driver.$("span=Save");
+    
+    return await element.click();
+    
+});
+Then('I click on my profile', async function () {
+
+    let element = await this.driver.$("span[class=\"gh-user-name mb1\"]");
+    
+    return await element.click();
+    
+});
+Then('I sign out', async function () {
+
+    let element = await this.driver.$("a[href=\"#/signout/\"]");
     
     return await element.click();
     
