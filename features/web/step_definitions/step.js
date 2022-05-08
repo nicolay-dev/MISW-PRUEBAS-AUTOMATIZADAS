@@ -90,6 +90,47 @@ let element = await this.driver.$("a[class=\"blue link fw4 flex items-center emb
 return await element.click();
 
 });
+
+Then('I click on posts view', async function () {
+
+let element = await this.driver.$("a[href=\"#/posts/\"]");
+    
+return await element.click();
+    
+});
+
+Then('I edit the created post', async function () {
+
+let element = await this.driver.$("a[id=\"ember623\"]");
+    
+return await element.click();
+    
+});
+
+Then('I click on settings post button', async function () {
+
+let element = await this.driver.$("a[class=\"post-settings\"]");
+    
+return await element.click();
+    
+});
+
+Then('I click on delete button', async function () {
+
+let element = await this.driver.$("[class=\"gh-btn gh-btn-hover-red gh-btn-icon settings-menu-delete-button\"]");
+    
+return await element.click();
+    
+});
+
+Then('I confirm delete action', async function () {
+
+let element = await this.driver.$("[id=\"ember727\"]");
+    
+return await element.click();
+    
+});
+
 Then('I click on View site', async function () {
 
 let element = await this.driver.$("a[title=\"Open site in new tab\"]");
@@ -312,6 +353,32 @@ Then('I enter page text {kraken-string}', async function (parrafoPagina) {
     let element = await this.driver.$("div[data-placeholder=\"Begin writing your page...\"]");
     
     return await element.setValue(parrafoPagina);
+    
+});
+
+
+Then('I scheduled the publish', async function () {
+
+let element = await this.driver.$("[class=\"gh-publishmenu-radio-button\"]");
+    
+return await element.click();
+    
+});
+
+
+Then('I submit the schedule', async function () {
+
+let element = await this.driver.$("[id=\"ember885\"]");
+    
+return await element.click();
+    
+});
+
+Then('I go to post view', async function () {
+
+let element = await this.driver.$("[href=\"#/posts/\"]");
+    
+return await element.click();
     
 });
 
