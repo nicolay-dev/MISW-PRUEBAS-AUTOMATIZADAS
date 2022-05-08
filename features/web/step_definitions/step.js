@@ -216,3 +216,62 @@ Then('I sign out', async function () {
     return await element.click();
     
 });
+Then('I go to Pages section', async function () {
+
+    let element = await this.driver.$("a[href=\"#/pages/\"]");
+    
+    return await element.click();
+    
+});
+Then('I create new page', async function () {
+
+    let element = await this.driver.$("span=New page");
+    
+    return await element.click();
+    
+});
+Then('I click on the redact page title inputbox', async function () {
+
+    let element = await this.driver.$("textarea[placeholder=\"Page Title\"]");
+
+    return await element.click();
+
+});
+  
+Then('I click on the redact page paragraph inputbox', async function () {
+
+let element = await this.driver.$("div[data-placeholder=\"Begin writing your page...\"]");
+
+return await element.click();
+
+});
+Then('I publish new page', async function () {
+
+    let element = await this.driver.$("button[class=\"gh-btn gh-btn-blue gh-publishmenu-button gh-btn-icon ember-view\"]");
+    
+    return await element.click();
+    
+});
+Then('I return to pages view', async function () {
+
+    let element = await this.driver.$("a[class=\"blue link fw4 flex items-center ember-view\"]");
+    
+    return await element.click();
+    
+});
+Then('I click on settings of page', async function () {
+
+    let element = await this.driver.$("button[class=\"post-settings\"]");
+    
+    return await element.click();
+
+});
+Then('I click on page link', async function () {
+
+    let element = await this.driver.$("a[class=\"post-view-link\"]");
+    
+    return await element.click();
+
+});
+
+
