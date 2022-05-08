@@ -15,10 +15,10 @@ Scenario: Como usuario creo una página, la publico y la edito
   And I wait for 2 seconds
   And I click on the redact page title inputbox
   And I wait for 2 seconds
-  And I enter text "<ESCENARIO14>"
+  And I enter page title "<PAGE14>"
   And I wait for 2 seconds
   And I click on the redact page paragraph inputbox
-  And I enter text "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut gravida scelerisque ex quis pellentesque. Vivamus eget eros vitae tellus consectetur porttitor. Pellentesque dui ligula, consequat quis feugiat nec, maximus ut tortor. Nam massa mauris, congue id pulvinar eget, iaculis sed sapien. Etiam ullamcorper commodo sagittis. Duis purus lacus, suscipit quis libero eget, tempus imperdiet nisl. Quisque arcu nibh, volutpat sed urna sit amet, lobortis molestie massa. Phasellus posuere, metus non aliquam scelerisque, velit magna tristique urna, in consequat lectus lorem a magna. Aenean condimentum ornare orci non consequat."
+  And I enter page text "<PARRAFO>"
   And I wait for 2 seconds
   And I click on the publish menu
   And I wait for 2 seconds

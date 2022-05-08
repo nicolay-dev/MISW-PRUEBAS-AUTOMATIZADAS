@@ -34,13 +34,26 @@ Then('I click on the redact title inputbox', async function () {
     return await element.click();
 
 });
-  
+Then('I enter post title {kraken-string}', async function (tituloPost) {
+
+    let element = await this.driver.$("textarea[placeholder=\"Post Title\"]");
+
+    return await element.setValue(tituloPost);
+
+});  
 Then('I click on the redact paragraph inputbox', async function () {
 
 let element = await this.driver.$("div[data-placeholder=\"Begin writing your post...\"]");
 
 return await element.click();
 
+});
+Then('I enter post text {kraken-string}', async function (parrafoPost) {
+
+    let element = await this.driver.$("div[data-placeholder=\"Begin writing your post...\"]");
+    
+    return await element.setValue(parrafoPost);
+    
 });
 Then('I click on the publish menu', async function () {
 
@@ -63,6 +76,13 @@ let element = await this.driver.$("button[class=\"gh-btn gh-btn-blue gh-publishm
 return await element.click();
 
 });
+Then('I unpublish new post', async function () {
+
+    let element = await this.driver.$("button[class=\"gh-btn gh-btn-blue gh-publishmenu-button gh-btn-icon ember-view\"]");
+    
+    return await element.click();
+    
+    });
 Then('I return to posts view', async function () {
 
 let element = await this.driver.$("a[class=\"blue link fw4 flex items-center ember-view\"]");
@@ -77,9 +97,9 @@ let element = await this.driver.$("a[title=\"Open site in new tab\"]");
 return await element.click();
 
 });
-Then('I click on created post', async function () {
+Then('I click on created post {kraken-string}', async function (tituloPost) {
 
-let element = await this.driver.$("h2=Post Escenario 2");
+let element = await this.driver.$("h2="+tituloPost);
 
 return await element.click();
 
@@ -119,9 +139,9 @@ Then('I go to Posts section', async function () {
     return await element.click();
 
 });
-Then('I click to edit new post', async function () {
+Then('I click to edit new post {kraken-string}', async function (tituloPost) {
 
-    let element = await this.driver.$("h3=Post Escenario 6");
+    let element = await this.driver.$("h3="+tituloPost);
     
     return await element.click();
 
@@ -237,6 +257,13 @@ Then('I click on the redact page title inputbox', async function () {
     return await element.click();
 
 });
+Then('I enter page title {kraken-string}', async function (tituloPagina) {
+
+    let element = await this.driver.$("textarea[placeholder=\"Page Title\"]");
+
+    return await element.setValue(tituloPagina);
+
+});
   
 Then('I click on the redact page paragraph inputbox', async function () {
 
@@ -273,5 +300,18 @@ Then('I click on page link', async function () {
     return await element.click();
 
 });
+Then('I click on the Unpublished option', async function () {
 
+    let element = await this.driver.$("div=Unpublished");
+    
+    return await element.click();
+
+});
+Then('I enter page text {kraken-string}', async function (parrafoPagina) {
+
+    let element = await this.driver.$("div[data-placeholder=\"Begin writing your page...\"]");
+    
+    return await element.setValue(parrafoPagina);
+    
+});
 
