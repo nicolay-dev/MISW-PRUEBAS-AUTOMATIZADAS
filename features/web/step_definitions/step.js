@@ -382,3 +382,44 @@ return await element.click();
     
 });
 
+Then('I click on my profile', async function () {
+
+let element = await this.driver.$("[id=\"#/ember1566/\"]");
+    
+return await element.click();
+    
+});
+
+Then('I click on your profile tab', async function () {
+
+let element = await this.driver.$("[id=\"#/ember1711/\"]");
+    
+return await element.click();
+    
+});
+
+Then('I click on bio text area', async function () {
+
+let element = await this.driver.$("[id=\"#/user-bio/\"]");
+    
+return await element.click();
+    
+});
+Then('I save the modifications', async function () {
+
+let element = await this.driver.$("[id=\"ember1688\"]");
+    
+return await element.click();
+    
+});
+
+When('I enter bio text', async function () {
+
+    let element = await this.driver.$("[id=\"#/user-bio/\"]");
+
+    return await element.setValue("My bio text");
+
+});
+
+
+
