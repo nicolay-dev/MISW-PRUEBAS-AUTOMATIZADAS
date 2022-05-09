@@ -56,7 +56,7 @@ l.correaz@uniandez.edu.co
 ### Escenario 5 Funcionalidades (Login, Crear un TAG)
 - Hacer login en GHOST
 - Crear un TAG
-- Verificar que el TAG esté creado"
+- Verificar que el TAG esté creado
 ### Escenario 6 Funcionalidades (Login, Crear un TAG, Asignar TAG a un post)
 - Hacer login en GHOST
 - Crear un TAG
@@ -79,15 +79,11 @@ l.correaz@uniandez.edu.co
 - Verificar que el post se haya guardado y esté en estado ""DRAFT"""
 ### Escenario 9 Funcionalidades (Login, Crear un post, Agregar una imagen a un post)
 - Hacer login en GHOST
-- Crear un post
-- Publicar el post creado
-- Ir a la página principal de GHOST
-- Verificar que esté el post creado
-- Ir a edición del post
-- Agregar una imagen por URL
-- Guardar post
-- Ir a página principal
-- Verificar que se se visulice la imagen en el post"
+- Crear una página
+- Publicar la página
+- Editar la página
+- Visitar  página
+- Verificar que la pagina este creado
 ### Escenario 10  Funcionalidades (Login, Cambiar el fullname)
 - Hacer login en GHOST
 - Ir al modulo de staff (Your Profile)
@@ -113,14 +109,11 @@ l.correaz@uniandez.edu.co
 - Cambiar la imagen del post
 - Verificar el cambio de la imagen"
 ### Escenario 13 Funcionalidades (Login, Modificar el timezone)
-- Hacer login en GHOST
+- - Hacer login en GHOST
 - Ir al modulo de Settings/General
 - Modificar el timezone existente
 - Guardar configuración
-- Cerrar sessión
-- Hacer login en Ghost
-- Ir al modulo de Settings/General
-- Verificar el mismo timezone configurado"
+- Verificar el timezone configurado"
 ### Escenario 14 Funcionalidades (Login, Crear una nueva página, Publicar página)
 - Hacer login en GHOST
 - Crear una nueva Página
@@ -140,12 +133,11 @@ l.correaz@uniandez.edu.co
 - Esperar al momento configurado
 - Validar que el post se publicó de forma correcta"
 ### Escenario 17 Funcionalidades (Login, Add Tab, Logout, View Web)
--Hacer login en GHOST
+- Hacer login en GHOST
 - Dirigirse a la funcionalidad de diseño
-- Agregar un nuevo tab (Menu)
-- Cerrar Sesión
-- Dirigirse a la vista web sin logearse
-- Verificar que el menu se creo"
+- Editar el tab de home por Lorem
+- Dirigirse a la vista web 
+- Verificar que el menu se modificó
 ### Escenario 18 Funcionalidades (Login, Crear post, Publicra un post, "Des-publicar" un post)
 - Hacer login en GHOST
 - Crear un post
