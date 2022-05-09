@@ -494,6 +494,31 @@ Then('I select to view recent created tag', async function () {
 
 });
 
+Then('I empty the inputbox', async function () {
+
+    let element = await this.driver.$("input[name=\"name\"]");
+    
+    return await element.clearValue();
+
+});
+
+Then('I click to view recent created tag', async function () {
+
+    let element = await this.driver.$("a[href=\"#/tags/tag-esc-15/\"]");
+    
+    return await element.click();
+
+});
+
+Then('I click to delete TAG', async function () {
+
+    let element = await this.driver.$("button[class=\"gh-btn gh-btn-red gh-btn-icon mb15\"]");
+    
+    return await element.click();
+
+});
+
+
 Then('I click to edit new page {kraken-string}', async function (tituloPage) {
 
     let element = await this.driver.$("h3="+tituloPage);
@@ -576,12 +601,17 @@ Then('I should see new home label Lorem', async function () {
 When('I click next', async function() {
     let element = await this.driver.$('#ember12 > span');
     return await element.click();
-})
+});
 
 When('I click crear post', async function() {
     let element = await this.driver.$('#ember29 > span');
     return await element.click();
-})
+});
+
+When('I confirm deletion of TAG', async function() {
+    let element = await this.driver.$('span=Delete');
+    return await element.click();
+});
 
 When('I enter titulo {kraken-string}', async function (titulo) {
     let element = await this.driver.$('#ember63');
