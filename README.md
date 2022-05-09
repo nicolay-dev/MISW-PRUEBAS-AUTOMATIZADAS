@@ -1,4 +1,4 @@
-#README PARA EJECUTAR PRUEBAS KRAKEN
+# README PARA EJECUTAR PRUEBAS KRAKEN
 
 Activar ghost en una carpeta nueva
 Ejecutar ghost localmente
