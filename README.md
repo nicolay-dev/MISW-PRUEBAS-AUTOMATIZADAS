@@ -1,3 +1,25 @@
+#README PARA EJECUTAR PRUEBAS KRAKEN
+
+Activar ghost en una carpeta nueva
+Ejecutar ghost localmente
+Crear cuenta de administrador. 
+
+Descargar el código del programa. 
+Parado en la carpeta del proyecto ejecutar el comando npm install. Con versión de node 12.22.1
+Utilizar el comando npm install kraken-node para instalar Kraken localmente en la carpeta del proyecto 
+
+Definir las siguientes variables en properties.json
+
+  "URL": "http://localhost:2369/ghost/", 
+  "USERNAME1": "username@correo.com", 
+  "PASSWORD1": "passwordcreado",
+  "BeforeName": "Nombre Creado",
+  "AfterName": "Nombre creado ESC-10",
+  
+Utilizar el comando npx kraken-node run para ejecutar las pruebas. 
+
+Nota: Las pruebas puede que no corran todas en window, si encuentra este problema por favor crear una carpeta de ignore y colocar todas las pruebas allí. Pase a la carpeta feature cada una de las pruebas para su ejecución. 
+
 # MISW-PRUEBAS-AUTOMATIZADAS-ISSUES-JN
 
 REPORTE DE ISSUES PRUEBAS AUTOMATIZADAS (MISO - Uniandes)
