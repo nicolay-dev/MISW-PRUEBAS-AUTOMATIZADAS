@@ -421,5 +421,155 @@ When('I enter bio text', async function () {
 
 });
 
+Then('I click on my admin name', async function() {
+
+    let element = await this.driver.$('#ember-basic-dropdown-wormhole');
+
+    return await element.click();
+
+});
+
+
+Then('I click on my profile name', async function() {
+
+    let element = await this.driver.$('/html/body/div[2]/div/main/section/section/section[2]/div/div[2]/a');
+
+    return await element.click();
+
+});
+
+Then('I enter old password {kraken-string}', async function(password) {
+
+    let element = await this.driver.$('#user-password-old');
+
+    return await element.setValue(password);
+
+});
+
+Then('I enter new password {kraken-string}', async function(password) {
+
+    let element = await this.driver.$('#user-password-new');
+
+    return await element.setValue(password);
+
+});
+
+Then('I confirm new password {kraken-string}', async function(password) {
+
+    let element = await this.driver.$('#user-new-password-verification');
+
+    return await element.setValue(password);
+
+});
+
+Then('I click in save change', async function() {
+
+    let element = await this.driver.$('/html/body/div[2]/div/main/section/section/div/form[2]/div/fieldset/div[4]/button');
+
+    return await element.click();
+
+});
+
+Then('I click in botton name', async function() {
+
+    let element = await this.driver.$('/html/body/div[2]/div/nav[1]/section/div[2]/div[1]');
+
+    return await element.click();
+
+});
+
+Then('I click signout', async function() {
+
+    let element = await this.driver.$('/html/body/div[1]/div/ul/li[9]/a');
+
+    return await element.click();
+
+});
+
+Then('I select to view recent created tag', async function () {
+
+    let element = await this.driver.$("a[href=\"#/tags/tag-esc-5/\"]");
+    
+    return await element.click();
+
+});
+
+Then('I click to edit new page {kraken-string}', async function (tituloPage) {
+
+    let element = await this.driver.$("h3="+tituloPage);
+    
+    return await element.click();
+
+});
+Then('I click on the page title', async function () {
+
+    let element = await this.driver.$(".gh-editor-title.ember-text-area.gh-input.ember-view");
+
+    return await element.click();
+
+});
+
+Then('I click to settings', async function () {
+
+    let element = await this.driver.$("a[href=\"#/settings/general/\"]");
+    
+    return await element.click();
+
+});
+
+Then('I click to timezone', async function () {
+
+    let element = await this.driver.$("/html/body/div[2]/div/main/section/div/section/div[2]/div[2]/div[2]/button");
+    
+    return await element.click();
+
+});
+
+Then('I select timezone {kraken-string}', async function (timezone) {
+
+    let element = await this.driver.$('#timezone');
+    await element.click();
+    let element2 = await this.driver.$('//*[@id="timezone"]/option[56]');
+    return await element2.click();
+
+});
+
+Then('I click to save Settings', async function () {
+
+    let element = await this.driver.$('/html/body/div[2]/div/main/section/div/header/section/button');
+
+    return await element.click();
+
+});
+
+Then('I navigate to design', async function () {
+
+    let element = await this.driver.$("a[href=\"#/settings/design/\"]");
+    
+    return await element.click();
+});
+
+Then('I edit the home label to Lorem', async function () {
+
+    let element = await this.driver.$("/html/body/div[2]/div/main/section/section/div[2]/form/div[1]/div[1]/div/div/span[1]/input");
+    await element.click();
+    return await element.setValue("Lorem");
+
+});
+
+Then('I save changes to the home label', async function () {
+
+    let element = await this.driver.$("/html/body/div[2]/div/main/section/header/section/button");
+    
+    return await element.click();
+});
+
+Then('I should see new home label Lorem', async function () {
+
+    let element = await this.driver.$("a[href=\"http://localhost:2369/\"]");
+    
+    return await element.click();
+});
+
 
 

@@ -1,15 +1,20 @@
 {
   "URL": "http://localhost:2369/ghost/", 
-  "USERNAME1": "juanc@mail123.com", 
-  "PASSWORD1": "5YNqpgy6Yuxmvxf",
-  "BeforeName": "Juan Pineda",
-  "AfterName": "Juan Pineda ESC-10",
+  "USERNAME1": "ls.campo10@uniandes.edu.co", 
+  "PASSWORD1": "Lesly870522",
+  "BeforeName": "Lesly Campo",
+  "AfterName": "Lesly Campo ESC-10",
   "Untitled": "(Untitled)",
   "PAGE14": "Página Escenario 14",
+  "PAGE09": "Página Escenario 09",
+  "PAGE09Edit": "Página Escenario 09 Editada",
   "POST18": "Post Escenario 18",
   "POST2": "Post Escenario 2",
   "POST3": "Post Escenario 3",
   "POST6": "Post Escenario 6",
   "POST7": "Post Escenario 7",
-  "PARRAFO": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut gravida scelerisque ex quis pellentesque. Vivamus eget eros vitae tellus consectetur porttitor. Pellentesque dui ligula, consequat quis feugiat nec, maximus ut tortor. Nam massa mauris, congue id pulvinar eget, iaculis sed sapien. Etiam ullamcorper commodo sagittis. Duis purus lacus, suscipit quis libero eget, tempus imperdiet nisl. Quisque arcu nibh, volutpat sed urna sit amet, lobortis molestie massa. Phasellus posuere, metus non aliquam scelerisque, velit magna tristique urna, in consequat lectus lorem a magna. Aenean condimentum ornare orci non consequat."
+  "PARRAFO": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut gravida scelerisque ex quis pellentesque. Vivamus eget eros vitae tellus consectetur porttitor. Pellentesque dui ligula, consequat quis feugiat nec, maximus ut tortor. Nam massa mauris, congue id pulvinar eget, iaculis sed sapien. Etiam ullamcorper commodo sagittis. Duis purus lacus, suscipit quis libero eget, tempus imperdiet nisl. Quisque arcu nibh, volutpat sed urna sit amet, lobortis molestie massa. Phasellus posuere, metus non aliquam scelerisque, velit magna tristique urna, in consequat lectus lorem a magna. Aenean condimentum ornare orci non consequat.",
+  "PASSWORDNEW": "Lesly12345",
+  "TIMEZONE": "Asia/Tokyo",
+  "createURL": "http://localhost:2369/"
 }
