@@ -120,16 +120,13 @@ l.correaz@uniandez.edu.co
 - Cerrar la sesión
 - Iniciar sesión nuevamente
 - Verificar que la bio ha sido creada"
-### Escenario 12 Funcionalidades (Login, Crear un nuevo post, Editar imagen agregada)
+### Escenario 12 Funcionalidades (Login, Crear un nuevo post, Agregar excerpt y Publicar Post.)
 - Hacer login en GHOST
 - Crear un nuevo post
 - Agregar un titulo
 - Agregar un texto de prueba
-- Agregar una imagen de prueba
-- Publicar el post
-- Abrir la edición del post
-- Cambiar la imagen del post
-- Verificar el cambio de la imagen"
+- Agregar excerpt. 
+- Publicar el post.
 ### Escenario 13 Funcionalidades (Login, Modificar el timezone)
 - - Hacer login en GHOST
 - Ir al modulo de Settings/General
@@ -149,11 +146,13 @@ l.correaz@uniandez.edu.co
 - Cerrar sesión
 - Dirigirse a la vista web sin logearse
 - Verificar que el menu se eliminó correctamente"
-### Escenario 16 Funcionalidades (Login, Crear un post, Programar fecha publicación)
+### Escenario 16 Funcionalidades (Login, Crear un post, Agregar Twitter Card y publicar post)
 - Hacer login en GHOST
-- Crear un post
-- Esperar al momento configurado
-- Validar que el post se publicó de forma correcta"
+- Crear un nuevo post
+- Agregar un titulo
+- Agregar un texto de prueba
+- Agregar Twitter Card Title
+- Publicar el post.
 ### Escenario 17 Funcionalidades (Login, Add Tab, Logout, View Web)
 - Hacer login en GHOST
 - Dirigirse a la funcionalidad de diseño
@@ -177,8 +176,10 @@ l.correaz@uniandez.edu.co
 - Publicar el post creado
 - Editar el Post Publicado eliminar los tags
 - Revisar que la información se actualizo en la publicación y en los filtros"
-### Escenario 20 Funcionalidades (Login, Crear un post, Programar fecha publicación, Organizar Post)
--Hacer login en GHOST
-- Crear varios post con diferentes fechas programadas de publicación
-- Organizarlos por fecha de publicación 
-- Verificar que el orden este correcto"
+### Escenario 20 Funcionalidades (Login, Crear un post, Agregar Twitter Card y publicar post))
+'- Hacer login en GHOST
+- Crear un nuevo post
+- Agregar un titulo
+- Agregar un texto de prueba
+- Agregar Facebook Card Title
+- Publicar el post.
