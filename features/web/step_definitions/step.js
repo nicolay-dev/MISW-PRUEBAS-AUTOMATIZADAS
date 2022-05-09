@@ -573,3 +573,148 @@ Then('I should see new home label Lorem', async function () {
 
 
 
+When('I click next', async function() {
+    let element = await this.driver.$('#ember12 > span');
+    return await element.click();
+})
+
+When('I click crear post', async function() {
+    let element = await this.driver.$('#ember29 > span');
+    return await element.click();
+})
+
+When('I enter titulo {kraken-string}', async function (titulo) {
+    let element = await this.driver.$('#ember63');
+    return await element.setValue(titulo);
+});
+
+When('I enter contenido post {kraken-string}', async function (contenido) {
+    let element = await this.driver.$('.koenig-editor__editor');
+    return await element.setValue(contenido);
+});
+
+When('I click publish list', async function() {
+    let element = await this.driver.$('/html[1]/body[1]/div[2]/div[1]/main[1]/section[1]/header[1]/section[1]/div[1]/div[1]/span[1]');
+    return await element.click();
+})
+
+When('I click publish button', async function() {
+    let element = await this.driver.$('/html[1]/body[1]/div[1]/div[1]/footer[1]/button[2]/span[1]');
+    return await element.click();
+})
+
+When('I click on back button', async function() {
+    let element = await this.driver.$('/html[1]/body[1]/div[2]/div[1]/main[1]/section[1]/header[1]/div[1]/div[1]/a[1]');
+    return await element.click();
+})
+
+When('I click on specific post', async function() {
+    let element = await this.driver.$('//section/ol/li//h3[text()="Post Escenario 4"]//ancestor::li');
+    return await element.click();
+})
+
+
+When('I click on unpublished option', async function() {
+    let element = await this.driver.$('/html[1]/body[1]/div[1]/div[1]/div[1]/section[1]/div[1]/div[2]/div[1]');
+    return await element.click();
+})
+
+
+When('I click on space', async function() {
+    let element = await this.driver.$('/html[1]/body[1]/div[2]/div[1]/main[1]/section[1]/div[1]/div[1]');
+    return await element.click();
+})
+
+When('I click on update', async function() {
+    let element = await this.driver.$('/html[1]/body[1]/div[1]/div[1]/footer[1]/button[2]/span[1]');
+    return await element.click();
+})
+
+
+When('I select tittle {kraken-string}', async function (contenido) {
+    let element = await this.driver.$('/html[1]/body[1]/div[2]/div[1]/main[1]/section[1]/div[1]/div[1]/textarea[1]');
+    return element.setValue(contenido)
+});
+
+When('I click back button-route', async function() {
+    let element = await this.driver.$('/html[1]/body[1]/div[2]/div[1]/main[1]/section[1]/header[1]/div[1]/div[1]/a[1]');
+    return await element.click();
+})
+
+When('I click on post-published', async function() {
+    let element = await this.driver.$('/html[1]/body[1]/div[2]/div[1]/nav[1]/section[1]/div[1]/ul[2]/li[2]/div[1]/div[1]/ul[1]/li[3]/a[1]/span[2]');
+    return await element.click();
+})
+
+
+When('I verify return of title of test', async function() {
+    let element = await this.driver.$('//section/ol/li//h3[text()="Prueba cambio de titulo"]//ancestor::li');
+    return await element.click();
+})
+
+When('I click on drafts button', async function() {
+    let element = await this.driver.$('/html[1]/body[1]/div[2]/div[1]/nav[1]/section[1]/div[1]/ul[2]/li[2]/div[1]/div[1]/ul[1]/li[1]/a[1]/span[2]');
+    return await element.click();
+})
+
+
+When('I click on draft post if exist', async function() {
+    let element = await this.driver.$('//section/ol/li//h3[text()="Titulo Borrador"]//ancestor::li');
+    return await element.click();
+})
+
+When('I click on list-add-multimedia', async function() {
+    let element = await this.driver.$('/html[1]/body[1]/div[2]/div[1]/main[1]/section[1]/div[1]/div[1]/article[1]/div[4]/button[1]/*[name()="svg"][1]');
+    return await element.click();
+})
+
+When('I click on add-image', async function() {
+    let element = await this.driver.$('/html[1]/body[1]/div[2]/div[1]/main[1]/section[1]/div[1]/div[1]/article[1]/div[4]/div[1]/div[2]');
+    return await element.click();
+})
+
+
+When('I click settings-button f12', async function() {
+    let element = await this.driver.$('/html[1]/body[1]/div[2]/div[1]/main[1]/section[1]/header[1]/section[1]/button[1]/*[name()="svg"][1]/*[name()="path"][2]');
+    return await element.click();
+})
+
+
+When('I enter excerpt settings-f12 {kraken-string}', async function (excerpt) {
+    let element = await this.driver.$('/html[1]/body[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/form[1]/div[4]/textarea[1]');
+    return await element.setValue(excerpt);
+});
+
+
+When('I click settings-button f16', async function() {
+    let element = await this.driver.$('/html[1]/body[1]/div[2]/div[1]/main[1]/section[1]/header[1]/section[1]/button[1]/*[name()="svg"][1]/*[name()="path"][2]');
+    return await element.click();
+})
+
+
+When('I click Twitter-Card f16', async function() {
+    let element = await this.driver.$('/html[1]/body[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/form[1]/ul[1]/li[2]/button[1]/span[1]');
+    return await element.click();
+})
+
+When('I enter Twitter-Card-Title f16 {kraken-string}', async function (twitterTittle) {
+    let element = await this.driver.$('/html[1]/body[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/form[1]/div[4]/textarea[1]');
+    return await element.setValue(twitterTittle);
+});
+
+
+When('I click settings-button f20', async function() {
+    let element = await this.driver.$('/html[1]/body[1]/div[2]/div[1]/main[1]/section[1]/header[1]/section[1]/button[1]/*[name()="svg"][1]/*[name()="path"][2]');
+    return await element.click();
+})
+
+When('I click Facebook-Card f20', async function() {
+    let element = await this.driver.$('/html[1]/body[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/form[1]/ul[1]/li[3]/button[1]/span[1]');
+    return await element.click();
+})
+
+When('I enter Facebook-Card-Title f20 {kraken-string}', async function (twitterTittle) {
+    let element = await this.driver.$('/html[1]/body[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/form[1]/div[2]/input[1]');
+    return await element.setValue(twitterTittle);
+});
+
