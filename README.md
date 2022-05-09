@@ -139,13 +139,12 @@ l.correaz@uniandez.edu.co
 - Dar título y parrafo a la Página
 - Publicar la Página
 - Verificar que la página se visualice en el URL creado"
-### Escenario 15 Funcionalidades (Login, Delete Tab, Logout, View Web)
--Hacer login en GHOST
-- Dirigirse a la funcionalidad de diseño
-- Eliminar un tab (Menu)
-- Cerrar sesión
-- Dirigirse a la vista web sin logearse
-- Verificar que el menu se eliminó correctamente"
+### Escenario 15 Funcionalidades (Login, Crear TAG, Editar TAG)
+- Hacer login en GHOST
+- Crear un TAG
+- Verificar que el TAG esté creado
+- Editar TAG
+- Verificar edición del TAG
 ### Escenario 16 Funcionalidades (Login, Crear un post, Agregar Twitter Card y publicar post)
 - Hacer login en GHOST
 - Crear un nuevo post
@@ -169,15 +168,16 @@ l.correaz@uniandez.edu.co
 - Verificar que el estado del post sea UNPUBLISHED
 - Ir a la página princiapl de GHOST
 - Visulizar que el post no está publicado"
-### Escenario 19 Funcionalidades (Login, Crear post, Add tags, Edit Post)
--Hacer login en GHOST
-- Crear un post
-- Agregar dos tags
-- Publicar el post creado
-- Editar el Post Publicado eliminar los tags
-- Revisar que la información se actualizo en la publicación y en los filtros"
+### Escenario 19 Funcionalidades (Login, Crear TAG, Editar TAG, Eliminar TAG)
+- Hacer login en GHOST
+- Crear un TAG
+- Verificar que el TAG esté creado
+- Editar TAG
+- Verificar edición del TAG
+- Eliminar TAG
+- Verificar eliminación TAG
 ### Escenario 20 Funcionalidades (Login, Crear un post, Agregar Twitter Card y publicar post))
-'- Hacer login en GHOST
+- Hacer login en GHOST
 - Crear un nuevo post
 - Agregar un titulo
 - Agregar un texto de prueba
