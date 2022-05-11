@@ -1,0 +1,11 @@
+{
+  "projectId":"End-to-End-GHOST-3-41-1",
+  "baseUrl": "http://localhost:2368/ghost/",
+  "env": {
+      "appName": "Prueba Ghost",
+      "username": "juanc@mail123.com",
+      "password": "5YNqpgy6Yuxmvxf",
+      "password2": "Lesly870522"
+     
+  }
+}
