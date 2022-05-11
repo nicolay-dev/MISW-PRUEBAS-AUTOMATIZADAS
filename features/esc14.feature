@@ -1,11 +1,11 @@
-Feature: Crear y publicar una página y poder editarla
+Feature: Crear página
 
 @user1 @web
-Scenario: Como usuario creo una página, la publico y la edito
+Scenario: Como usuario creo una página y la publico
   Given I navigate to page "<URL>"
   And I wait for 5 seconds
-  When I enter email "<USERNAME1>"
-  And I enter password "<PASSWORD1>"
+  When I enter email "<USERNAME>"
+  And I enter password "<PASSWORD>"
   And I wait for 2 seconds
   And I click Sign in
   And I wait for 7 seconds
@@ -15,19 +15,19 @@ Scenario: Como usuario creo una página, la publico y la edito
   And I wait for 2 seconds
   And I click on the redact page title inputbox
   And I wait for 2 seconds
-  And I enter page title "<PAGE14>"
+  And I enter text "<PAGE14>"
   And I wait for 2 seconds
   And I click on the redact page paragraph inputbox
-  And I enter page text "<PARRAFO>"
+  And I enter text "<PARRAFO>"
   And I wait for 2 seconds
-  And I click on the publish menu
+  And I click on the publish-update menu
   And I wait for 2 seconds
   And I click on the Set it live now option
   And I wait for 2 seconds
-  Then I publish new page
+  Then I click on publish-update
   And I wait for 4 seconds
-  And I click on settings of page
+  And I click on post-page settings
   And I wait for 2 seconds
   And I click on page link
-  And I wait for 2 seconds
+  And I wait for 1 seconds
   And I wait for 3 seconds

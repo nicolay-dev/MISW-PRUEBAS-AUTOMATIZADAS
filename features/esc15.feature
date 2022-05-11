@@ -1,34 +1,35 @@
-Feature: Crear un nuevo TAG y editarlo
+Feature: Editar Tag
 
 @user1 @web
-Scenario: Como usuario administrador un TAG nuevo y editarlo
+Scenario: Como usuario queiro crear un Tag y editarlo
   Given I navigate to page "<URL>"
   And I wait for 5 seconds
-  When I enter email "<USERNAME1>"
-  And I enter password "<PASSWORD1>"
+  When I enter email "<USERNAME>"
+  And I enter password "<PASSWORD>"
   And I wait for 2 seconds
   And I click Sign in
   And I wait for 7 seconds
-  And I go the TAG section
+  And I go to Tag section
   And I wait for 2 seconds
   And I create a new TAG
   And I wait for 2 seconds
   And I click on the redact name inputbox
   And I wait for 2 seconds
-  And I enter text "TAG Esc-15"
+  And I enter text "<TAG15>"
   And I wait for 2 seconds
-  Then I save my new tag
+  Then I click save
   And I wait for 2 seconds
-  And I go the TAG section
+  And I go to Tag section
   And I wait for 2 seconds
-  Then I click to view recent created tag
+  Then I click to edit post-page-tag "<TAG15>"
   And I wait for 2 seconds
   And I click on the redact name inputbox
   And I wait for 2 seconds
   And I empty the inputbox
-  And I enter text "TAG Esc-15v2"
+  And I wait for 1 seconds
+  And I enter text "<TAG15-1>"
   And I wait for 2 seconds
-  Then I save my new tag
+  Then I click save
   And I wait for 2 seconds
-  And I go the TAG section
-  And I wait for 2 seconds
+  And I go to Tag section
+  And I wait for 3 seconds

@@ -1,30 +1,47 @@
-Feature: Crear y Eliminar un post
+Feature: Programar publicación de post
 
 @user1 @web
-Scenario: Como usuario inicio sesión, creo un post, lo publico y lo elimino
+Scenario: Como usuario quiero crear un post y programar su hora de publicación (**LA PRUEBA NO FUNCIONA SI EL MINUTO EN EL QUE SE PROGRAMA LA PUBLICACIÓN DEL POST ESTA ENTRE 57 Y 59)
   Given I navigate to page "<URL>"
   And I wait for 5 seconds
-  When I enter email "<USERNAME1>"
-  And I enter password "<PASSWORD1>"
+  When I enter email "<USERNAME>"
+  And I enter password "<PASSWORD>"
   And I wait for 2 seconds
   And I click Sign in
   And I wait for 7 seconds
-  And I create a new post with nav bar
+  And I click the icon to create new post
   And I wait for 2 seconds
-  And I click on the redact title inputbox
+  And I click on the redact post title inputbox
   And I wait for 2 seconds
-  And I enter post title "<POST7>"
+  And I enter text "<POST07>"
   And I wait for 2 seconds
-  And I click on the redact paragraph inputbox
-  And I enter post text "<PARRAFO>"
+  And I click on the redact post paragraph inputbox
   And I wait for 2 seconds
-  And I click on the publish menu
+  And I enter text "<PARRAFO>"
   And I wait for 2 seconds
-  And I scheduled the publish
+  And I click on the publish-update menu
   And I wait for 2 seconds
-  And I edit the time
+  And I click on the redact UTC time
+  And I wait for 1 seconds
+  And I delete default scheduled UTC time
+  And I wait for 1 seconds
+  And I set publish time for 3 minutes in the future
   And I wait for 2 seconds
   And I submit the schedule
-  And I wait for 240 seconds
-  Then I go to post view
+  And I wait for 4 seconds
+  Then I return to section view
   And I wait for 2 seconds
+  And I click on View site in new tab
+  And I wait for 1 seconds
+  And I wait for 25 seconds
+  And I wait for 25 seconds
+  And I wait for 25 seconds
+  And I wait for 25 seconds
+  And I wait for 25 seconds
+  And I wait for 25 seconds
+  And I wait for 25 seconds
+  And I wait for 5 seconds
+  And I navigate to page "<URL-LECTOR>"
+  And I wait for 5 seconds
+  Then I click on published post-page "<POST07>"
+  And I wait for 4 seconds

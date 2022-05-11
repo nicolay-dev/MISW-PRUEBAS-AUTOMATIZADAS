@@ -1,47 +1,58 @@
-Feature: Editar titulo de post creado
+Feature: Editar post
 
 @user1 @web
-Scenario: Iniciar sesión, Agregar titulo, agregar descripción, crear post, editar titulo de post y verificar el cambio. 
+Scenario: Como usuario quiero crear un post, publicarlo y editarlo
     Given I navigate to page "<URL>"
     And I wait for 3 seconds
-    When I enter email "<USERNAME1>"
+    When I enter email "<USERNAME>"
     And I wait for 2 seconds
-    And I enter password "<PASSWORD1>"
+    And I enter password "<PASSWORD>"
     And I wait for 2 seconds
-    And I click next
+    And I click Sign in
     And I wait for 2 seconds
-    And I click crear post
+    And I click the icon to create new post
     And I wait for 2 seconds
-    And I enter titulo "<POST4>"
+    And I click on the redact post title inputbox
     And I wait for 2 seconds
-    And I enter contenido post "<PARRAFO>"
-    And I wait for 5 seconds
-    And I click publish list
+    And I enter text "<POST04>"
     And I wait for 2 seconds
-    And I click publish button
+    And I click on the redact post paragraph inputbox
     And I wait for 2 seconds
-    And I click on back button
+    And I enter text "<PARRAFO>"
     And I wait for 2 seconds
-    And I click on specific post
+    And I click on the publish-update menu
     And I wait for 2 seconds
-    And I click publish list
+    And I click on the Set it live now option
     And I wait for 2 seconds
-    And I click on unpublished option
+    Then I click on publish-update
+    And I wait for 4 seconds
+    And I return to section view
     And I wait for 2 seconds
-    And I click on update
+    And I click on View site in new tab
     And I wait for 2 seconds
-    And I select tittle "<POST4_1>"
+    Then I click on published post-page "<POST04>"
+    And I wait for 4 seconds
+    And I navigate to page "http://localhost:2368/ghost/"
+    And I wait for 3 seconds
+    And I go to Posts section
+    And I wait for 2 seconds
+    And I click to edit post-page-tag "<POST04>"
+    And I wait for 2 seconds
+    And I click on the redact post title inputbox
     And I wait for 1 seconds
-    And I click on space
-    And I wait for 1 seconds    
-    And I click publish list
+    And I delete current post title
     And I wait for 2 seconds
-    And I click publish button
+    And I enter text "<POST04_1>"
     And I wait for 2 seconds
-    And I click on back button
+    And I click on the publish-update menu
     And I wait for 2 seconds
-    And I click on post-published
+    Then I click on publish-update
+    And I wait for 4 seconds
+    And I return to section view
     And I wait for 2 seconds
-    And I verify return of title of test
+    And I click on View site in new tab
     And I wait for 2 seconds
-
+    Then I click on published post-page "<POST04_1>"
+    And I wait for 1 seconds
+    And I wait for 3 seconds
+   
