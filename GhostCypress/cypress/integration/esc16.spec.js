@@ -1,3 +1,5 @@
+const { PassThrough } = require("stream")
+const POM = require("../POM/POM")
 
 Cypress.on('uncaught:exception', (err, runnable) => {
     // we expect a 3rd party library error with message 'list not defined'
@@ -20,16 +22,10 @@ describe('Visit site login', () => {
     })
        it('Login to ghost, change password and logout', () => {  
         cy.get('form').within(() => {
-            cy.get('input[id="ember8"]').type(username)
-            cy.get('input[id="ember10"]').type(password)
-            cy.get('.login.gh-btn').click()
+            POM.signIn(username, password);
         })
-        cy.get('.ember-view.gh-secondary-action.gh-nav-new-post').click();
         cy.wait(1000);
-        cy.get('.gh-editor-title.ember-text-area.gh-input.ember-view').type('POST DE PRUEBA PARA BORRAR');
-        cy.wait(2000);
-        cy.get('.koenig-editor__editor').type("PRUEBAS AUTOMATIZADAS MISO");
-        cy.wait(3000);
+        POM.buildNewPost('tiutlo esc 16','jkaisfj oianf g0ngpong OJOegtom')
         cy.get('.post-settings').click();
         cy.wait(1000);
         cy.get('b').contains("Twitter card").click();       
