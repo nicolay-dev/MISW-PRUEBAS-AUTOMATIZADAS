@@ -6,7 +6,7 @@ class shortCut{
         passwordInput: () => cy.get('input[name="password"]'),
         logInBtn: () => cy.get('button[type="Submit"]'),
         managePosts: () => cy.contains('Posts'),
-        createPost: () => cy.contains('a[title="New post"]'),
+        createPost: () => cy.get('a[title="New post"]'),
         managePages: () => cy.contains('Pages'),
         manageTags: () => cy.contains('Tags'),
         manageStaff: () => cy.contains('Staff'),
@@ -14,7 +14,14 @@ class shortCut{
         settingsDesign: () => cy.contains('Design'),
         myProfile: () => cy.get(`span[class="gh-user-email"]`),
         signOutBtn: () => cy.get(`a[href='#/signout/']`),
-        createTag: () => cy.get('a span:contains("New tag")')
+        createTag: () => cy.get('a span:contains("New tag")'),
+        createPage: () => cy.get('a span:contains("New page")'),
+        save: () => cy.contains('Save'),
+        confirmDelete: () => cy.contains('Delete'),
+        getPPT: (titulo) => cy.get("h3").contains(titulo),
+        getPostPageinSite: (titulo) => cy.get("h2").contains(titulo),
+        getTaginSite: (titulo) => cy.get("div").contains(titulo),
+        getPostPageinTag: (titulo) => cy.get("h1").contains(titulo),
 
     }
 
@@ -53,10 +60,6 @@ class shortCut{
         cy.wait(1000);
     }
 
-    getPPT(titulo){
-        cy.get("h3").contains(titulo);
-    }
-
     createNewTag(titulo){
         this.elements.createTag().click();
         cy.wait(2000);
@@ -64,12 +67,19 @@ class shortCut{
         cy.contains('Save').click();
     }
 
-    createNewPost(titulo, parrafo){
+    buildNewPost(titulo, parrafo){
+        this.elements.createPost().click();
+        cy.get('textarea[placeholder="Post Title"]').type(titulo);
+        cy.get('div[data-placeholder="Begin writing your post..."]').type(parrafo);
 
     }
 
     createNewPage(titulo, parrafo){
-
+        this.elements.createPage().click();
+        cy.wait(2000);
+        cy.get('textarea[placeholder="Page Title"]').type(titulo)
+        cy.wait(2000);
+        cy.get("div[data-placeholder=\"Begin writing your page...\"]").type(parrafo)                  
     }
 
     //Click on the settings button in whatever Posts or Pages view
