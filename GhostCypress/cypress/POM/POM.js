@@ -22,9 +22,12 @@ class shortCut{
         getPostPageinSite: (titulo) => cy.get('h2').contains(titulo),
         getTaginSite: (titulo) => cy.get("div").contains(titulo),
         getPostPageinTag: (titulo) => cy.get("h1").contains(titulo),
-        publishPP: ()  => cy.get('div[class="gh-publishmenu ember-view"]'),
+        menuPublishUpdatePP: ()  => cy.get('div[class="gh-publishmenu ember-view"]'),
+        btnPublishUpdatePP: () => cy.get('button[class="gh-btn gh-btn-blue gh-publishmenu-button gh-btn-icon ember-view"]'),
+        settingsBtnPP: () => cy.get('button[title="Settings"]'),
         sectionView: () => cy.get('a[class="blue link fw4 flex items-center ember-view"]'),
-        viewSite: () => cy.get('a[title="Open site in new tab"]')
+        viewSite: () => cy.get('a[title="Open site in new tab"]'),
+        
 
     }
 
@@ -93,26 +96,15 @@ class shortCut{
         cy.get("div[data-placeholder=\"Begin writing your page...\"]").type(parrafo)                  
     }
 
-    //Click on the settings button in whatever Posts or Pages view
-    clickUpdateButtonOnPP() {
-        cy.contains('Update').click();
-    }
-
-    //Update - Publish changes in whatever Post, Page, Tag
-    updateChangesOnPP() {
-        this.clickUpdateButtonOnPP();
-        cy.get('Button').contains('Update').click();
-    }
-
-    //Click on the settings button in whatever Post, Page, Tag
+    //Click on the settings button in whatever Post-Page
     clickSettingsOnPP() {
-        cy.get('button[title="Settings"]').click();
+        this.elements.settingsBtnPP().click();
     }
 
-    //Publish and Set it live now changes in whatever Post, Page, Tag
-    publishChangesOnPP() {
-        this.elements.publishPP().click();
-        cy.get('button[class="gh-btn gh-btn-blue gh-publishmenu-button gh-btn-icon ember-view"]').click(); 
+    //Publish new or update any changes in whatever Post-Page
+    publishUpdatePP() {
+        this.elements.menuPublishUpdatePP().click();
+        this.elements.btnPublishUpdatePP().click(); 
     }  
 
     //If you are in edit Post/Page view, it will return to section view

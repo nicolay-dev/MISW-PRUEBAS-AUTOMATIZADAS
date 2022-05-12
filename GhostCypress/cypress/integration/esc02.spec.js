@@ -19,7 +19,7 @@ describe('Create a post', () => {
     //Build a new post
     POM.buildNewPost(titulo, parrafo)
     cy.wait(1000)
-    POM.publishChangesOnPP()
+    POM.publishUpdatePP()
     cy.wait(4000)
     POM.returnToSectionView()
 

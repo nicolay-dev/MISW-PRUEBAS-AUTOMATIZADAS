@@ -1,4 +1,3 @@
-const { publishChangesOnPP } = require("../POM/POM")
 const POM = require("../POM/POM")
 const url = Cypress.config('baseUrl')
 const username = Cypress.env('username')
@@ -21,7 +20,7 @@ describe('Create a post', () => {
     //Build a new post
     POM.buildNewPost(titulo, parrafo)
     cy.wait(1000)
-    POM.publishChangesOnPP()
+    POM.publishUpdatePP()
     cy.wait(4000)
     POM.returnToSectionView()
     
@@ -43,7 +42,7 @@ describe('Create a post', () => {
     cy.wait(2000)
     POM.closeSettings()
     cy.wait(1000)
-    POM.publishChangesOnPP()
+    POM.publishUpdatePP()
 
     //Go to viewer site and confirm the post is published
     cy.wait(2000)
