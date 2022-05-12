@@ -15,6 +15,9 @@ class shortCut{
         myProfile: () => cy.get(`span[class="gh-user-email"]`),
         signOutBtn: () => cy.get(`a[href='#/signout/']`),
         createTag: () => cy.get('a span:contains("New tag")'),
+        createPage: () => cy.get('a span:contains("New page")'),
+        save: () => cy.contains('Save'),
+        confirmDelete: () => cy.contains('Delete'),
         getPPT: (titulo) => cy.get("h3").contains(titulo),
         getPostPageinSite: (titulo) => cy.get("h2").contains(titulo),
         getTaginSite: (titulo) => cy.get("div").contains(titulo),
@@ -72,7 +75,11 @@ class shortCut{
     }
 
     createNewPage(titulo, parrafo){
-
+        this.elements.createPage().click();
+        cy.wait(2000);
+        cy.get('textarea[placeholder="Page Title"]').type(titulo)
+        cy.wait(2000);
+        cy.get("div[data-placeholder=\"Begin writing your page...\"]").type(parrafo)                  
     }
 
 
