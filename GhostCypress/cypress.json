@@ -1,10 +1,10 @@
 {
   "projectId":"End-to-End-GHOST-3-41-1",
-  "baseUrl": "http://localhost:2369/ghost/",
+  "baseUrl": "http://localhost:2368/ghost/",
   "env": {
       "appName": "Prueba Ghost",
-      "username": "ls.campo10@uniandes.edu.co",
-      "password": "Lesly123456",
+      "username": "juanc@mail123.com",
+      "password": "5YNqpgy6Yuxmvxf",
       "password2": "Lesly870522",
       "POST02": "Post Escenario 2",
         "PARRAFO": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut gravida scelerisque ex quis pellentesque. Vivamus eget eros vitae tellus consectetur porttitor. Pellentesque dui ligula, consequat quis feugiat nec, maximus ut tortor. ",

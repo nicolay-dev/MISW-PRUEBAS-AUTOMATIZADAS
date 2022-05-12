@@ -19,13 +19,16 @@ class shortCut{
         save: () => cy.contains('Save'),
         confirmDelete: () => cy.contains('Delete'),
         getPPT: (titulo) => cy.get("h3").contains(titulo),
-        getPostPageinSite: (titulo) => cy.get("h2").contains(titulo),
+        getPostPageinSite: (titulo) => cy.get('h2').contains(titulo),
         getTaginSite: (titulo) => cy.get("div").contains(titulo),
         getPostPageinTag: (titulo) => cy.get("h1").contains(titulo),
         publishPP: ()  => cy.get("span").contains("Publish"),
-        viewPP: () => cy.get("a[class='post-view-link']")
+        viewPP: () => cy.get("a[class='post-view-link']"),
+        sectionView: () => cy.get('a[class="blue link fw4 flex items-center ember-view"]'),
+        viewSite: () => cy.get('a[title="Open site in new tab"]')
 
     }
+
 
     signIn(email, password){
         this.elements.emailInput().type(email);
@@ -76,6 +79,13 @@ class shortCut{
 
     }
 
+    //Once you are inside a post, it changes the title
+    editTitlePost(titulo){
+        cy.get('textarea[placeholder="Post Title"]').clear();
+        cy.get('textarea[placeholder="Post Title"]').type(titulo);
+
+    }
+
     createNewPage(titulo, parrafo){
         this.elements.createPage().click();
         cy.wait(2000);
@@ -107,6 +117,21 @@ class shortCut{
         cy.get('div').contains('Set it live now').click();
          cy.get('button').contains('Publish').click(); 
     }  
+
+    //If you are in edit Post/Page view, it will return to section view
+    returnToSectionView(){
+        this.elements.sectionView().click();
+    }
+
+    //If you are in the main page, it will click on the button that opens a new tab with the reader site version of Ghost
+    viewReaderSite(){
+        this.elements.viewSite().click();
+    }
+
+    //If you are inside settings in a Post/Page it closes the settings view
+    closeSettings(){
+        cy.get('button[aria-label="Close"]').click()
+    }
 }
 
 module.exports = new shortCut();
