@@ -16,7 +16,9 @@ class shortCut{
         signOutBtn: () => cy.get(`a[href='#/signout/']`),
         createTag: () => cy.get('a span:contains("New tag")'),
         getPPT: (titulo) => cy.get("h3").contains(titulo),
-        getPPTinSite: (titulo) => cy.get("h2").contains(titulo),
+        getPostPageinSite: (titulo) => cy.get("h2").contains(titulo),
+        getTaginSite: (titulo) => cy.get("div").contains(titulo),
+        getPostPageinTag: (titulo) => cy.get("h1").contains(titulo),
 
     }
 
