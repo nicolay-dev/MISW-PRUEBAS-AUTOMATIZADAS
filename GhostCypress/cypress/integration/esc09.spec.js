@@ -21,7 +21,9 @@ describe('Visit site login and create tag', () => {
             POM.createNewPage(Cypress.env('PAGE09'), Cypress.env('PARRAFO') )
             cy.wait(1000)
             // Publish the page
-              
+              POM.elements.publishPP.click()
+                cy.wait(1000)
+                
                  
 
         })

@@ -22,6 +22,7 @@ class shortCut{
         getPostPageinSite: (titulo) => cy.get("h2").contains(titulo),
         getTaginSite: (titulo) => cy.get("div").contains(titulo),
         getPostPageinTag: (titulo) => cy.get("h1").contains(titulo),
+        publishPP: ()  => cy.get("span").contains("Publish"),
 
     }
 
@@ -97,6 +98,13 @@ class shortCut{
     clickSettingsOnPP() {
         cy.get('button[title="Settings"]').click();
     }
+
+    //Publish and Set it live now changes in whatever Post, Page, Tag
+    publishChangesOnPP() {
+        this.publishPP();
+        cy.get('div').contains('Set it live now').click();
+         cy.get('button').contains('Publish').click(); 
+    }  
 }
 
 module.exports = new shortCut();
