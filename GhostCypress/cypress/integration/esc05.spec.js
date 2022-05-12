@@ -22,12 +22,11 @@ describe('Visit site login and create tag', () => {
         //Go to the tag section and validate the tag is created
         POM.goToTags()
         cy.wait(1000)
-        cy.get(`a[href="#/tags/tag-esc-5/"]`).should('contain', 'TAG Esc-5')
+        cy.get("h3").contains('TAG Esc-5').should('contain', 'TAG Esc-5')
 
         cy.get(`a[href="#/tags/tag-esc-5/"]`).then(($tag) => {
             expect($tag[0].innerText).to.equal('TAG Esc-5')
         }) // check if we create the tag
-
 
     })
 

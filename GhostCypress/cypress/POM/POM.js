@@ -54,7 +54,7 @@ class shortCut{
     }
 
     getPPT(titulo){
-        cy.get('h3='+titulo)
+        cy.get("h3").contains(titulo);
     }
 
     createNewTag(titulo){
@@ -63,6 +63,15 @@ class shortCut{
         cy.get('input[name="name"]').type(titulo);
         cy.contains('Save').click();
     }
+
+    createNewPost(titulo, parrafo){
+
+    }
+
+    createNewPage(titulo, parrafo){
+
+    }
+
 
 }
 
