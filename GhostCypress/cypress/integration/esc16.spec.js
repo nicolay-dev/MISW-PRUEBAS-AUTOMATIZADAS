@@ -14,6 +14,8 @@ Cypress.on('uncaught:exception', (err, runnable) => {
 const url = Cypress.config('baseUrl') 
 const username = Cypress.env('username')
 const password = Cypress.env('password')
+const parrafo = Cypress.env('PARRAFO')
+const titulo = Cypress.env('POST16')
 
 describe('Visit site login', () => {
     beforeEach(()=>{
@@ -25,7 +27,7 @@ describe('Visit site login', () => {
             POM.signIn(username, password);
         })
         cy.wait(1000);
-        POM.buildNewPost('tiutlo esc 16','jkaisfj oianf g0ngpong OJOegtom')
+        POM.buildNewPost(titulo,parrafo)
         cy.get('.post-settings').click();
         cy.wait(1000);
         cy.get('b').contains("Twitter card").click();       
