@@ -25,6 +25,7 @@ class shortCut{
         menuPublishUpdatePP: ()  => cy.get('div[class="gh-publishmenu ember-view"]'),
         btnPublishUpdatePP: () => cy.get('button[class="gh-btn gh-btn-blue gh-publishmenu-button gh-btn-icon ember-view"]'),
         settingsBtnPP: () => cy.get('button[title="Settings"]'),
+        viewPP: () => cy.get("a[class='post-view-link']"),
         sectionView: () => cy.get('a[class="blue link fw4 flex items-center ember-view"]'),
         viewSite: () => cy.get('a[title="Open site in new tab"]'),
         
