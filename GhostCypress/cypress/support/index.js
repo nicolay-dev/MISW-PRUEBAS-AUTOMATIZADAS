@@ -15,6 +15,17 @@
 
 // Import commands.js using ES2015 syntax:
 import './commands'
+require('cypress-xpath')
+import 'cypress-iframe';
 
-// Alternatively you can use CommonJS syntax:
-// require('./commands')
+Cypress.Commands.add('getIframeBody', () => {
+    // get the iframe > document > body
+    // and retry until the body element is not empty
+    return cy
+    .get('#site-frame')
+    .its('0.contentDocument.body').should('not.be.empty')
+    // wraps "body" DOM element to allow
+    // chaining more Cypress commands, like ".find(...)"
+    // https://on.cypress.io/wrap
+    .then(cy.wrap)
+  })

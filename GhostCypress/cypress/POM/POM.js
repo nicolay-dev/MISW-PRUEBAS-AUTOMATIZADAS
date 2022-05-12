@@ -23,6 +23,7 @@ class shortCut{
         getTaginSite: (titulo) => cy.get("div").contains(titulo),
         getPostPageinTag: (titulo) => cy.get("h1").contains(titulo),
         publishPP: ()  => cy.get("span").contains("Publish"),
+        viewPP: () => cy.get("a[class='post-view-link']")
 
     }
 
@@ -101,7 +102,8 @@ class shortCut{
 
     //Publish and Set it live now changes in whatever Post, Page, Tag
     publishChangesOnPP() {
-        this.publishPP();
+        this.elements.publishPP().click();
+        cy.wait(1000),
         cy.get('div').contains('Set it live now').click();
          cy.get('button').contains('Publish').click(); 
     }  
