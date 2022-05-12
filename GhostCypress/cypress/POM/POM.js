@@ -72,7 +72,21 @@ class shortCut{
 
     }
 
+    //Click on the settings button in whatever Posts or Pages view
+    clickUpdateButtonOnPP() {
+        cy.contains('Update').click();
+    }
 
+    //Update - Publish changes in whatever Post, Page, Tag
+    updateChangesOnPP() {
+        this.clickUpdateButtonOnPP();
+        cy.get('Button').contains('Update').click();
+    }
+
+    //Click on the settings button in whatever Post, Page, Tag
+    clickSettingsOnPP() {
+        cy.get('button[title="Settings"]').click();
+    }
 }
 
 module.exports = new shortCut();
