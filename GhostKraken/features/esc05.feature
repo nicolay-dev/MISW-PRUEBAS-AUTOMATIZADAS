@@ -10,25 +10,26 @@ Scenario: Como usuario administrador cquiero crear un Tag
   And I wait for 2 seconds
   And I take a screenshot "esc05-02"
   And I click Sign in
-  And I wait for 7 seconds
-  And I go to Tag section
-  And I wait for 2 seconds
+  And I wait for 5 seconds
   And I take a screenshot "esc05-03"
-  And I create a new TAG
+  And I go to Tag section
   And I wait for 2 seconds
   And I take a screenshot "esc05-04"
-  And I click on the redact name inputbox
+  And I create a new TAG
   And I wait for 2 seconds
   And I take a screenshot "esc05-05"
-  And I enter text "<TAG05>"
+  And I click on the redact name inputbox
   And I wait for 2 seconds
   And I take a screenshot "esc05-06"
-  Then I click save
+  And I enter text "<TAG05>"
   And I wait for 2 seconds
   And I take a screenshot "esc05-07"
-  And I go to Tag section
+  Then I click save
   And I wait for 2 seconds
   And I take a screenshot "esc05-08"
-  Then I click to edit post-page-tag "<TAG05>"
+  And I go to Tag section
   And I wait for 2 seconds
   And I take a screenshot "esc05-09"
+  Then I click to edit post-page-tag "<TAG05>"
+  And I wait for 2 seconds
+  And I take a screenshot "esc05-10"
