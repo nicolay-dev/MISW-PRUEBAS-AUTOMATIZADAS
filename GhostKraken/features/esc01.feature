@@ -4,6 +4,7 @@ Feature: Cambiar contraseña
 Scenario: Como usuario quiero cambiar mi contrasenia
   Given I navigate to page "<URL>"
   And I wait for 5 seconds
+  And I take a screenshot "esc01-01"
   When I enter email "<USERNAME>"
   And I enter password "<PASSWORD>"
   And I wait for 2 seconds

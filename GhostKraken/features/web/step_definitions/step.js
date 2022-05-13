@@ -535,3 +535,7 @@ When('I go back to settings', async function() {
     return await element.click();
 });
 
+When ('I take a screenshot {kraken-string}', async function(image) {	
+
+    return await this.driver.saveScreenshot(`./screenshots/${image}.png`);	
+});
