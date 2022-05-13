@@ -54,7 +54,7 @@ Scenario: Como usuario creo un post, lo publico y lo elimino
   And I wait for 2 seconds
   And I take a screenshot "esc03-13"
   And I click on delete page-post
-  And I wait for 2 seconds
+  And I wait for 10 seconds
   Then I confirm deletion
   And I wait for 3 seconds
   And I take a screenshot "esc03-14"
