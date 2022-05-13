@@ -27,7 +27,7 @@ class shortCut{
         settingsBtnPP: () => cy.get('button[title="Settings"]'),
         viewPP: () => cy.get("a[class='post-view-link']"),
         sectionView: () => cy.get('a[class="blue link fw4 flex items-center ember-view"]'),
-        viewSite: () => cy.get('a[title="Open site in new tab"]'),
+        viewSite: () => cy.get('a[title="Open site in new tab"]').invoke('removeAttr', 'target'),
         
 
     }

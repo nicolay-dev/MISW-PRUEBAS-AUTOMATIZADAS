@@ -2,6 +2,7 @@ const POM = require("../POM/POM")
 const url = Cypress.config('baseUrl')
 const username = Cypress.env('username')
 const password = Cypress.env('password')
+const titulo = Cypress.env('TAG05')
 let count = 0;
 
 describe('Visit site login and create tag', () => {
@@ -15,12 +16,13 @@ describe('Visit site login and create tag', () => {
             POM.signIn(username, password);
         })
         POM.takeScreenShot('esc05', count++);
-        cy.wait(1000)
+        cy.wait(2000)
         //Create a tag
+        POM.takeScreenShot('esc05', count++);
         POM.goToTags()
         cy.wait(1000)
         POM.takeScreenShot('esc05', count++);
-        POM.createNewTag('TAG Esc-5')
+        POM.createNewTag(titulo)
 
         cy.wait(2000)
         POM.takeScreenShot('esc05', count++);
@@ -28,13 +30,7 @@ describe('Visit site login and create tag', () => {
         POM.goToTags()
         cy.wait(1000)
         POM.takeScreenShot('esc05', count++);
-        POM.elements.getPPT('TAG Esc-5').should('contain', 'TAG Esc-5')
-        POM.takeScreenShot('esc05', count++);
-        cy.get(`a[href="#/tags/tag-esc-5/"]`).then(($tag) => {
-            expect($tag[0].innerText).to.equal('TAG Esc-5')
-        }) // check if we create the tag
-        POM.takeScreenShot('esc05', count++);
-
+        POM.elements.getPPT(titulo).should('contain',titulo)
     })
 
 })

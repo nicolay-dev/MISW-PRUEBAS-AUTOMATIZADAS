@@ -14,7 +14,6 @@ const username = Cypress.env('username')
 const password = Cypress.env('password')
 const titulo = Cypress.env('POST02')
 const parrafo = Cypress.env('PARRAFO')
-const urlLector = Cypress.env('URL-LECTOR')
 let count=0;
 
 describe('Create a post', () => {
@@ -26,8 +25,8 @@ describe('Create a post', () => {
   it('Login to ghost, change password and logout', () => {
     cy.get('form').within(() => {
       POM.signIn(username, password);
-      POM.takeScreenShot('esc02', count++);
     })
+    POM.takeScreenShot('esc02', count++);
     cy.wait(1000)
     //Build a new post
     POM.takeScreenShot('esc02', count++);
@@ -41,7 +40,7 @@ describe('Create a post', () => {
     //Go to viewer site and confirm the post is published
     cy.wait(2000)
     POM.takeScreenShot('esc02', count++);
-    cy.visit(urlLector)
+    POM.viewReaderSite();
     cy.wait(2000)
     POM.takeScreenShot('esc02', count++);
     POM.elements.getPostPageinSite(titulo).click()
