@@ -17,7 +17,7 @@ class shortCut{
         createTag: () => cy.get('a span:contains("New tag")'),
         createPage: () => cy.get('a span:contains("New page")'),
         save: () => cy.contains('Save'),
-        confirmDelete: () => cy.contains('Delete'),
+        confirmDelete: () => cy.get('button[class="gh-btn gh-btn-red gh-btn-icon ember-view"]'),
         getPPT: (titulo) => cy.get("h3").contains(titulo),
         getPostPageinSite: (titulo) => cy.get('h2').contains(titulo),
         getTaginSite: (titulo) => cy.get("div").contains(titulo),
@@ -72,7 +72,7 @@ class shortCut{
         this.elements.createTag().click();
         cy.wait(2000);
         cy.get('input[name="name"]').type(titulo);
-        cy.contains('Save').click();
+        this.elements.save().click();
     }
 
     buildNewPost(titulo, parrafo){
