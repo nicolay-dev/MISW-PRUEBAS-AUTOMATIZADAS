@@ -15,51 +15,62 @@ Cypress.on('uncaught:exception', (err) => {
   const password = Cypress.env('password')
   const nombre = Cypress.env('NAME')
   const nombreNew = Cypress.env('NAMENEW')
-  
+  let count = 0;
+
   describe('Change Profile name', () => {
     beforeEach(() => {
       cy.visit("/")
       cy.wait(4000)
+      POM.takeScreenShot('esc10', count++);
     })
     it('Login to ghost, change password and logout', () => {
       cy.get('form').within(() => {
         POM.signIn(username, password);
+        POM.takeScreenShot('esc10', count++);
       })
       cy.wait(1000)
       //Go to the staff owner page
       POM.elements.emailInput().should('not.exist') // check if the login form is not visible
       POM.goToStaff()
       cy.wait(1000)
+      POM.takeScreenShot('esc10', count++);
       cy.get('.gh-badge.owner').click()
       cy.wait(1000)
+      POM.takeScreenShot('esc10', count++);
       //change full name
       cy.get('input[placeholder="Full Name"]').clear()
       cy.get('input[placeholder="Full Name"]').type(nombreNew, { force: true })
       cy.wait(1000)
+      POM.takeScreenShot('esc10', count++);
       POM.elements.save().click()
-  
+      POM.takeScreenShot('esc10', count++);
       // Logout
       cy.wait(3000)
       POM.signOut()
+      POM.takeScreenShot('esc10', count++);
       //Login again
       POM.signIn(username, password);
       cy.wait(1000)
+      POM.takeScreenShot('esc10', count++);
       cy.get(`span[class="gh-user-email"]`).then(($user) => {
         expect($user[0].innerText).to.equal(`${username}`)
       }) // check if we alreally are logged in
-  
+      POM.takeScreenShot('esc10', count++);
       //Go to the staff owner page and reset the password
       cy.wait(1000)
       POM.goToStaff()
       cy.wait(2000)
+      POM.takeScreenShot('esc10', count++);
       cy.get('.gh-badge.owner').click()
       cy.wait(2000)
       //change password
+      POM.takeScreenShot('esc10', count++);
       cy.get('input[placeholder="Full Name"]').clear()
       cy.get('input[placeholder="Full Name"]').type(nombre, { force: true })
       cy.wait(1000)
+      POM.takeScreenShot('esc10', count++);
       POM.elements.save().click()
-  
+      POM.takeScreenShot('esc10', count++);
     })
   
   })

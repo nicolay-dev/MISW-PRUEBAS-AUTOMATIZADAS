@@ -120,7 +120,7 @@ class shortCut{
 
     //If you are inside settings in a Post/Page it closes the settings view
     closeSettings(){
-        cy.get('button[aria-label="Close"]').click()
+        cy.get('button[aria-label="Close"]').click();
     }
 
     takeScreenShot(filename, count) {
