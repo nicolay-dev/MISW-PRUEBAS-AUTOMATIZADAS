@@ -122,6 +122,10 @@ class shortCut{
     closeSettings(){
         cy.get('button[aria-label="Close"]').click()
     }
+
+    takeScreenShot(filename, count) {
+        cy.screenshot(`${filename} - ${count}`);
+    }
 }
 
 module.exports = new shortCut();
