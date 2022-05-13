@@ -126,6 +126,15 @@ class shortCut{
     takeScreenShot(filename, count) {
         cy.screenshot(`${filename} - ${count}`);
     }
+
+    clickOnLastCreatedPost() {
+        cy.get('a[title="Edit this post"]').first().click();
+    }
+
+    deleteButtonClick() {
+        cy.get('span').contains('Delete').click();
+
+    }
 }
 
 module.exports = new shortCut();
