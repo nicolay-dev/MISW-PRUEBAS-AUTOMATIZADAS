@@ -34,7 +34,7 @@ describe('Create a post', () => {
         cy.wait(2000)
         POM.takeScreenShot('esc04', count++);
         //Select specific title
-        cy.get('h3').contains("Post Escenario 04").click();
+        cy.get('h3').contains("Post Escenario 4").click();
         cy.wait(2000)
         POM.takeScreenShot('esc04', count++);
         //Change title
