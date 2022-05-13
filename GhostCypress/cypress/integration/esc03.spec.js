@@ -34,10 +34,11 @@ describe('Create a post', () => {
     cy.wait(1000);
     POM.takeScreenShot('esc03', count++);
     POM.clickSettingsOnPP();
-    cy.wait(1000);
+    cy.wait(2000);
     POM.takeScreenShot('esc03', count++);
-    POM.deleteButtonClick();
     cy.wait(1000);
+    POM.deleteButtonClick();
+    cy.wait(2000);
     POM.takeScreenShot('esc03', count++);
     cy.get('span').last().click();
     cy.wait(2000);
