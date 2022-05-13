@@ -34,7 +34,7 @@ Scenario: Como usuario quiero cambiar mi contrasenia
   And I enter text "<PASSWORDNEW>"
   And I wait for 2 seconds
   Then I click change password
-  An I take a screenshot "esc01-08"
+  And I take a screenshot "esc01-08"
   And I wait for 10 seconds
   And I click on my profile
   And I wait for 2 seconds
