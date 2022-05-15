@@ -6,7 +6,7 @@ const fs = require('fs');
 //Decalarición de const
 const { viewportHeight, viewportWidth, browsers, options } = config;
 const foldersNumber = ['02','03','04','05','14'];
-const imaginesLength = ['8','15','16','6','8'];
+const imaginesLength = ['8','15','16','6','7'];
 const pathImageInit = 'esc';
 const pathImageEnd = '.spec.js';
 const nameImageInit = 'esc';
@@ -38,8 +38,8 @@ async function executeTest(){
           for (let j = 0; j < imaginesLength[i]; j++) {
             
             const data = await compareImages(
-              fs.readFileSync(`${folderCypress341}${pathImageInit}${foldersNumber[i]}${pathImageEnd}/${nameImageInit}${foldersNumber[i]}${middleName}${j}${nameImageEnd}`),
-              fs.readFileSync(`${folderCypress444}${pathImageInit}${foldersNumber[i]}${pathImageEnd}/${nameImageInit}${foldersNumber[i]}${middleName}${j}${nameImageEnd}`),
+              fs.readFileSync(`../${folderCypress341}${pathImageInit}${foldersNumber[i]}${pathImageEnd}/${nameImageInit}${foldersNumber[i]} - `+j+`${nameImageEnd}`),
+              fs.readFileSync(`../${folderCypress444}${pathImageInit}${foldersNumber[i]}${pathImageEnd}/${nameImageInit}${foldersNumber[i]} - `+j+`${nameImageEnd}`),
               options
             );
 
@@ -105,14 +105,12 @@ function browser(b, info){
         <div class="imgline">
           <div class="imgcontainer">
             <span class="imgname">Reference</span>
-            <img class="img2" src="
-            ../${folderCypress341}${pathImageInit}${foldersNumber[i]}${pathImageEnd}/${nameImageInit}${foldersNumber[i]}${middleName}${j}${nameImageEnd}"
+            <img class="img2" src="../../../${folderCypress341}${pathImageInit}${foldersNumber[i]}${pathImageEnd}/${nameImageInit}${foldersNumber[i]} - `+j+`${nameImageEnd}"
             id="refImage" label="Reference">
           </div>
           <div class="imgcontainer">
             <span class="imgname">Test</span>
-            <img class="img2" src="
-            ../${folderCypress444}${pathImageInit}${foldersNumber[i]}${pathImageEnd}/${nameImageInit}${foldersNumber[i]}${middleName}${j}${nameImageEnd}"
+            <img class="img2" src="../../../${folderCypress444}${pathImageInit}${foldersNumber[i]}${pathImageEnd}/${nameImageInit}${foldersNumber[i]} - `+j+`${nameImageEnd}"
             id="testImage" label="Test">
           </div>
         </div>
