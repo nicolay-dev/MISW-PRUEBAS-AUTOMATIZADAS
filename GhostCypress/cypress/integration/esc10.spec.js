@@ -26,9 +26,10 @@ Cypress.on('uncaught:exception', (err) => {
     it('Login to ghost, change password and logout', () => {
       cy.get('form').within(() => {
         POM.signIn(username, password);
-        POM.takeScreenShot('esc10', count++);
       })
-      cy.wait(1000)
+      POM.takeScreenShot('esc10', count++);
+      cy.wait(2000)
+      POM.takeScreenShot('esc10', count++);
       //Go to the staff owner page
       POM.elements.emailInput().should('not.exist') // check if the login form is not visible
       POM.goToStaff()
@@ -39,6 +40,7 @@ Cypress.on('uncaught:exception', (err) => {
       POM.takeScreenShot('esc10', count++);
       //change full name
       cy.get('input[placeholder="Full Name"]').clear()
+      POM.takeScreenShot('esc10', count++);
       cy.get('input[placeholder="Full Name"]').type(nombreNew, { force: true })
       cy.wait(1000)
       POM.takeScreenShot('esc10', count++);
@@ -50,7 +52,8 @@ Cypress.on('uncaught:exception', (err) => {
       POM.takeScreenShot('esc10', count++);
       //Login again
       POM.signIn(username, password);
-      cy.wait(1000)
+      POM.takeScreenShot('esc10', count++);
+      cy.wait(2000)
       POM.takeScreenShot('esc10', count++);
       cy.get(`span[class="gh-user-email"]`).then(($user) => {
         expect($user[0].innerText).to.equal(`${username}`)
@@ -66,6 +69,7 @@ Cypress.on('uncaught:exception', (err) => {
       //change password
       POM.takeScreenShot('esc10', count++);
       cy.get('input[placeholder="Full Name"]').clear()
+      POM.takeScreenShot('esc10', count++);
       cy.get('input[placeholder="Full Name"]').type(nombre, { force: true })
       cy.wait(1000)
       POM.takeScreenShot('esc10', count++);
