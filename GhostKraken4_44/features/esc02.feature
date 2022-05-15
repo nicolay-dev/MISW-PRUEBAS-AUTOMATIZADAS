@@ -12,6 +12,7 @@ Scenario: Como usuario quiero crear un post y publicarlo
   And I click Sign in
   And I wait for 4 seconds
   And I take a screenshot "esc02-03"
+  And I wait for 2 seconds
   And I click the icon to create new post
   And I wait for 2 seconds
   And I take a screenshot "esc02-04"

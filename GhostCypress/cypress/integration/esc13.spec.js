@@ -26,6 +26,7 @@ describe('Visit site login and create tag', () => {
         cy.get("#timezone").select("Asia/Tokyo")
         cy.wait(1000)
         POM.takeScreenShot('esc13', count++);
+        cy.contains('Save settings'),
         cy.get('#timezone').find('option:selected').should('have.text', `\n    (GMT +9:00) Osaka, Sapporo, Tokyo\n`);
         POM.takeScreenShot('esc13', count++);
          // check if we create the tag

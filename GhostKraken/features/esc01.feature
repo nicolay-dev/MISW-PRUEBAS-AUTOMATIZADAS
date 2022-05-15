@@ -73,3 +73,4 @@ Scenario: Como usuario quiero cambiar mi contrasenia
   Then I click change password
   And I wait for 3 seconds
   And I take a screenshot "esc01-18"
+  And I wait for 4 seconds

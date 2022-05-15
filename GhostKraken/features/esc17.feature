@@ -31,6 +31,7 @@ Scenario: Como usuario quiero editar un label del menú de navegación
   And I take a screenshot "esc17-08"
   Then I click on label "<LABEL17>"
   And I wait for 4 seconds
-And I take a screenshot "esc17-09"
+  And I take a screenshot "esc17-09"
+   And I wait for 4 seconds
 
   

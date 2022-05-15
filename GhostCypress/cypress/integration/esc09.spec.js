@@ -37,7 +37,7 @@ describe('Visit site login and create tag', () => {
         cy.get('.gh-editor-title').type(Cypress.env('PAGE09Edit'))
         cy.wait(2000);
         POM.takeScreenShot('esc09', count++);
-       POM.updateChangesOnPP()
+        POM.publishUpdatePP()
          cy.wait(1000)
          cy.wait(1000)
          POM.takeScreenShot('esc09', count++);
