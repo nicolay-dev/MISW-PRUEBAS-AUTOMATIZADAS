@@ -9,7 +9,7 @@ async function executeTest(){
     if(browsers.length === 0){
       return;
     }
-    let resultInfo = {}
+    let resultInfo = []
 
 
     let datetime = new Date().toISOString().replace(/:/g,".");
@@ -41,10 +41,9 @@ async function executeTest(){
             analysisTime: data.analysisTime
           }
 
-          
+          fs.writeFileSync(`./results/${datetime}/compare-${b}`+index+`.png`, data.getBuffer());
+          fs.writeFileSync(`./results/${datetime}/report.html`, createReport(datetime, resultInfo, index));
         }        
-        fs.writeFileSync(`./results/${datetime}/compare-${b}`+index+`.png`, data.getBuffer());
-        fs.writeFileSync(`./results/${datetime}/report.html`, createReport(datetime, resultInfo, index));
 
     }
 
@@ -67,7 +66,7 @@ function browser(b, info, steps){
         <div class=" browser" id="test${index}">
         <div class=" btitle">
             <h2>Browser: ${b}</h2>
-            <p>Data: ${JSON.stringify(info[steps])}</p>
+            <p>Data: ${JSON.stringify(info[index])}</p>
         </div>
         <div class="imgline">
           <div class="imgcontainer">
