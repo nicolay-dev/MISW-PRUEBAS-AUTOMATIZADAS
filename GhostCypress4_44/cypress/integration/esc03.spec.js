@@ -17,7 +17,7 @@ const parrafo = Cypress.env('PARRAFO')
 let count = 0;
 
 
-describe('Create a post', () => {
+describe('Create and delete post', () => {
   beforeEach(() => {
     cy.visit("/")
     cy.wait(4000)
@@ -35,6 +35,7 @@ describe('Create a post', () => {
     cy.wait(1000);
     POM.takeScreenShot('esc03', count++);
     POM.publishUpdatePP();
+    POM.elements.cfrmPublishUpdatePP().click();
     cy.wait(5000);
     POM.takeScreenShot('esc03', count++);
     POM.returnToSectionView();

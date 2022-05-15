@@ -33,6 +33,8 @@ Scenario: Como usuario quiero crear un post, publicarlo y editarlo
     And I wait for 2 seconds
     And I take a screenshot "esc04-08"
     Then I click on publish-update
+    And I wait for 1 seconds
+    And I confirm publish-update
     And I wait for 4 seconds
     And I take a screenshot "esc04-09"
     And I return to section view

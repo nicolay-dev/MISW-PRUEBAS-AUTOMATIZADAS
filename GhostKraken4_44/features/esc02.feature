@@ -10,7 +10,6 @@ Scenario: Como usuario quiero crear un post y publicarlo
   And I wait for 2 seconds
   And I take a screenshot "esc02-02"
   And I click Sign in
-  And I take a screenshot "esc02-02"
   And I wait for 4 seconds
   And I take a screenshot "esc02-03"
   And I click the icon to create new post
@@ -32,6 +31,8 @@ Scenario: Como usuario quiero crear un post y publicarlo
   And I click on the Set it live now option
   And I wait for 1 seconds
   Then I click on publish-update
+  And I wait for 1 seconds
+  And I confirm publish-update
   And I wait for 3 seconds
   And I take a screenshot "esc02-08"
   And I return to section view

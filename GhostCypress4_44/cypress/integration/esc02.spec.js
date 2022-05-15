@@ -34,6 +34,7 @@ describe('Create a post', () => {
     cy.wait(1000)
     POM.takeScreenShot('esc02', count++);
     POM.publishUpdatePP()
+    POM.elements.cfrmPublishUpdatePP().click();
     cy.wait(4000)
     POM.takeScreenShot('esc02', count++);
     POM.returnToSectionView()

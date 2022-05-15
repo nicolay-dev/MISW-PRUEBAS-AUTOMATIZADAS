@@ -17,7 +17,7 @@ const titulo2 = Cypress.env('POST04_1')
 const parrafo = Cypress.env('PARRAFO')
 let count = 0;
 
-describe('Create a post', () => {
+describe('Create and edit post', () => {
   beforeEach(() => {
     cy.visit("/")
     cy.wait(4000)
@@ -35,6 +35,7 @@ describe('Create a post', () => {
     cy.wait(1000)
     POM.takeScreenShot('esc04', count++);
     POM.publishUpdatePP()
+    POM.elements.cfrmPublishUpdatePP().click();
     cy.wait(4000)
     POM.takeScreenShot('esc04', count++);
     //Back to return view

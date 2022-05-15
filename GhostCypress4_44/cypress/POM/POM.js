@@ -9,26 +9,19 @@ class shortCut{
         createPost: () => cy.get('a[title="New post"]'),
         managePages: () => cy.contains('Pages'),
         manageTags: () => cy.contains('Tags'),
-        manageStaff: () => cy.contains('Staff'),
-        settingsGeneral: () => cy.contains('General'),
-        settingsDesign: () => cy.contains('Design'),
-        myProfile: () => cy.get(`span[class="gh-user-email"]`),
-        signOutBtn: () => cy.get(`a[href='#/signout/']`),
         createTag: () => cy.get('a span:contains("New tag")'),
         createPage: () => cy.get('a span:contains("New page")'),
         save: () => cy.contains('Save'),
         confirmDelete: () => cy.get('button[class="gh-btn gh-btn-red gh-btn-icon ember-view"]'),
         getPPT: (titulo) => cy.get("h3").contains(titulo),
         getPostPageinSite: (titulo) => cy.get('h2').contains(titulo),
-        getTaginSite: (titulo) => cy.get("div").contains(titulo),
-        getPostPageinTag: (titulo) => cy.get("h1").contains(titulo),
         menuPublishUpdatePP: ()  => cy.get('div[class="gh-publishmenu ember-view"]'),
-        btnPublishUpdatePP: () => cy.get('button[class="gh-btn gh-btn-blue gh-publishmenu-button gh-btn-icon ember-view"]'),
+        btnPublishUpdatePP: () => cy.get('button[class="gh-btn gh-btn-black gh-publishmenu-button gh-btn-icon ember-view"]'),
+        cfrmPublishUpdatePP: () => cy.get('button[class="gh-btn gh-btn-black gh-btn-icon ember-view"]'),
         settingsBtnPP: () => cy.get('button[title="Settings"]'),
         viewPP: () => cy.get("a[class='post-view-link']"),
-        sectionView: () => cy.get('a[class="blue link fw4 flex items-center ember-view"]'),
-        viewSite: () => cy.get('a[title="Open site in new tab"]').invoke('removeAttr', 'target'),
-        
+        sectionView: () => cy.get('a[class="ember-view gh-editor-back-button"]'),
+        viewSite: () => cy.get('a[title="Open site in new tab"]').invoke('removeAttr', 'target'),  
 
     }
 
@@ -55,19 +48,6 @@ class shortCut{
         this.elements.manageTags().click();
     }
 
-    goToStaff(){
-        this.elements.manageStaff().click();
-    }
-
-    signOut(){
-        this.elements.myProfile().click();
-        cy.wait(3000);
-        this.elements.signOutBtn().click();
-        cy.wait(1500);
-        this.elements.logInBtn().should('exist'); // check if the login form is visible
-        cy.wait(1000);
-    }
-
     createNewTag(titulo){
         this.elements.createTag().click();
         cy.wait(2000);
@@ -77,22 +57,22 @@ class shortCut{
 
     buildNewPost(titulo, parrafo){
         this.elements.createPost().click();
-        cy.get('textarea[placeholder="Post Title"]').type(titulo);
+        cy.get('textarea[placeholder="Post title"]').type(titulo);
         cy.get('div[data-placeholder="Begin writing your post..."]').type(parrafo);
 
     }
 
     //Once you are inside a post, it changes the title
     editTitlePost(titulo){
-        cy.get('textarea[placeholder="Post Title"]').clear();
-        cy.get('textarea[placeholder="Post Title"]').type(titulo);
+        cy.get('textarea[placeholder="Post title"]').clear();
+        cy.get('textarea[placeholder="Post title"]').type(titulo);
 
     }
 
     createNewPage(titulo, parrafo){
         this.elements.createPage().click();
         cy.wait(2000);
-        cy.get('textarea[placeholder="Page Title"]').type(titulo)
+        cy.get('textarea[placeholder="Page title"]').type(titulo)
         cy.wait(2000);
         cy.get("div[data-placeholder=\"Begin writing your page...\"]").type(parrafo)                  
     }
@@ -118,17 +98,8 @@ class shortCut{
         this.elements.viewSite().click();
     }
 
-    //If you are inside settings in a Post/Page it closes the settings view
-    closeSettings(){
-        cy.get('button[aria-label="Close"]').click();
-    }
-
     takeScreenShot(filename, count) {
         cy.screenshot(`${filename} - ${count}`);
-    }
-
-    clickOnLastCreatedPost() {
-        cy.get('a[title="Edit this post"]').first().click();
     }
 
     deleteButtonClick() {

@@ -32,6 +32,8 @@ Scenario: Como usuario creo un post, lo publico y lo elimino
   And I wait for 2 seconds
   And I take a screenshot "esc03-08"
   Then I click on publish-update
+  And I wait for 1 seconds
+  And I confirm publish-update
   And I wait for 4 seconds
   And I take a screenshot "esc03-09"
   And I return to section view
@@ -56,7 +58,7 @@ Scenario: Como usuario creo un post, lo publico y lo elimino
   And I wait for 2 seconds
   And I take a screenshot "esc03-16"
   And I click on delete page-post
-  And I wait for 10 seconds
+  And I wait for 2 seconds
   And I take a screenshot "esc03-17"
   Then I confirm deletion
   And I wait for 3 seconds

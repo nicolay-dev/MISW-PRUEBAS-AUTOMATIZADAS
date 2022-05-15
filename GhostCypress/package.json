@@ -1,0 +1,19 @@
+{
+  "name": "ghostcypress",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "cypress-iframe": "^1.0.1",
+    "cypress-xpath": "^1.6.2"
+  },
+  "devDependencies": {
+    "cypress-iframe": "1.0.1",
+    "cypress-xpath": "1.6.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
