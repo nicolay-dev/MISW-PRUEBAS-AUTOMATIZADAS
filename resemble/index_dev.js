@@ -12,7 +12,6 @@ async function executeTest(){
     let resultInfo = {}
 
 
-
     let datetime = new Date().toISOString().replace(/:/g,".");
     for(b of browsers){
         if(!b in ['chromium']){
@@ -32,7 +31,7 @@ async function executeTest(){
           );
 
 
-          resultInfo[b] = {
+          resultInfo[index] = {
             index,
             isSameDimensions: data.isSameDimensions,
             dimensionDifference: data.dimensionDifference,
@@ -41,17 +40,11 @@ async function executeTest(){
             diffBounds: data.diffBounds,
             analysisTime: data.analysisTime
           }
-         
-          let arrayResult = new Array({...resultInfo});
-          //let objeto =           
-          //arrayResult.ṕush({resultados:objeto}) 
 
-     
-
+          
+        }        
         fs.writeFileSync(`./results/${datetime}/compare-${b}`+index+`.png`, data.getBuffer());
-        fs.writeFileSync(`./results/${datetime}/report.html`, createReport(datetime, arrayResult, index));
-
-      }        
+        fs.writeFileSync(`./results/${datetime}/report.html`, createReport(datetime, resultInfo, index));
 
     }
 
@@ -74,7 +67,7 @@ function browser(b, info, steps){
         <div class=" browser" id="test${index}">
         <div class=" btitle">
             <h2>Browser: ${b}</h2>
-            <p>Data: ${JSON.stringify(info)}</p>
+            <p>Data: ${JSON.stringify(info[steps])}</p>
         </div>
         <div class="imgline">
           <div class="imgcontainer">
@@ -112,7 +105,7 @@ function createReport(datetime, resInfo, index){
             </h1>
             <p>Executed: ${datetime}</p>
               <div id="visualizer">
-                  ${config.browsers.map(b=>browser(b, resInfo[b], index))}
+                  ${config.browsers.map(b=>browser(b, resInfo, index))}
               </div>
         </body>
     </html>`
