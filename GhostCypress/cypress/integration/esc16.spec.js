@@ -6,7 +6,7 @@ const titulo = Cypress.env('POST16')
 const parrafo = Cypress.env('PARRAFO')
 let count = 0; 
 
-describe('Create a title card', () => {
+describe('Create a Twitter title card', () => {
     beforeEach(()=>{
        cy.visit("/")
         cy.wait(4000)

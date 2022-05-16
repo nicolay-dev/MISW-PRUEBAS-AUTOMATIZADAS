@@ -16,7 +16,7 @@ const titulo = Cypress.env('POST18')
 const parrafo = Cypress.env('PARRAFO')
 let count=0;
 
-describe('Create a post', () => {
+describe('Unpublish post', () => {
   beforeEach(() => {
     cy.visit("/")
     cy.wait(4000)
@@ -37,6 +37,7 @@ describe('Create a post', () => {
     cy.wait(4000)
     POM.takeScreenShot('esc18', count++);
     POM.returnToSectionView()
+    cy.wait(2000)
     POM.takeScreenShot('esc18', count++);
 
     //Go to viewer site and confirm the post is published

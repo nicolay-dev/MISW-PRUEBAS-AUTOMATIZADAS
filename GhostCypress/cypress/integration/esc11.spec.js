@@ -7,7 +7,7 @@ const password = Cypress.env('password')
 const bio = Cypress.env('BIO-TEXT')
 let count=0;
 
-describe('Create a post', () => {
+describe('Add Bio', () => {
   beforeEach(() => {
     cy.visit("/")
     cy.wait(4000)

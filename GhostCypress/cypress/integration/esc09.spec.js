@@ -4,7 +4,7 @@ const username = Cypress.env('username')
 const password = Cypress.env('password')
 let count = 0;
 
-describe('Visit site login and create tag', () => {
+describe('Create and edit page', () => {
     beforeEach(()=>{
        cy.visit("/")
         cy.wait(4000)

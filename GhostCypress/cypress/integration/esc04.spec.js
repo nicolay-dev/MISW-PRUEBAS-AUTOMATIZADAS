@@ -17,7 +17,7 @@ const titulo2 = Cypress.env('POST04_1')
 const parrafo = Cypress.env('PARRAFO')
 let count = 0;
 
-describe('Create a post', () => {
+describe('Create and edit post', () => {
   beforeEach(() => {
     cy.visit("/")
     cy.wait(4000)

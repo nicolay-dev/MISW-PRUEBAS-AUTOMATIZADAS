@@ -5,7 +5,7 @@ const password = Cypress.env('password')
 const titulo = Cypress.env('TAG19')
 const titulo2 = Cypress.env('TAG19-1')
 
-describe('Create, edit and delte Tag', () => {
+describe('Create, edit and delete Tag', () => {
     beforeEach(() => {
         cy.visit("/")
         cy.wait(4000)

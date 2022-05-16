@@ -9,7 +9,7 @@ const parrafo = Cypress.env('PARRAFO')
 const urlLector = Cypress.env('URL-LECTOR')
 let count = 0;
 
-describe('Create a post', () => {
+describe('Schedule a post', () => {
   beforeEach(() => {
     cy.visit("/")
     cy.wait(4000)
