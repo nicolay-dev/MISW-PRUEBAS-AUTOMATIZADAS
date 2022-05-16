@@ -18,7 +18,7 @@ const urlLector = Cypress.env('URL-LECTOR')
 const tituloTag = Cypress.env('TAG06')
 let count = 0;
 
-describe('Create a post', () => {
+describe('Create a post, create a tag and assign tag to post', () => {
   beforeEach(() => {
     cy.visit("/")
     cy.wait(4000)
@@ -73,6 +73,7 @@ describe('Create a post', () => {
     cy.wait(2000)
     POM.takeScreenShot('esc06', count++);
     POM.returnToSectionView()
+    cy.wait(2000)
     POM.takeScreenShot('esc06', count++);
     POM.elements.viewSite().click()
     cy.wait(2000)

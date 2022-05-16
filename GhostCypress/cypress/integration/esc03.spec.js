@@ -17,7 +17,7 @@ const parrafo = Cypress.env('PARRAFO')
 let count = 0;
 
 
-describe('Create a post', () => {
+describe('Create and delete post', () => {
   beforeEach(() => {
     cy.visit("/")
     cy.wait(4000)

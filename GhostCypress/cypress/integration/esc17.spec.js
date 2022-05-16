@@ -5,7 +5,7 @@ const password = Cypress.env('password')
 let count = 0;
 
 
-describe('Visit site login and create tag', () => {
+describe('Edit label', () => {
     beforeEach(() => {
         cy.visit("/")
         cy.wait(4000)

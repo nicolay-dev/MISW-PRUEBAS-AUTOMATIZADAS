@@ -6,7 +6,7 @@ const titulo = Cypress.env('POST20')
 const parrafo = Cypress.env('PARRAFO')
 let count = 0;
 
-describe('Create post with facebook card', () => {
+describe('Create post with Facebook card', () => {
     beforeEach(()=>{
        cy.visit("/")
         cy.wait(4000)

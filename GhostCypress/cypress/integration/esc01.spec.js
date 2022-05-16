@@ -16,7 +16,7 @@ const password = Cypress.env('password')
 const passwordtest = Cypress.env('password2')
 let count = 0;
 
-describe('Visit site login', () => {
+describe('Change password', () => {
   beforeEach(() => {
     cy.visit("/")
     cy.wait(4000)

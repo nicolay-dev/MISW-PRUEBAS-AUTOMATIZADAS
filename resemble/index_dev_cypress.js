@@ -11,16 +11,16 @@ const pathImageInit = 'esc';
 const pathImageEnd = '.spec.js';
 const nameImageInit = 'esc';
 const nameImageEnd = '.png';
-const middleName = ' - ';
 const folderCypress341 = 'GhostCypress/cypress/screenshots/';
 const folderCypress444 = 'GhostCypress4_44/cypress/screenshots/';
+let resultInfo = [[],[],[],[],[]];
+let contentStructure = '';
 
 async function executeTest(){
 
     if(browsers.length === 0){
       return;
     }
-    let resultInfo = []
 
 
     let datetime = new Date().toISOString().replace(/:/g,".");
@@ -44,7 +44,7 @@ async function executeTest(){
             );
 
             //Extracción de analisis
-            resultInfo[i] = {
+            resultInfo[i][j] = {
               i,
               isSameDimensions: data.isSameDimensions,
               dimensionDifference: data.dimensionDifference,
@@ -54,53 +54,38 @@ async function executeTest(){
               analysisTime: data.analysisTime
             }
 
+            contentStructure += browser(datetime, i, j);
+
             //Escritura de resultados
             fs.writeFileSync(`./results/${datetime}/compare-${foldersNumber[i]} - ${j}.png`, data.getBuffer());
-            fs.writeFileSync(`./results/${datetime}/report.html`, createReport(datetime, resultInfo[i]));
+            fs.writeFileSync(`./results/${datetime}/report.html`, createReport(datetime));
           }
           
-        }
-
-        
-
-        
-        // for (let index = 0; index < 9 ; index++) {
-
-        //   const data = await compareImages(
-        //     fs.readFileSync(`results/3-41-1/escen04.spec.js/esc04 - `+index+`.png`),
-        //     fs.readFileSync(`results/4-40-0/escen04.spec.js/esc04 - `+index+`.png`),
-        //     options
-        //   );
-
-
-
-        // }        
+        }     
 
     }
 
     fs.copyFileSync('./index.css', `./results/${datetime}/index.css`);
 
-    console.log('------------------------------------------------------------------------------------')
-    console.log("Execution finished. Check the report under the results folder")
-    console.log(typeof(resultInfo))
+    // console.log('------------------------------------------------------------------------------------')
+    // console.log("Execution finished. Check the report under the results folder")
+    // console.log(typeof(resultInfo))
     return resultInfo;  
   }
-(async ()=>console.log(await executeTest()))();
+// (async ()=>console.log(await executeTest()))();
+(async ()=> await executeTest())();
 
-function browser(b, info){
+function browser(b, i, j){
   let str = ''
 
-  //Recorrecr carpetas
-  for (let i = 0; i < foldersNumber.length; i++) {
-    //Recorrer numeros archivos
-    for (let j = 0; j < imaginesLength[i]; j++) {
-
+    // console.log(i ,'-', j);
+    // console.log( resultInfo[i][j]);
       str+= 
     ` <div class= " Carpeta ${i} -  Imagen ${j}">
         <div class=" browser" id="test ${i} - ${j}">
         <div class=" btitle">
             <h2>Browser: ${b}</h2>
-            <p>Data: ${JSON.stringify(info)}</p>
+            <p>Data: ${JSON.stringify(resultInfo[i][j])}</p>
         </div>
         <div class="imgline">
           <div class="imgcontainer">
@@ -122,18 +107,11 @@ function browser(b, info){
         </div>
       </div>
     </div>`
-    }
-  }
       
-  return str 
-
-  // for (let index = 0; index <= steps; index++) {
- 
-    
-  // }
+  return str;
 }
 
-function createReport(datetime, resInfo){
+function createReport(datetime){
     return `
     <html>
         <head>
@@ -146,7 +124,7 @@ function createReport(datetime, resInfo){
             </h1>
             <p>Executed: ${datetime}</p>
               <div id="visualizer">
-                  ${config.browsers.map(b=>browser(b, resInfo))}
+                  ${contentStructure}
               </div>
         </body>
     </html>`
