@@ -20,13 +20,13 @@ describe('Edit label', () => {
         cy.wait(2000)
         POM.takeScreenShot('esc13', count++);
         //Change firt tab
-        cy.xpath('(//input[contains(@placeholder,"Label")])[1]').clear()
+        cy.get('body > div:nth-child(4) > div:nth-child(3) > main:nth-child(2) > section:nth-child(1) > section:nth-child(2) > div:nth-child(2) > form:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > span:nth-child(1) > input:nth-child(1)').clear()
         cy.get('main[role="main"').scrollTo('top', {ensureScrollable:false})
         cy.wait(2000)
-        cy.xpath('(//input[contains(@placeholder,"Label")])[1]').click()
+        cy.get('body > div:nth-child(4) > div:nth-child(3) > main:nth-child(2) > section:nth-child(1) > section:nth-child(2) > div:nth-child(2) > form:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > span:nth-child(1) > input:nth-child(1)').click()
 
         cy.wait(2000)
-        cy.xpath('(//span)[18]').type("Lorem");
+        cy.get('body > div:nth-child(4) > div:nth-child(3) > main:nth-child(2) > section:nth-child(1) > section:nth-child(2) > div:nth-child(2) > form:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > span:nth-child(1) > input:nth-child(1)').type("Lorem", {force: true});
         cy.wait(1000)
         POM.takeScreenShot('esc13', count++);
         POM.elements.save().click()
