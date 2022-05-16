@@ -150,7 +150,70 @@ l.correaz@uniandez.edu.co
 
 ## Funcionlidades involucradas
 
-<img width="544" alt="funcionalidades" src="https://user-images.githubusercontent.com/26149887/167306645-402675de-e270-4589-bafd-29e2377767e9.png">
+## Módulo de páginas
+
+### Crear
+Funcionalidad de agregar una nueva página a sitio 
+
+### Publicar
+Publicar página en un tiempo estipulado
+
+### Editar Página
+Funcionalidad de editar una página existente
+
+## Módulo de post
+
+### Crear un post. 
+Funcionalidad de agregar un nuevo post dentro de una página
+
+### Publicar
+Publicar post en un tiempo estipulado (sea programado o set a live )
+
+### Editar post 
+Funcionalidad de editar un post existente
+
+### Eliminar post. 
+Funcionalidad de eliminar un post existente
+
+### Agregar imagen a un post
+Funcionalidad de edición del contenido de un post con multimedia
+
+### Filtrar post 
+Búsqueda de post por medio de una línea dada.
+
+### Organizar post
+Organizar el post ascendente o descendente
+
+
+## Módulo Login 
+
+### Login 
+Permitir el inicio de sesión del usuario registrada con usuario y contraseña 
+
+### Logout
+Permitir cerrar sesión del usuario registrado actualmente en el sistema. 
+
+## Módulo Settings
+
+### Editar timezone
+Permite editar la zona horaria en el que trabaja la página web de administración
+
+## Módulo Tag
+
+### Crear Tag
+Crear un nuevo tag en la página que puede ser utilizado luego en un post  o página
+
+
+## Módulo View Site 
+
+### View Web
+Permite ver el blog de la página web que está creciendo creada desde ghost. 
+
+### Add Tab
+Permite agregar un item nuevo al menú de navegación del sitio web que está siendo creado por ghost
+
+### Delete Tab
+Permite eliminar un item del menú de navegación del sitio web que está siendo creado por ghost
 
 ### Escenarios de pruebas
 
