@@ -6,14 +6,11 @@ const fs = require('fs');
 //Decalarición de const
 const { viewportHeight, viewportWidth, browsers, options } = config;
 const foldersNumber = ['02','03','04','05','14'];
-const imaginesLength = ['8','15','16','6','7'];
-const pathImageInit = 'esc';
-const pathImageEnd = '.spec.js';
+const imaginesLength = ['12','20','23','11','12'];
 const nameImageInit = 'esc';
 const nameImageEnd = '.png';
-const middleName = ' - ';
-const folderCypress341 = 'GhostCypress/cypress/screenshots/';
-const folderCypress444 = 'GhostCypress4_44/cypress/screenshots/';
+const folderKraken341 = 'GhostKraken/screenshots/';
+const folderKraken444 = 'GhostKraken4_44/screenshots/';
 
 async function executeTest(){
 
@@ -35,11 +32,11 @@ async function executeTest(){
         //Recorrecr carpetas
         for (let i = 0; i < foldersNumber.length; i++) {
           //Recorrer numeros archivos
-          for (let j = 0; j < imaginesLength[i]; j++) {
+          for (let j = 1; j < imaginesLength[i]; j++) {
             
             const data = await compareImages(
-              fs.readFileSync(`../${folderCypress341}${pathImageInit}${foldersNumber[i]}${pathImageEnd}/${nameImageInit}${foldersNumber[i]} - `+j+`${nameImageEnd}`),
-              fs.readFileSync(`../${folderCypress444}${pathImageInit}${foldersNumber[i]}${pathImageEnd}/${nameImageInit}${foldersNumber[i]} - `+j+`${nameImageEnd}`),
+              fs.readFileSync(`../${folderKraken341}${nameImageInit}${foldersNumber[i]}-${j < 9 ? '0'+j : j}${nameImageEnd}`),
+              fs.readFileSync(`../${folderKraken444}${nameImageInit}${foldersNumber[i]}-${j < 9 ? '0'+j : j}${nameImageEnd}`),
               options
             );
 
@@ -52,7 +49,7 @@ async function executeTest(){
               misMatchPercentage: data.misMatchPercentage,
               diffBounds: data.diffBounds,
               analysisTime: data.analysisTime
-            }
+            };
 
             //Escritura de resultados
             fs.writeFileSync(`./results/${datetime}/compare-${foldersNumber[i]} - ${j}.png`, data.getBuffer());
@@ -60,40 +57,24 @@ async function executeTest(){
           }
           
         }
-
-        
-
-        
-        // for (let index = 0; index < 9 ; index++) {
-
-        //   const data = await compareImages(
-        //     fs.readFileSync(`results/3-41-1/escen04.spec.js/esc04 - `+index+`.png`),
-        //     fs.readFileSync(`results/4-40-0/escen04.spec.js/esc04 - `+index+`.png`),
-        //     options
-        //   );
-
-
-
-        // }        
-
     }
 
     fs.copyFileSync('./index.css', `./results/${datetime}/index.css`);
 
-    console.log('------------------------------------------------------------------------------------')
-    console.log("Execution finished. Check the report under the results folder")
-    console.log(typeof(resultInfo))
+    console.log('------------------------------------------------------------------------------------');
+    console.log("Execution finished. Check the report under the results folder");
+    console.log(typeof(resultInfo));
     return resultInfo;  
   }
 (async ()=>console.log(await executeTest()))();
 
 function browser(b, info){
-  let str = ''
+  let str = '';
 
   //Recorrecr carpetas
   for (let i = 0; i < foldersNumber.length; i++) {
     //Recorrer numeros archivos
-    for (let j = 0; j < imaginesLength[i]; j++) {
+    for (let j = 1; j < imaginesLength[i]; j++) {
 
       str+= 
     ` <div class= " Carpeta ${i} -  Imagen ${j}">
@@ -105,12 +86,12 @@ function browser(b, info){
         <div class="imgline">
           <div class="imgcontainer">
             <span class="imgname">Reference</span>
-            <img class="img2" src="../../../${folderCypress341}${pathImageInit}${foldersNumber[i]}${pathImageEnd}/${nameImageInit}${foldersNumber[i]} - `+j+`${nameImageEnd}"
+            <img class="img2" src="../../../../${folderKraken341}${nameImageInit}${foldersNumber[i]}-${j < 9 ? '0'+j : j}${nameImageEnd}"
             id="refImage" label="Reference">
           </div>
           <div class="imgcontainer">
             <span class="imgname">Test</span>
-            <img class="img2" src="../../../${folderCypress444}${pathImageInit}${foldersNumber[i]}${pathImageEnd}/${nameImageInit}${foldersNumber[i]} - `+j+`${nameImageEnd}"
+            <img class="img2" src="../../../${folderKraken444}${nameImageInit}${foldersNumber[i]}-${j < 9 ? '0'+j : j}${nameImageEnd}"
             id="testImage" label="Test">
           </div>
         </div>
@@ -125,12 +106,7 @@ function browser(b, info){
     }
   }
       
-  return str 
-
-  // for (let index = 0; index <= steps; index++) {
- 
-    
-  // }
+  return str;
 }
 
 function createReport(datetime, resInfo){
