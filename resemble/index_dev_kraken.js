@@ -11,13 +11,14 @@ const nameImageInit = 'esc';
 const nameImageEnd = '.png';
 const folderKraken341 = 'GhostKraken/screenshots/';
 const folderKraken444 = 'GhostKraken4_44/screenshots/';
+let resultInfo = [[],[],[],[],[]];
+let contentStructure = '';
 
 async function executeTest(){
 
     if(browsers.length === 0){
       return;
     }
-    let resultInfo = []
 
 
     let datetime = new Date().toISOString().replace(/:/g,".");
@@ -35,13 +36,13 @@ async function executeTest(){
           for (let j = 1; j < imaginesLength[i]; j++) {
             
             const data = await compareImages(
-              fs.readFileSync(`../${folderKraken341}${nameImageInit}${foldersNumber[i]}-${j < 9 ? '0'+j : j}${nameImageEnd}`),
-              fs.readFileSync(`../${folderKraken444}${nameImageInit}${foldersNumber[i]}-${j < 9 ? '0'+j : j}${nameImageEnd}`),
+              fs.readFileSync(`../${folderKraken341}${nameImageInit}${foldersNumber[i]}-${j < 10 ? '0'+j : j}${nameImageEnd}`),
+              fs.readFileSync(`../${folderKraken444}${nameImageInit}${foldersNumber[i]}-${j < 10 ? '0'+j : j}${nameImageEnd}`),
               options
             );
 
             //Extracción de analisis
-            resultInfo[i] = {
+            resultInfo[i][j] = {
               i,
               isSameDimensions: data.isSameDimensions,
               dimensionDifference: data.dimensionDifference,
@@ -51,47 +52,46 @@ async function executeTest(){
               analysisTime: data.analysisTime
             };
 
+            contentStructure += browser(datetime, i, j);
+
             //Escritura de resultados
             fs.writeFileSync(`./results/${datetime}/compare-${foldersNumber[i]} - ${j}.png`, data.getBuffer());
-            fs.writeFileSync(`./results/${datetime}/report.html`, createReport(datetime, resultInfo[i]));
+            fs.writeFileSync(`./results/${datetime}/report.html`, createReport(datetime));
           }
           
         }
     }
-
     fs.copyFileSync('./index.css', `./results/${datetime}/index.css`);
 
-    console.log('------------------------------------------------------------------------------------');
-    console.log("Execution finished. Check the report under the results folder");
-    console.log(typeof(resultInfo));
+    // fs.copyFileSync('./index.css', `./results/${datetime}/index.css`);
+
+    // console.log('------------------------------------------------------------------------------------');
+    // console.log("Execution finished. Check the report under the results folder");
+    // console.log(typeof(resultInfo));
     return resultInfo;  
   }
-(async ()=>console.log(await executeTest()))();
+// (async ()=>console.log(await executeTest()))();
+(async ()=> await executeTest())();
 
-function browser(b, info){
+function browser(b, i, j){
   let str = '';
-
-  //Recorrecr carpetas
-  for (let i = 0; i < foldersNumber.length; i++) {
-    //Recorrer numeros archivos
-    for (let j = 1; j < imaginesLength[i]; j++) {
 
       str+= 
     ` <div class= " Carpeta ${i} -  Imagen ${j}">
         <div class=" browser" id="test ${i} - ${j}">
         <div class=" btitle">
             <h2>Browser: ${b}</h2>
-            <p>Data: ${JSON.stringify(info)}</p>
+            <p>Data: ${JSON.stringify(resultInfo[i][j])}</p>
         </div>
         <div class="imgline">
           <div class="imgcontainer">
             <span class="imgname">Reference</span>
-            <img class="img2" src="../../../../${folderKraken341}${nameImageInit}${foldersNumber[i]}-${j < 9 ? '0'+j : j}${nameImageEnd}"
+            <img class="img2" src="../../../${folderKraken341}${nameImageInit}${foldersNumber[i]}-${j < 10 ? '0'+j : j}${nameImageEnd}"
             id="refImage" label="Reference">
           </div>
           <div class="imgcontainer">
             <span class="imgname">Test</span>
-            <img class="img2" src="../../../${folderKraken444}${nameImageInit}${foldersNumber[i]}-${j < 9 ? '0'+j : j}${nameImageEnd}"
+            <img class="img2" src="../../../${folderKraken444}${nameImageInit}${foldersNumber[i]}-${j < 10 ? '0'+j : j}${nameImageEnd}"
             id="testImage" label="Test">
           </div>
         </div>
@@ -103,13 +103,11 @@ function browser(b, info){
         </div>
       </div>
     </div>`
-    }
-  }
       
   return str;
 }
 
-function createReport(datetime, resInfo){
+function createReport(datetime){
     return `
     <html>
         <head>
@@ -122,7 +120,7 @@ function createReport(datetime, resInfo){
             </h1>
             <p>Executed: ${datetime}</p>
               <div id="visualizer">
-                  ${config.browsers.map(b=>browser(b, resInfo))}
+              ${contentStructure}
               </div>
         </body>
     </html>`
