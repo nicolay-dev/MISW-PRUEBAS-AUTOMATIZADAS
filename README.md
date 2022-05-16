@@ -21,6 +21,33 @@ Definir las siguientes variables en properties.json
 
 Nota: Las pruebas puede que no corran todas de una vez en window, si encuentra este problema por favor crear una carpeta de ignore y colocar todas las pruebas allí. Pase a la carpeta feature la prueba a ejecutar una por una para su ejecución. 
 
+# README PARA EJECUTAR RESEMBLE.JS
+Instrucciones para ejecutar regresión visual
+
+#### Dependencias:
+Node v14.16.1
+npm 6.14.12
+
+1. Clonar el en repositorio
+2. Ubicarse en la carpeta de ‘resemble’
+3. Ejecutar: 
+``` [language]
+npm i
+```
+4. Seguido de 
+``` [language]
+node index_dev.js
+```
+5. Esperar la ejecución del script, al finalizar se creará un reporte en la carpeta correspondiente a la fecha y hora de ejecución ubicada en:
+
+```
+‘/resemble/results/<Carpeta Creada>/report.html’
+```
+Ejemplo: 
+```
+'resemble/results/2022-05-15T22.13.17.227Z/report.html'
+```
+
 # MISW-PRUEBAS-AUTOMATIZADAS-ISSUES-JN
 
 REPORTE DE ISSUES PRUEBAS AUTOMATIZADAS (MISO - Uniandes)
@@ -36,8 +63,7 @@ y.joyag@uniandes.edu.co
 -Lesly Campo: 
 ls.campo10@uniandes.edu.co
 
-
--Luis Correa
+-Luis Correa:
 l.correaz@uniandez.edu.co
 
 ## Plan de pruebas:
