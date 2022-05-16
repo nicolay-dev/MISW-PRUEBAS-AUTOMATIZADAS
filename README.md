@@ -1,25 +1,62 @@
-# README PARA EJECUTAR PRUEBAS KRAKEN
+# README PARA EJECUCIÓN DE PRUEBAS (Windows)
+  # Preparación ambiente
+    1. Tener instalado una versión actual de un navegador web
+      - Sugerencias: Google Chrome - Micorsoft Edge
+    2. Tener instalado un IDE
+      - Sugerencia: Visual Studio code
+    3. Instalar node.js
+      - Vaya a la siguiente url: https://nodejs.org/es/
+      - Seleccione la descarga de la versión recomendada de node
+      - Al completar la descarga, ejecute el instalador e implemente todos los pasos predeterminados y agregue todos los paquetes necesarios junto a la instalación.
+    4. Instalar nvm
+      - Vaya a la siguiente url y siga los pasos descritos allí: https://content.breatheco.de/es/how-to/nvm-install-windows
+    5. Instalar Ghost CLI
+      - En un programa de línea de comando, escriba el siguiente comando: npm install -g ghost-cli@latest
+    6. Instalar Ghost (3.41.1)
+      - Cree una carpeta nueva donde va a guardar esta versión de Ghost
+      - En un programa de línea de comando, escriba el siguiente comando: nvm install 14.17.0 
+      - En un programa de línea de comando, escriba el siguiente comando: nvm use 14.17.0 
+      - En un programa de línea de comando, escriba el siguiente comando: npm install sqlite3 
+      - En línea de comando de su equipo, estando en la ruta de su nueva carpeta, debe escribir el siguiente comando: ghost install 3.41.1 --db=sqlite3 --force
+        - Cualquier pregunta que muestre el instalador, escribir Yes o y
+      - Cuando la instalación sea exitosa, ejecutar el siguiente comando: ghost start
+      - Usando un navegador web, ir a la dirección url dada al final de la inicialización
+      - Crear una cuenta (Guardar correo y contraseña creadas para futuros pasos)
+    7. Usar Ghost (4.44.0) en Docker
+      - Ir a https://docs.docker.com/desktop/windows/install/ y descargar Docker para Windows
+      - Instalar Docker con todas las opciones predeterminadas
+        - Reiniciar equipo si es necesario
+      - Inicializar el Docker
+      - En un programa de línea de comando, escriba el siguiente comando: docker run -d -e url=http://localhost:3002 -p 3002:2368 --name ghost_4.44.0 ghost:4.44.0
+      - Usando un navegador web, ir a la dirección url dada al final de la inicialización
+      - Crear una cuenta (Guardar correo y contraseña creadas para futuros pasos)
+    8. Instalar Cypress
+      - En un programa de línea de comando, escriba el siguiente comando: npm install -g cypress
+    9. Instalar Kraken
+      - En un programa de línea de comando, escriba el siguiente comando: npm install kraken-node -g
+  # Preparación pruebas
+    1. Descargue este reporsitorio como un .zip
+    2. Descomprima todos los archivos
+      - Notará que las pruebas están distribuídas en cuatro carpetas diferentes:
+        A. GhostCypress = Pruebas en Cypress para la versión 3.41.1 de Ghost
+        B. GhostKraken = Pruebas en Kraken para la versión 3.41.1 de Ghost  
+        C. GhostCypress4_44 = Pruebas en Cypress para la versión 4.44.0 de Ghost
+        D. GhostKraken4_44 = Pruebas en Kraken para la versión 4.44.0 de Ghost 
+    3. Ubíquse en cada una de las cuatro carpetas mencionadas anteriormente (dentro de una línea de comando) e instale los paquetes necesarios utilizando el comando: npm install
 
-- Activar ghost en una carpeta nueva
-- Ejecutar ghost localmente
-- Crear cuenta de administrador. 
-
-- Descargar el código del programa de este repositorio. 
-- Parado en la carpeta del proyecto ejecutar el comando npm install. Con versión de node 12.22.1
-- Utilizar el comando npm install kraken-node para instalar Kraken localmente en la carpeta del proyecto 
-
-Definir las siguientes variables en properties.json
-
-  - "URL": "http://localhost:2369/ghost/" 
-  - "USERNAME": "username@correo.com"
-  - "PASSWORD": "passwordcreado"
-  - "NAME": "Nombre Creado"
-  - "NAMENEW": "Nombre creado ESC-10"
-  - "URL-LECTOR": "http://localhost:2368/"
-  
-- Utilizar el comando npx kraken-node run para ejecutar las pruebas. 
-
-Nota: Las pruebas puede que no corran todas de una vez en window, si encuentra este problema por favor crear una carpeta de ignore y colocar todas las pruebas allí. Pase a la carpeta feature la prueba a ejecutar una por una para su ejecución. 
+  # Ejecución pruebas
+    0. Recuerde tener el servidor de Ghost corriendo para las pruebas que desee ejecutar
+    1. Definir las siguientes variables en properties.json (Kraken) y cypress.json (Cypress) de cada una de los respectivos grupos de pruebas
+      - "URL": -url utilizada para cada versión de ghost-
+      - "USERNAME": -correo de su cuenta ghost-
+      - "PASSWORD": -contraseña de su cuenta ghost-
+      - "NAME": -nombre de su cuenta ghost-
+      - "URL-LECTOR": -url de versión lector de ghost- (Es el localhost sin el /ghost/ al final)-
+    2. Para correr pruebas en kraken:
+      - Ubicarse en la carpeta respectiva de kraken (en una línea de comando) y ejecutar el comando npx kraken-node run
+        *** Nota: Las pruebas puede que no corran todas de una vez en window, si encuentra este problema por favor crear una carpeta de ignore y colocar todas las pruebas allí. Pase a la carpeta feature la prueba a ejecutar una por una para su ejecución.
+    3. Para correr pruebas en Cypress:
+      - Ubicarse en la carpeta respectiva de cypress (en una línea de comando) y ejecutar el comando cypress run (forma rápida) o cypress open -> esperar a que la consola de cypress se abra y correr pruebas individualmente o grupales con el navegador en vista.
 
 # MISW-PRUEBAS-AUTOMATIZADAS-ISSUES-JN
 
