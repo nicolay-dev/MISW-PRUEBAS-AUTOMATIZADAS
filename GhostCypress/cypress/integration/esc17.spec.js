@@ -26,7 +26,7 @@ describe('Edit label', () => {
         cy.get('body > div:nth-child(4) > div:nth-child(3) > main:nth-child(2) > section:nth-child(1) > section:nth-child(2) > div:nth-child(2) > form:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > span:nth-child(1) > input:nth-child(1)').click()
 
         cy.wait(2000)
-        cy.get('body > div:nth-child(4) > div:nth-child(3) > main:nth-child(2) > section:nth-child(1) > section:nth-child(2) > div:nth-child(2) > form:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > span:nth-child(1) > input:nth-child(1)').type("Lorem", {force: true});
+        cy.get('body > div:nth-child(4) > div:nth-child(3) > main:nth-child(2) > section:nth-child(1) > section:nth-child(2) > div:nth-child(2) > form:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > span:nth-child(1) > input:nth-child(1)').type("Lorem", {force:true});
         cy.wait(1000)
         POM.takeScreenShot('esc13', count++);
         POM.elements.save().click()
