@@ -58,75 +58,74 @@
     3. Para correr pruebas en Cypress:
       - Ubicarse en la carpeta respectiva de cypress (en una línea de comando) y ejecutar el comando cypress run (forma rápida) o cypress open -> esperar a que la consola de cypress se abra y correr pruebas individualmente o grupales con el navegador en vista.
 
-## README PARA EJECUTAR RESEMBLE.JS CON KRAKEN
+## README PARA EJECUTAR RESEMBLE.JS (KRAKEN)
 
 Instrucciones para ejecutar regresión visual
 
-### Dependencias ejecución reporte kraken
-
+##### Dependencias:
+```
 Node v14.16.1
-npm 6.14.12
-
+npm v6.14.12
+```
 1. Clonar el en repositorio
-2. Ubicarse en la carpeta de ‘resemble’
+2. Ubicarse dentro la carpeta de ‘resemble’
 3. Ejecutar:
 
-``` [language]
+```
 npm i
 ```
 
 4. Seguido de
 
-``` [language]
+```
 node index_dev_kraken.js
 ```
 
-5. Esperar la ejecución del script, al finalizar se creará un reporte en la carpeta correspondiente a la fecha y hora de ejecución ubicada en:
+5. Esperar la ejecución del script, al finalizar se creará un reporte html en la carpeta correspondiente a la fecha y hora de ejecución ubicado en:
 
-```[language]
-‘/resemble/results/<Carpeta Creada>/report.html’
+```
+resemble/results/<Carpeta Creada>/report.html
 ```
 
-Ejemplo:
 
-```[language]
-'resemble/results/2022-05-15T22.13.17.227Z/report.html'
-```
+##### Ejemplo del reporte obtenido al ejecutar el script (Kraken):
 
-## README PARA EJECUTAR RESEMBLE.JS CON CYPRESS
+[resemble/results/2022-05-16T02.56.56.091Z/report.html](
+https://github.com/nicolay-dev/MISW-PRUEBAS-AUTOMATIZADAS/blob/9c4f5312190b52cebe21d9368b934b32f14446bf/resemble/results/2022-05-16T02.56.56.091Z/report.html)
+
+## README PARA EJECUTAR RESEMBLE.JS (CYPRESS)
 
 Instrucciones para ejecutar regresión visual
 
-### Dependencias ejecución reporte cypress
-
+##### Dependencias:
+```
 Node v14.16.1
-npm 6.14.12
-
+npm v6.14.12
+```
 1. Clonar el en repositorio
-2. Ubicarse en la carpeta de ‘resemble’
+2. Ubicarse dentro la carpeta de ‘resemble’
 3. Ejecutar:
 
-  ``` [language]
+  ```
   npm i
   ```
 
 4. Seguido de
 
-``` [language]
+```
 node index_dev_cypress.js
 ```
 
-5. Esperar la ejecución del script, al finalizar se creará un reporte en la carpeta correspondiente a la fecha y hora de ejecución ubicada en:
+5. Esperar la ejecución del script, al finalizar se creará un reporte en la carpeta correspondiente a la fecha y hora de ejecución ubicado en:
 
-``` [language]
+```
 ‘/resemble/results/<Carpeta Creada>/report.html’
 ```
 
-Ejemplo:
+##### Ejemplo del reporte obtenido al ejecutar el script (Cypress):
 
-``` [language]
-'resemble/results/2022-05-15T22.13.17.227Z/report.html'
-```
+[resemble/results/2022-05-16T02.58.32.876Z/report.html](
+https://github.com/nicolay-dev/MISW-PRUEBAS-AUTOMATIZADAS/blob/9c4f5312190b52cebe21d9368b934b32f14446bf/resemble/results/2022-05-16T02.58.32.876Z/report.html)
 
 ## MISW-PRUEBAS-AUTOMATIZADAS-ISSUES-JN
 
