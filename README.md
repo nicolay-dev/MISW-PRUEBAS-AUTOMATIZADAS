@@ -63,8 +63,7 @@ y.joyag@uniandes.edu.co
 -Lesly Campo: 
 ls.campo10@uniandes.edu.co
 
-
--Luis Correa
+-Luis Correa:
 l.correaz@uniandez.edu.co
 
 ## Plan de pruebas:
