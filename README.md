@@ -30,21 +30,21 @@ Instrucciones para ejecutar regresión visual
 Node v14.16.1
 npm 6.14.12
 
-A. Clonar el en repositorio
-B. Ubicarse en la carpeta de ‘resemble’
-C. Ejecutar:
+1. Clonar el en repositorio
+2. Ubicarse en la carpeta de ‘resemble’
+3. Ejecutar:
 
 ``` [language]
 npm i
 ```
 
-D. Seguido de
+4. Seguido de
 
 ``` [language]
 node index_dev_kraken.js
 ```
 
-E. Esperar la ejecución del script, al finalizar se creará un reporte en la carpeta correspondiente a la fecha y hora de ejecución ubicada en:
+5. Esperar la ejecución del script, al finalizar se creará un reporte en la carpeta correspondiente a la fecha y hora de ejecución ubicada en:
 
 ```[language]
 ‘/resemble/results/<Carpeta Creada>/report.html’
@@ -65,21 +65,21 @@ Instrucciones para ejecutar regresión visual
 Node v14.16.1
 npm 6.14.12
 
-A. Clonar el en repositorio
-B. Ubicarse en la carpeta de ‘resemble’
-C. Ejecutar:
+1. Clonar el en repositorio
+2. Ubicarse en la carpeta de ‘resemble’
+3. Ejecutar:
 
   ``` [language]
   npm i
   ```
 
-D. Seguido de
+4. Seguido de
 
 ``` [language]
 node index_dev_cypress.js
 ```
 
-E. Esperar la ejecución del script, al finalizar se creará un reporte en la carpeta correspondiente a la fecha y hora de ejecución ubicada en:
+5. Esperar la ejecución del script, al finalizar se creará un reporte en la carpeta correspondiente a la fecha y hora de ejecución ubicada en:
 
 ``` [language]
 ‘/resemble/results/<Carpeta Creada>/report.html’
@@ -113,7 +113,7 @@ l.correaz@uniandez.edu.co
 
 ## Funcionlidades involucradas
 
-imagen
+<img width="544" alt="funcionalidades" src="https://user-images.githubusercontent.com/26149887/167306645-402675de-e270-4589-bafd-29e2377767e9.png">
 
 ### Escenarios de pruebas
 
