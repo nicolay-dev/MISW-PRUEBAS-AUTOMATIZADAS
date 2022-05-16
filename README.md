@@ -81,11 +81,12 @@ npm i
 node index_dev_kraken.js
 ```
 
-5. Esperar la ejecución del script, al finalizar se creará un reporte en la carpeta correspondiente a la fecha y hora de ejecución ubicada en:
+5. Esperar la ejecución del script, al finalizar se creará un reporte html en la carpeta correspondiente a la fecha y hora de ejecución ubicado en:
 
-```[language]
+```
 resemble/results/<Carpeta Creada>/report.html
 ```
+
 
 ##### Ejemplo del reporte obtenido al ejecutar el script (Kraken):
 
@@ -115,9 +116,9 @@ npm v6.14.12
 node index_dev_cypress.js
 ```
 
-5. Esperar la ejecución del script, al finalizar se creará un reporte en la carpeta correspondiente a la fecha y hora de ejecución ubicada en:
+5. Esperar la ejecución del script, al finalizar se creará un reporte en la carpeta correspondiente a la fecha y hora de ejecución ubicado en:
 
-``` [language]
+```
 ‘/resemble/results/<Carpeta Creada>/report.html’
 ```
 
