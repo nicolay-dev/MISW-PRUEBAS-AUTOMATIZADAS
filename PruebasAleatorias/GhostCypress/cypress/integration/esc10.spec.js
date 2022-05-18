@@ -11,10 +11,12 @@ Cypress.on('uncaught:exception', (err) => {
   
   const POM = require("../POM/POM")
   const url = Cypress.config('baseUrl')
-  const username = Cypress.env('username')
-  const password = Cypress.env('password')
-  const nombre = Cypress.env('NAME')
-  const nombreNew = Cypress.env('NAMENEW')
+  const pollData01 = Cypress.env('poolData01');
+
+  const username = pollData01.username;
+  const password = pollData01.password;
+  const nombre = pollData01.NAME;
+  const nombreNew = pollData01.NAMENEW;
   let count = 0;
 
   describe('Change Profile name', () => {

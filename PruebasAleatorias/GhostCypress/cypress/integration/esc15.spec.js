@@ -1,9 +1,11 @@
 const POM = require("../POM/POM")
 const url = Cypress.config('baseUrl')
-const username = Cypress.env('username')
-const password = Cypress.env('password')
-const titulo = Cypress.env('TAG15')
-const titulo2 = Cypress.env('TAG15-1')
+const pollData01 = Cypress.env('poolData01');
+
+const username = pollData01.username;
+const password = pollData01.password;
+const titulo = pollData01.TAG15;
+const titulo2 = pollData01.TAG151;
 let count= 0;
 
 describe('Create and edit Tag', () => {

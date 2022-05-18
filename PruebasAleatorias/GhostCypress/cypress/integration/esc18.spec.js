@@ -10,10 +10,12 @@ Cypress.on('uncaught:exception', (err) => {
 
 const POM = require("../POM/POM")
 const url = Cypress.config('baseUrl')
-const username = Cypress.env('username')
-const password = Cypress.env('password')
-const titulo = Cypress.env('POST18')
-const parrafo = Cypress.env('PARRAFO')
+const pollData01 = Cypress.env('poolData01');
+
+const username = pollData01.username;
+const password = pollData01.password;
+const titulo = pollData01.POST18;
+const parrafo = pollData01.PARRAFO;
 let count=0;
 
 describe('Unpublish post', () => {

@@ -2,9 +2,11 @@
 
 const POM = require("../POM/POM")
 const url = Cypress.config('baseUrl')
-const username = Cypress.env('username')
-const password = Cypress.env('password')
-const bio = Cypress.env('BIO-TEXT')
+const pollData01 = Cypress.env('poolData01');
+
+const username = pollData01.username;
+const password = pollData01.password;
+const bio = pollData01.BIOTEXT;
 let count=0;
 
 describe('Add Bio', () => {
