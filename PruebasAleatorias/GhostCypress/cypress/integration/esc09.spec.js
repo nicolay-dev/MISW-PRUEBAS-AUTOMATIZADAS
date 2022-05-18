@@ -1,7 +1,9 @@
 const POM = require("../POM/POM")
 const url = Cypress.config('baseUrl') 
-const username = Cypress.env('username')
-const password = Cypress.env('password')
+const pollData01 = Cypress.env('poolData01');
+
+const username = pollData01.username;
+const password = pollData01.password;
 let count = 0;
 
 describe('Create and edit page', () => {
@@ -22,7 +24,7 @@ describe('Create and edit page', () => {
         cy.wait(1000)
         POM.takeScreenShot('esc09', count++);
         // Create a new page
-        POM.createNewPage(Cypress.env('PAGE09'), Cypress.env('PARRAFO') )
+        POM.createNewPage(Cypress.env('poolData01').PAGE09, Cypress.env('poolData01').PARRAFO)
         cy.wait(1000)
         POM.takeScreenShot('esc09', count++);
         // Publish the page
@@ -33,8 +35,8 @@ describe('Create and edit page', () => {
         cy.wait(1000)
         POM.takeScreenShot('esc09', count++);
         // Edit the title of the page
-        POM.elements.getPPT(Cypress.env('PAGE09')).click()
-        cy.get('.gh-editor-title').type(Cypress.env('PAGE09Edit'))
+        POM.elements.getPPT(Cypress.env('poolData01').PAGE09).click()
+        cy.get('.gh-editor-title').type(Cypress.env('poolData01').PAGE09Edit)
         cy.wait(2000);
         POM.takeScreenShot('esc09', count++);
         POM.publishUpdatePP()
@@ -47,11 +49,9 @@ describe('Create and edit page', () => {
             // Validate the title of the page
 
             cy.get("h3").then(($title) => {
-                expect($title[0].innerText).to.equal(`${Cypress.env('PAGE09')}`+`${Cypress.env('PAGE09Edit')}`)
+                expect($title[0].innerText).to.equal(`${Cypress.env('poolData01').PAGE09}`+`${Cypress.env('poolData01').PAGE09Edit}`)
               }) // Check if the title is the same as the one we edited
               POM.takeScreenShot('esc09', count++);
-                 
-
         })
        
     })

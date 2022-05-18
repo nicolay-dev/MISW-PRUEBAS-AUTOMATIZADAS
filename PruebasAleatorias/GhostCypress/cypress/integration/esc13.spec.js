@@ -1,7 +1,9 @@
 const POM = require("../POM/POM")
 const url = Cypress.config('baseUrl')
-const username = Cypress.env('username')
-const password = Cypress.env('password')
+const pollData01 = Cypress.env('poolData01');
+
+const username = pollData01.username;
+const password = pollData01.password;
 let count = 0;
 
 describe('Change timezone', () => {

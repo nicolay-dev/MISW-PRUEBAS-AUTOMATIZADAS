@@ -10,12 +10,14 @@ Cypress.on('uncaught:exception', (err) => {
 
 const POM = require("../POM/POM")
 const url = Cypress.config('baseUrl')
-const username = Cypress.env('username')
-const password = Cypress.env('password')
-const titulo = Cypress.env('POST06')
-const parrafo = Cypress.env('PARRAFO')
-const urlLector = Cypress.env('URL-LECTOR')
-const tituloTag = Cypress.env('TAG06')
+const pollData01 = Cypress.env('poolData01');
+
+const username = pollData01.username;
+const password = pollData01.password;
+const titulo = pollData01.POST06;
+const parrafo = pollData01.PARRAFO;
+const urlLector = pollData01.URLLECTOR;
+const tituloTag = pollData01.TAG06;
 let count = 0;
 
 describe('Create a post, create a tag and assign tag to post', () => {

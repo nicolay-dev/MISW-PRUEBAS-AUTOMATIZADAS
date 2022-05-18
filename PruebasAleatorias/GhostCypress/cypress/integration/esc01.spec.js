@@ -11,9 +11,10 @@ Cypress.on('uncaught:exception', (err) => {
 
 const POM = require("../POM/POM")
 const url = Cypress.config('baseUrl')
-const username = Cypress.env('username')
-const password = Cypress.env('password')
-const passwordtest = Cypress.env('password2')
+const pollData01 = Cypress.env('poolData01');
+const username = pollData01.username;
+const password = pollData01.password;
+const passwordtest = pollData01.password2;
 let count = 0;
 
 describe('Change password', () => {

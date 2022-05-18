@@ -9,8 +9,10 @@
     "faker": "^6.6.6"
   },
   "devDependencies": {
+    "@faker-js/faker": "^6.3.1",
     "cypress-iframe": "1.0.1",
-    "cypress-xpath": "1.6.2"
+    "cypress-xpath": "1.6.2",
+    "faker": "^6.6.6"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
