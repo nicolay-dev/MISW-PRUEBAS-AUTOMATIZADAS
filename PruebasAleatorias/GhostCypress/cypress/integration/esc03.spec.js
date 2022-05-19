@@ -5,75 +5,101 @@ const POM = require("../POM/POM");
 const pollData01 = Cypress.env('poolData01');
 const takeScreenshots = false;
 
-//Data Used
+//Data Pool a-priori
 const username = pollData01.username;
 const password = pollData01.password;
-const titulo = faker.name.firstName();
-const parrafo = faker.lorem.paragraph();
 
-let count = 0;
+let screenShotCount = 0;
+
+function getDataPool() {
+  return {
+    titulo: pollData01.POST03,
+    parrafo: pollData01.PARRAFO
+  }
+}
 
 describe('Create and delete post', () => {
   beforeEach(() => {
-    cy.visit("/")
-    cy.wait(4000)
-    takeScreenshots ? POM.takeScreenShot('esc03', count++): {};
-    executeTest(takeScreenshots);
-  })
-  it('Should not exist the post created', () => {
-    POM.elements.getPostPageinSite(titulo).should('not.exist');
+    login();
+  });
+
+  it('Should not exist the post created after delete it', () => {
+    const data = getDataPool();
+    buildPost(data);
+    publishPost();
+    executeTest(data);
+    POM.elements.getPostPageinSite(data.titulo).should('not.exist');
     cy.wait(3000);
-  })
+  });
+
+  it.only('Should not be able to publish a post when title is longer than 100 words', () => {
+    const fakeData = {
+      titulo: faker.lorem.slug(100),
+      parrafo: faker.lorem.paragraph()
+    }
+    buildPost(fakeData);
+    cy.get('span').contains('Publish').should('not.exist');
+    cy.wait(3000);
+  });
 })
 
+function login() {
+  cy.visit("/");
+  cy.wait(3000);
+  takeScreenshots ? POM.takeScreenShot('esc03', screenShotCount++): {};
+  cy.get('form').within(() => { POM.signIn(username, password) });
+  takeScreenshots ? POM.takeScreenShot('esc03', screenShotCount++): {};
+  cy.wait(1000);
+}
 
-function executeTest(isScreenshots) {
-  cy.get('form').within(() => {
-    POM.signIn(username, password);
-  })
-  isScreenshots ? POM.takeScreenShot('esc03', count++): {};
+//Build a new post
+function buildPost(data) {
+  takeScreenshots ? POM.takeScreenShot('esc03', screenShotCount++): {};
+  POM.buildNewPost(data.titulo, data.parrafo);
   cy.wait(1000);
-  //Build a new post
-  isScreenshots ? POM.takeScreenShot('esc03', count++): {};
-  POM.buildNewPost(titulo, parrafo);
-  cy.wait(1000);
-  isScreenshots ? POM.takeScreenShot('esc03', count++): {};
+  takeScreenshots ? POM.takeScreenShot('esc03', screenShotCount++): {};
+}
+
+function publishPost() {
   POM.publishUpdatePP();
   cy.wait(5000);
-  isScreenshots ? POM.takeScreenShot('esc03', count++): {};
+  takeScreenshots ? POM.takeScreenShot('esc03', screenShotCount++): {};
   POM.returnToSectionView();
-  //Go to viewer site and confirm the post is published
   cy.wait(2000);
-  isScreenshots ? POM.takeScreenShot('esc03', count++): {};
+}
+
+function executeTest(data) {
+  //Go to viewer site and confirm the post is published
+  takeScreenshots ? POM.takeScreenShot('esc03', screenShotCount++): {};
   POM.viewReaderSite();
   cy.wait(2000);
-  isScreenshots ? POM.takeScreenShot('esc03', count++): {};
-  POM.elements.getPostPageinSite(titulo).click();
+  takeScreenshots ? POM.takeScreenShot('esc03', screenShotCount++): {};
+  POM.elements.getPostPageinSite(data.titulo).click();
   cy.wait(3000);
-  isScreenshots ? POM.takeScreenShot('esc03', count++): {};
+  takeScreenshots ? POM.takeScreenShot('esc03', screenShotCount++): {};
   //Delete post
   cy.visit(Cypress.config('baseUrl'))
   cy.wait(2000)
-  isScreenshots ? POM.takeScreenShot('esc03', count++): {};
+  takeScreenshots ? POM.takeScreenShot('esc03', screenShotCount++): {};
   POM.goToPosts();
-  isScreenshots ? POM.takeScreenShot('esc03', count++): {};
-  POM.elements.getPPT(titulo).click()
+  takeScreenshots ? POM.takeScreenShot('esc03', screenShotCount++): {};
+  POM.elements.getPPT(data.titulo).click()
   cy.wait(1000);
-  isScreenshots ? POM.takeScreenShot('esc03', count++): {};
+  takeScreenshots ? POM.takeScreenShot('esc03', screenShotCount++): {};
   POM.clickSettingsOnPP();
   cy.wait(2000);
-  isScreenshots ? POM.takeScreenShot('esc03', count++): {};
+  takeScreenshots ? POM.takeScreenShot('esc03', screenShotCount++): {};
   cy.wait(1000);
   POM.deleteButtonClick();
   cy.wait(2000);
-  isScreenshots ? POM.takeScreenShot('esc03', count++): {};
+  takeScreenshots ? POM.takeScreenShot('esc03', screenShotCount++): {};
   POM.elements.confirmDelete().click({force: true});
   //Check in viewer site post is no longer there
   cy.wait(3000);
-  isScreenshots ? POM.takeScreenShot('esc03', count++): {};
+  takeScreenshots ? POM.takeScreenShot('esc03', screenShotCount++): {};
   POM.viewReaderSite();
   cy.wait(2000);
-  isScreenshots ? POM.takeScreenShot('esc03', count++): {};
+  takeScreenshots ? POM.takeScreenShot('esc03', screenShotCount++): {};
 }
 
 Cypress.on('uncaught:exception', (err) => {
