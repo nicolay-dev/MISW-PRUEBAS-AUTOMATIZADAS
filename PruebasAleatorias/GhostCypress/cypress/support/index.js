@@ -17,6 +17,8 @@
 import './commands'
 require('cypress-xpath')
 import 'cypress-iframe';
+import 'cypress-each';
+
 
 Cypress.Commands.add('getIframeBody', () => {
     // get the iframe > document > body
