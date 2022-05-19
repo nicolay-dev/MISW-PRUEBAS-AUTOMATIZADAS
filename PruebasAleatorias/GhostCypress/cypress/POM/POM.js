@@ -135,6 +135,14 @@ class shortCut{
         cy.get('span').contains('Delete').click();
 
     }
+
+    addImageToPost(imgUrl) {
+        cy.get('div[data-placeholder="Begin writing your post..."]').type('{enter}');
+        cy.get('button[aria-label="Add a card"]').click();
+        cy.get('div').contains('Other').click();
+        cy.get('input[name="url"]').type(imgUrl);
+        cy.get('input[name="url"]').type('{enter}');
+    }
 }
 
 module.exports = new shortCut();
