@@ -4,11 +4,13 @@ const pollData01 = Cypress.env('poolData01');
 const username = pollData01.username;
 const password = pollData01.password;
 const { faker } = require('@faker-js/faker');
-faker.seed(153)
+const seed = Math.floor(Math.random()*200);
+faker.seed(seed);
 
 // Este es mi pool de datos seudo dinámicos para la prueba   
 const pages = Cypress._.range(1, 20).map((index)=>{
     return {
+        seed: seed,
         title: faker.lorem.sentence(),
         content: faker.lorem.paragraphs(3),
         titleEdit: faker.lorem.sentence(),
@@ -23,7 +25,6 @@ const pages = Cypress._.range(1, 20).map((index)=>{
     }
 })
 
-console.log(pages);
 
 describe('Create and edit page', () => {
     beforeEach(()=>{
