@@ -23,6 +23,22 @@ describe('Create and delete post', () => {
     login();
   });
 
+
+  it.only('Should create a post with title and content ok', () => {
+    const fakeData = {
+      titulo: faker.lorem.slug(100),
+      parrafo: faker.lorem.paragraph()
+    }
+    buildPost(fakeData);
+    publishPost();
+    POM.viewReaderSite();
+    cy.wait(3000);
+    POM.elements.getPostPageinSite(data.titulo).click();
+    cy.wait(2000);
+    POM.elements.getPostPageinSite(data.titulo).should('exist');
+  });
+
+
   it('Should not exist the post created after delete it', () => {
     const data = getDataPool();
     buildPost(data);
@@ -32,7 +48,7 @@ describe('Create and delete post', () => {
     cy.wait(3000);
   });
 
-  it.only('Should not be able to publish a post when title is longer than 100 words', () => {
+  it('Should not be able to publish a post when title is longer than 100 words', () => {
     const fakeData = {
       titulo: faker.lorem.slug(100),
       parrafo: faker.lorem.paragraph()
