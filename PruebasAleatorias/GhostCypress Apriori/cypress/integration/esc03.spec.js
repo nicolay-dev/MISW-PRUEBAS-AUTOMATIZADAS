@@ -1,43 +1,66 @@
-const { faker } = require('@faker-js/faker');
-
 // Declaring constants
 const POM = require("../POM/POM");
 const pollData01 = Cypress.env('poolData01');
 const takeScreenshots = false;
 
-//Data Pool a-priori
-const username = pollData01.username;
-const password = pollData01.password;
+//Username Data
+const username = pollData01.genericUsername;
+const password = pollData01.genericPassword;
 
 let screenShotCount = 0;
-
-function getDataPool() {
-  return {
-    titulo: pollData01.POST03,
-    parrafo: pollData01.PARRAFO
-  }
-}
+let data = {};
 
 describe('Create and delete post', () => {
   beforeEach(() => {
+    // Get apriori data
+    cy.fixture('apriori').then((apriori) => {
+      data = apriori;
+    });
     login();
   });
 
   it('Should not exist the post created after delete it', () => {
-    const data = getDataPool();
-    buildPost(data);
+    buildPost(data.apriori[1]);
     publishPost();
-    executeTest(data);
-    POM.elements.getPostPageinSite(data.titulo).should('not.exist');
+    executeTest(data.apriori[1]);
+    cy.get('h2').contains(data.apriori[1].title).should('not.exist');
     cy.wait(3000);
   });
 
-  it.only('Should not be able to publish a post when title is longer than 100 words', () => {
-    const fakeData = {
-      titulo: faker.lorem.slug(100),
-      parrafo: faker.lorem.paragraph()
+  //Isue the test fail
+  it('Should not be able to publish a post whit special chars in title', () => {
+    const specialData = {
+      title: data.apriori[1].string191,
+      content: data.apriori[1].content
     }
-    buildPost(fakeData);
+    buildPost(specialData);
+    cy.get('span').contains('Publish').should('not.exist');
+    cy.wait(3000);
+  });
+
+  //Isue the test fail
+  it('Should not be able to publish a post whit special chars in content', () => {
+    const specialData = {
+      content: data.apriori[1].string191,
+      title: data.apriori[1].title
+    }
+    buildPost(specialData);
+    cy.get('span').contains('Publish').should('not.exist');
+    cy.wait(3000);
+  });
+
+  //Isue the test fail
+  it('Should not be able to publish a post without title', () => {
+    POM.elements.createPost().click();
+    cy.get('textarea[placeholder="Post Title"]').type('{enter}');
+    cy.get('div[data-placeholder="Begin writing your post..."]').type(data.apriori[1].content);
+    cy.get('span').contains('Publish').should('not.exist');
+    cy.wait(3000);
+  });
+
+  it('Should not be able to publish a post without content', () => {
+    POM.elements.createPost().click();
+    cy.get('textarea[placeholder="Post Title"]').type(data.apriori[1].title);
     cy.get('span').contains('Publish').should('not.exist');
     cy.wait(3000);
   });
@@ -55,7 +78,7 @@ function login() {
 //Build a new post
 function buildPost(data) {
   takeScreenshots ? POM.takeScreenShot('esc03', screenShotCount++): {};
-  POM.buildNewPost(data.titulo, data.parrafo);
+  POM.buildNewPost(data.title, data.content);
   cy.wait(1000);
   takeScreenshots ? POM.takeScreenShot('esc03', screenShotCount++): {};
 }
@@ -74,7 +97,7 @@ function executeTest(data) {
   POM.viewReaderSite();
   cy.wait(2000);
   takeScreenshots ? POM.takeScreenShot('esc03', screenShotCount++): {};
-  POM.elements.getPostPageinSite(data.titulo).click();
+  POM.elements.getPostPageinSite(data.title).click();
   cy.wait(3000);
   takeScreenshots ? POM.takeScreenShot('esc03', screenShotCount++): {};
   //Delete post
@@ -83,7 +106,7 @@ function executeTest(data) {
   takeScreenshots ? POM.takeScreenShot('esc03', screenShotCount++): {};
   POM.goToPosts();
   takeScreenshots ? POM.takeScreenShot('esc03', screenShotCount++): {};
-  POM.elements.getPPT(data.titulo).click()
+  POM.elements.getPPT(data.title).click()
   cy.wait(1000);
   takeScreenshots ? POM.takeScreenShot('esc03', screenShotCount++): {};
   POM.clickSettingsOnPP();
