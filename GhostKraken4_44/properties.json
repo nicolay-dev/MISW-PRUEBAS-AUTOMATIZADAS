@@ -1,5 +1,5 @@
 {
-  "URL": "http://localhost:2368/ghost/", 
+  "URL": "http://localhost:3002/ghost/", 
   "USERNAME": "grupo23@uniandes.edu.co", 
   "PASSWORD": "grupo23123",
   "POST02": "Post Escenario 2",
@@ -8,6 +8,6 @@
   "POST04": "Post Escenario 4",
   "POST04_1": "Prueba cambio de titulo",
   "TAG05": "TAG Esc-5",
-  "URL-LECTOR": "http://localhost:2368/", 
+  "URL-LECTOR": "http://localhost:3002/", 
   "PAGE14": "Página Escenario 14"
 }
