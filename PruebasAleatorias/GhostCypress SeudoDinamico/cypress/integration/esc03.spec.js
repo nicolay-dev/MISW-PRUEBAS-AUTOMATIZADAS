@@ -2,19 +2,30 @@ const { faker } = require('@faker-js/faker');
 
 // Declaring constants
 const POM = require("../POM/POM");
-const pollData01 = Cypress.env('poolData01');
+const poolData01 = Cypress.env('poolData01');
+const poolData02 = Cypress.env('poolData02');
+const poolData03 = Cypress.env('poolData03');
 const takeScreenshots = false;
-
-//Data Pool a-priori
-const username = pollData01.username;
-const password = pollData01.password;
 
 let screenShotCount = 0;
 
-function getDataPool() {
-  return {
-    titulo: pollData01.POST03,
-    parrafo: pollData01.PARRAFO
+function getPoolData(pollDataNumber) {
+  switch (pollDataNumber) {
+    case 2:
+      return {
+        titulo: poolData02.POST03,
+        parrafo: poolData02.PARRAFO
+      }
+    case 3:
+      return {
+        titulo: poolData03.title,
+        parrafo: poolData03.PARRAFO
+      }
+    default:
+      return {
+        titulo: poolData01.POST03,
+        parrafo: poolData01.PARRAFO
+      }
   }
 }
 
@@ -24,7 +35,7 @@ describe('Create and delete post', () => {
   });
 
   it('Should not exist the post created after delete it', () => {
-    const data = getDataPool();
+    const data = getPoolData();
     buildPost(data);
     publishPost();
     executeTest(data);
@@ -32,7 +43,7 @@ describe('Create and delete post', () => {
     cy.wait(3000);
   });
 
-  it.only('Should not be able to publish a post when title is longer than 100 words', () => {
+  it('Should not be able to publish a post when title is longer than 100 words', () => {
     const fakeData = {
       titulo: faker.lorem.slug(100),
       parrafo: faker.lorem.paragraph()
@@ -41,13 +52,38 @@ describe('Create and delete post', () => {
     cy.get('span').contains('Publish').should('not.exist');
     cy.wait(3000);
   });
+
+  //Issue
+  it('Should not be able to publish a post whit special chars in title', () => {
+    const data = getPoolData(3);
+    buildPost(data);
+    cy.get('span').contains('Publish').should('be.disabled');
+    cy.wait(3000);
+  });
+
+  //Error
+  it('Should be able to publish a post whit text and an image', () => {
+    const fakeData = {
+      titulo: faker.name.findName(),
+      parrafo: faker.lorem.paragraph(),
+      imagen: faker.image.abstract()
+    };
+    buildPost(fakeData);
+    POM.addImageToPost(fakeData.imagen);
+    cy.wait(5000);
+    publishPost();
+    POM.viewReaderSite();
+    cy.get('h2').contains(fakeData.titulo).click();
+    cy.get(`img[src="${fakeData.imagen}"]`).should('exist');
+    cy.wait(3000);
+  });
 })
 
 function login() {
   cy.visit("/");
   cy.wait(3000);
   takeScreenshots ? POM.takeScreenShot('esc03', screenShotCount++): {};
-  cy.get('form').within(() => { POM.signIn(username, password) });
+  cy.get('form').within(() => { POM.signIn(Cypress.env('poolData01').username, Cypress.env('poolData01').password) });
   takeScreenshots ? POM.takeScreenShot('esc03', screenShotCount++): {};
   cy.wait(1000);
 }
@@ -60,6 +96,7 @@ function buildPost(data) {
   takeScreenshots ? POM.takeScreenShot('esc03', screenShotCount++): {};
 }
 
+//Publish a new post
 function publishPost() {
   POM.publishUpdatePP();
   cy.wait(5000);
