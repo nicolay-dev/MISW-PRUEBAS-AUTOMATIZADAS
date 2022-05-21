@@ -63,6 +63,12 @@ Cypress.Commands.add('generateFixture', () => {
             'passwordConfirmVoid': "",
             'emailvoid': "",
             'email': `${faker.internet.email()}`,
+            'alphanumeric1001': `${faker.random.alphaNumeric(1001)}`,
+            'alphanumeric1000': `${faker.random.alphaNumeric(100)}`,
+            'alphanumeric999': `${faker.random.alphaNumeric(999)}`,
+            'slug191': `${faker.random.alphaNumeric(186)}-slug`,
+            'slug190': `${faker.random.alphaNumeric(185)}-slug`,
+            'slug192': `${faker.random.alphaNumeric(187)}-slug`,
             
         }
       })
