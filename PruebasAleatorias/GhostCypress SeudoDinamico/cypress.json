@@ -6,9 +6,11 @@
       "appName": "Prueba Ghost",
       "username": "grupo23@uniandes.edu.co",
       "password": "Lesly870522",
-      "password2": "grupo987456",
       "genericUsername": "juanc@mail123.com",
       "genericPassword": "5YNqpgy6Yuxmvxf",
+      "URLLECTOR": "http://localhost:2369/",
+      "NAME": "Grupo 23",
+      "password2": "grupo987654",
       "POST02": "Post Escenario 2",
       "PARRAFO": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut gravida scelerisque ex quis pellentesque. Vivamus eget eros vitae tellus consectetur porttitor. Pellentesque dui ligula, consequat quis feugiat nec, maximus ut tortor. ",
       "POST03": "Post Escenario 3",
@@ -18,11 +20,9 @@
       "POST06": "Post Escenario 6",
       "TAG06": "TAG Esc-6",
       "POST07": "Post Escenario 7",
-      "URLLECTOR": "http://localhost:2368/",
       "POST08": "Titulo Borrador",
       "PAGE09": "Página Escenario 09",
       "PAGE09Edit": " Editada",
-      "NAME": "Juan Pineda",
       "NAMENEW": "Grupo 23 ESC-10",
       "BIOTEXT": "My Bio text.",
       "POST12": "Post Escenario 12",
@@ -46,9 +46,6 @@
       "PAGE09Edit": " Editada",
       "PARRAFO": "&7%?[452//(--df)"
     },
-    "poolData03": {
-      "title": "@ĸϟjðĸjĸ@ϟjðĸjωḯ.ḯ@ḯḯ@ϟḯℎð@jϟðq○ωðj@ĸϟjðĸ∞∞¬‰6£∞¢$%$$$$]++´çç`ñ",
-      "PARRAFO": "@ĸϟjðĸjĸ@ϟjðĸjωḯ.ḯ@ḯḯ@ϟḯℎð@jϟðq○ωðj@ĸϟjðĸ∞∞¬‰6£∞¢$%$$$$]++´çç`ñ"
-    }
+    "poolData03": {}
   }
 }
