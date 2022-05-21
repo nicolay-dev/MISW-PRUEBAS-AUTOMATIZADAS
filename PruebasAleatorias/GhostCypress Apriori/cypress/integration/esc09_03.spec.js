@@ -6,8 +6,6 @@ const password = pollData01.password;
 
 
 // Este es mi pool de datos seudo dinámicos para la prueba   
-let pages =[];
-
 
 describe('Create and edit page', () => {
     beforeEach(()=>{

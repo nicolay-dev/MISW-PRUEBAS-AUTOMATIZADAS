@@ -25,11 +25,10 @@
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 Cypress.Commands.add('generateFixture', () => {
     const { faker } = require('@faker-js/faker');
-    const seed = Math.floor(Math.random()*200);
-    faker.seed(seed);
+    faker.seed(153);
   
-    cy.writeFile('cypress/fixtures/seudoDinamico.json', {
-      seudo:Cypress._.times(5, () => {
+    cy.writeFile('cypress/fixtures/apriori.json', {
+      apriori:Cypress._.times(5, () => {
         return {
  
             'title': `${faker.lorem.words(3)}`,
@@ -44,18 +43,21 @@ Cypress.Commands.add('generateFixture', () => {
             'random': `${faker.datatype.string()}`,
             'url':`${faker.internet.url()}`,
             'author':`${faker.name.firstName()} ${faker.name.lastName()}`,
-            'tagName191': `${faker.lorem.words(191)}`,
-            'tagName190': `${faker.lorem.words(190)}`,
-            'tagName192': `${faker.lorem.words(192)}`,
-            'titlepost1000': `${faker.lorem.words(1000)}`,
-            'titlepost1001': `${faker.lorem.words(1001)}`,
-            'titlepost999': `${faker.lorem.words(999)}`,
-            'name191': `${faker.lorem.words(191)}`,
-            'name190': `${faker.lorem.words(190)}`,
-            'name192': `${faker.lorem.words(192)}`,
-            'password60': `${faker.internet.password(60)}`,
-            'password61': `${faker.internet.password(61)}`,
-            'password59': `${faker.internet.password(59)}`,
+            'string191': `${faker.datatype.string(191)}`,
+            'string190': `${faker.datatype.string(190)}`,
+            'string192': `${faker.datatype.string(192)}`,
+            'alphanumeric191': `${faker.random.alphaNumeric(191)}`,
+            'alphanumeric190': `${faker.random.alphaNumeric(190)}`,
+            'alphanumeric192': `${faker.random.alphaNumeric(192)}`,
+            'titlepost1000': `${faker.datatype.string(1000)}`,
+            'titlepost1001': `${faker.datatype.string(1001)}`,
+            'titlepost999': `${faker.datatype.string(999)}`,
+            'password10': `${faker.internet.password(10)}`,
+            'password11': `${faker.internet.password(11)}`,
+            'password9': `${faker.internet.password(9)}`,
+            'password6': `${faker.internet.password(6)}`,
+            'passworddummynum': `1234567890`,
+            'passworddummyalfa': `qwertyuiop`,
             'nameVoid': "",
             'passwordVoid': "",
             'passwordConfirmVoid': "",
