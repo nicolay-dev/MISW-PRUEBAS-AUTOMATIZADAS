@@ -41,7 +41,8 @@
       "email191": "gp8c7dthd8r60eelpc4jue2cloza9ae0utnss7li9woeg0xu3kz7a6bv9rnf1gek41tjl07gcurtjqm0wu6x0hzwuhqvtu6lo6f93hrhavz4jhxoeg3i8c2lndk4zyv4drbai9a21qje95q3i4ge0a1y0lptzateg2h0lbtzpyhcxhdjg2le@correo.com",
       "email192": "p1ihcsjaucl85z69emm6ifdlidm0scyp5kye5bedhq1eo5k2onrrn0di9gypfsqmpvma940uo8919mz7cf0i3gc87zwiaizjvw3mrkpk89z3fdjofh90fuvkpp3md46hl0pm285g5olbg4f27x36fjod6cfpphiwnxp28lz5jn9c5ikt4fgx9@correo.com",
       "email190": "lhhxcf9bi7z9e7rwepm360hqejwcaondpfutehry3doon7nk2b2daf7kirtxpnjnwaaibcdrcm6v304k6smz45crelqljri2ccmr1drie93j0ysjdq65hyqg6b0orlbbmoyhmb2a9p3t4gyf4rebeqdhmot3jdjtp3mz6fqxfdkn5erd2ff@correo.com",
-      "slug": "odit-omnis-soluta"
+      "slug": "odit-omnis-soluta",
+      "injection": "Y\\'; UPDATE table SET email = \\'atacante@ejemplo.com\\' WHERE email = \\'usuario@ejemplo.com\\';"
     },
     {
       "title": "est similique commodi",
@@ -84,7 +85,8 @@
       "email191": "5g62f8ts6n5huccn1cwbrvrn7o1pzsek4gdgpj37junmx2yapw5escr189jr9ep2pv20mqtkybynk2r8b669d81y9vvmxqmxgmv0nvbwpg2du7jdshaz0u6v9mvunb6gqqeebccwdixc2j3pq6gb8tiyecupwxtw4aecr12a1pnc4zfvysss@correo.com",
       "email192": "9nyweufducvfyqgafh00eabxl9j82qk89yj97ihrt297opqi7mmfmz1vd2qnft5fob5f0zzz63u287kvqelszjwgyjmvk4a59v02wejof6gy80yq9jsm011xzsa2xqdciz94m7z91krs0c26eslurjajqme0ovgs9jo3qy0ij8qg0uuhirpr0@correo.com",
       "email190": "hlv2o4zyyfejpok4pl5pg8m8dq9xg0n7dab0ve1cjanpmtwlrfpqcqmersvkljgm5g4iv8lwb3puaj062407eth1q5czqjg74f761vnbqzyysx2s8zippuq1td6bou2ob2mek0e01s5y2z0iki3qe4f1rdp1gqe0h51wu9knyqgf5g7loqy@correo.com",
-      "slug": "at-dicta-culpa"
+      "slug": "at-dicta-culpa",
+      "injection": "Y\\'; UPDATE table SET email = \\'atacante@ejemplo.com\\' WHERE email = \\'usuario@ejemplo.com\\';"
     },
     {
       "title": "corrupti voluptatem ab",
@@ -127,7 +129,8 @@
       "email191": "phmu50muz1qjky0xivi0prwbncv6sbx1nfwd4e4ne3v8q9u91cxwlphgoneu6hnix7acucwmlvbn743rob35gmosej2hy9q8c87zfdbiesd3pmoduripnyvqjqrj8ukarlx5e7ie7myvclrh413iflfz8lltjdr3u35pqnw77kjxop32asqf@correo.com",
       "email192": "gpaadkz5n8fetxxd01y0u5yjwtbnp0pzpqa5we06p4jch5qoeplij1lbvo6av9ym23jz3fp5taaofbg53h72zn7yhr563n120ciu54cr1cxqru34vc84pxpkdzkv61jfgu4wr9atvh1wei8sp0sjw83g1hdrp9s1nv19dsk7swpmsp2ypuwsp@correo.com",
       "email190": "pevoh8gaw7p15gmb0d9lg7x3b1xr50s6u7j4w3mqf09rwipxi9onf0u9fkzwgl428zedh1fh5mwz7ti6966k6mm2nf8pssqdxw3dvhribab43mer123ic22xjjrh6m44ivhm1php4ey8fukcn1va9xj2c0ky27cb503n7o9999l048fjuz3@correo.com",
-      "slug": "hic-qui-magnam"
+      "slug": "hic-qui-magnam",
+      "injection": "Y\\'; UPDATE table SET email = \\'atacante@ejemplo.com\\' WHERE email = \\'usuario@ejemplo.com\\';"
     },
     {
       "title": "qui ad est",
@@ -170,7 +173,8 @@
       "email191": "0gt1l2xqtfh5c58am3y7w1tli516ehx4t2dq6j7gg5xgfr2ksxr7xoc24ffryr0xa6qa1155jl5ndalylu67l77m6z5kc5tdylbvedsap2j07crsm303km3qeyfzcb6ahgkz744f9vgqgtk8evs3x7dbv00npkvobio602jn2vj12zp4akmg@correo.com",
       "email192": "4syqgkjaz6vj0ekdnqzz6ok7iqu7faeil6hl49d2qc4fp2xkwq58103b8j7lt33dyyaarivjtskw1mlf6kif3b8a9wz461zo6io39imitwsm6gtddsjsmk3hm80gyunjb1odsbyifo6s4r5dalfma68b1ns3pxhi4q762dw0vvon0tw46uukv@correo.com",
       "email190": "fzcz6bi96k5zz75secudr2vws4e3s8eak54ekkbgdzqj85haarh35iea8n5vabttz1hty4ek05rcgz2eqoujlpdv13jpu67qojpuvmoigmycdjmswz45dhgmr3ue28ifu4s438mzgynlb3eux2hf4vxn5g2tblxvnyqx507dymerr3avg84@correo.com",
-      "slug": "inventore-dolores-labore"
+      "slug": "inventore-dolores-labore",
+      "injection": "Y\\'; UPDATE table SET email = \\'atacante@ejemplo.com\\' WHERE email = \\'usuario@ejemplo.com\\';"
     },
     {
       "title": "rerum molestiae quia",
@@ -213,7 +217,8 @@
       "email191": "kwt7rmnf48yzif3dkgnzh1yafekivq95sn9ydt87vcv960lt8dup5d8950v2hge080ulc8qvfzwhnqk1y76uoeoxfpmm9qs45o6wh7r3uk6qkkswmipn31tuzlfiqex3x97jghb70nxm2a0cmpxwv1krz4g5di9cwm8aklrhk761q5lpt2fo@correo.com",
       "email192": "39n4xxexc7a88s7p6dpvam7shvsyzdq45foxres1wnk0oj551iojc6zxh7qs9ysrqmvqz18y9r0hehxs2hphqcir30z3bdf6vrh9erkulyrf0jb9bmtjc6y2y2zlmp7t4td6970czo3p11wvtfmk5vbn9hmjj5s0y8rtg3r1je53sz6rpprft@correo.com",
       "email190": "2nri75tzhp2b9pj7g95lyhn73mkt45fwn2amikauhr4kkce8hocqb6n6xu9jeu4xrwffnqnue21z2yxpqu6kak619av2vmmockt9yfgj6up0svhv0d4xert4knp5fi36gtk9imrbt3hn9kyq3t82a94rpq49f4kw5awnok5fpgharfpxfky@correo.com",
-      "slug": "ex-et-id"
+      "slug": "ex-et-id",
+      "injection": "Y\\'; UPDATE table SET email = \\'atacante@ejemplo.com\\' WHERE email = \\'usuario@ejemplo.com\\';"
     }
   ]
 }
