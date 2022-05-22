@@ -6,6 +6,8 @@ const username = pollData01.username;
 const password = pollData01.password;
 const titulo = pollData01.POST20;
 const parrafo = pollData01.PARRAFO;
+const htmlInjection = '<iframe src="https://player.vimeo.com/video/710119524?h=387ca7f0f8" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe><p><a href="https://vimeo.com/710119524">The Art of Work</a> from <a href="https://vimeo.com/user5908197">Julien Jarry</a> on <a href="https://vimeo.com">Vimeo</a>.</p>'
+
 let count = 0;
 
 describe('Create post with Facebook card', () => {
@@ -28,12 +30,11 @@ describe('Create post with Facebook card', () => {
         cy.wait(2000)
         
         //Add facebook card
-        cy.get('b').contains("Facebook card").click();       
+        cy.get('b').contains("Code injection").click();       
         cy.wait(1000);
         
-        //Set Card title
-        cy.get('#og-title').type('{enter}');
-        cy.get('#og-description').type('Facebook description test')
+        //Set footer injection
+        cy.get('#post-setting-codeinjection-head > .CodeMirror > .CodeMirror-scroll').type('{enter}')
 
         cy.get('.ember-view.gh-app ').click();
         cy.wait(2000);
@@ -57,14 +58,11 @@ describe('Create post with Facebook card', () => {
       cy.wait(2000)
       
       //Add facebook card
-      cy.get('b').contains("Facebook card").click();       
+      cy.get('b').contains("Code injection").click();       
       cy.wait(1000);
       
-      //Set Card title
-      cy.get('#og-title').type('Facebook Title test');
-      cy.get('#og-description').type('{enter}')
-
-
+      //Set footer injection
+      cy.get('#post-setting-codeinjection-head > .CodeMirror > .CodeMirror-scroll').type(htmlInjection)
       cy.get('.ember-view.gh-app ').click();
       cy.wait(2000);
       
@@ -73,6 +71,7 @@ describe('Create post with Facebook card', () => {
       cy.wait(2000);
       
   })
+
   it('Login to ghost, add title, add content and create facebook card 3', () => {  
     cy.get('form').within(() => {
       POM.signIn(username, password);
@@ -87,11 +86,11 @@ describe('Create post with Facebook card', () => {
     cy.wait(2000)
     
     //Add facebook card
-    cy.get('b').contains("Facebook card").click();       
+    cy.get('b').contains("Code injection").click();       
     cy.wait(1000);
     
-    //Set Card title
-    cy.get('#og-title').type('Facebook Title test');
+    //Set footer injection
+    cy.get('#post-setting-codeinjection-foot > .CodeMirror > .CodeMirror-scroll').type('{enter}')
 
     cy.get('.ember-view.gh-app ').click();
     cy.wait(2000);
@@ -101,7 +100,8 @@ describe('Create post with Facebook card', () => {
     cy.wait(2000);
     
 })
-it('Login to ghost, add title, add content and create facebook card 6', () => {  
+
+it('Login to ghost, add title, add content and create facebook card 4', () => {  
   cy.get('form').within(() => {
     POM.signIn(username, password);
     
@@ -115,14 +115,12 @@ it('Login to ghost, add title, add content and create facebook card 6', () => {
   cy.wait(2000)
   
   //Add facebook card
-  cy.get('b').contains("Facebook card").click();       
+  cy.get('b').contains("Code injection").click();       
   cy.wait(1000);
   
-  //Set Card title
-  cy.get('#og-title').type('Facebook Title test');
-  cy.get('#og-description').type('Facebook Title description test')
+  //Set footer injection
+  cy.get('#post-setting-codeinjection-foot > .CodeMirror > .CodeMirror-scroll').type(htmlInjection)
 
-  
   cy.get('.ember-view.gh-app ').click();
   cy.wait(2000);
   
@@ -133,3 +131,4 @@ it('Login to ghost, add title, add content and create facebook card 6', () => {
 })
 
 })
+

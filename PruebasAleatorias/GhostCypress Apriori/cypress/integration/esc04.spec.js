@@ -17,65 +17,218 @@ const password = pollData01.password;
 const titulo = pollData01.POST04;
 const titulo2 = pollData01.POST04_1;
 const parrafo = pollData01.PARRAFO;
-let count = 0;
+const youtubelink = pollData01.YOUTUBELINK; 
+const vimeolink = pollData01.VIMEOLINK; 
+const souncloudlink = pollData01.SOUNDCLOUD; 
 
 describe('Create and edit post', () => {
   beforeEach(() => {
     cy.visit("/")
     cy.wait(4000)
-    POM.takeScreenShot('esc04', count++);
+    
   })
   it('Login to ghost, create title, create content, publish and edit title.', () => {
     cy.get('form').within(() => {
       POM.signIn(username, password);
     })
-    POM.takeScreenShot('esc04', count++);
+    
     cy.wait(2000)
     //Build a new post
-    POM.takeScreenShot('esc04', count++);
+    
     POM.buildNewPost(titulo, parrafo)
     cy.wait(1000)
-    POM.takeScreenShot('esc04', count++);
+    
     POM.publishUpdatePP()
     cy.wait(4000)
-    POM.takeScreenShot('esc04', count++);
+    
     //Back to return view
     POM.returnToSectionView()
     cy.wait(2000);
-    POM.takeScreenShot('esc04', count++);
+    
     //Go to viewer site and confirm the post is published
     POM.viewReaderSite();
     cy.wait(2000)
-    POM.takeScreenShot('esc04', count++);
+    
     POM.elements.getPostPageinSite(titulo).click()
     cy.wait(3000)
-    POM.takeScreenShot('esc04', count++);
+    
     //Return to edit post
     cy.visit(url)
     cy.wait(2000)
-    POM.takeScreenShot('esc04', count++);
+    
     POM.goToPosts();
-    POM.takeScreenShot('esc04', count++);
+    
     POM.elements.getPPT(titulo).click()
     cy.wait(1000);
-    POM.takeScreenShot('esc04', count++);
+    
     //Change title
     POM.editTitlePost(titulo2);
     cy.wait(2000);
-    POM.takeScreenShot('esc04', count++);
+    
+    //Drop content 1
+    cy.get('p[data-koenig-dnd-droppable="true"]').clear();
+    cy.wait(3000);
+
+    
+    //Change content for embed YouTube URL 
+    cy.get('div[data-placeholder="Begin writing your post..."]').type('{enter}');
+    cy.get('button[aria-label="Add a card"]').click();
+    cy.get('div').contains('YouTube').click();
+    cy.get('input[name="url"]').type(youtubelink);
+    cy.get('input[name="url"]').type('{enter}');
+    cy.wait(3000);
+
+
     //Publish post
     POM.publishUpdatePP()
-    POM.takeScreenShot('esc04', count++);
+    
     //Verify edited post
     POM.returnToSectionView()
     cy.wait(2000);
-    POM.takeScreenShot('esc04', count++);
+    
     POM.viewReaderSite();
     cy.wait(2000)
-    POM.takeScreenShot('esc04', count++);
+    
     POM.elements.getPostPageinSite(titulo2).click()
     cy.wait(3000)
-    POM.takeScreenShot('esc04', count++);
+
+
+  })
+  it('Login to ghost, create title, create content, publish and edit title.', () => {
+    cy.get('form').within(() => {
+      POM.signIn(username, password);
+    })
+    
+    cy.wait(2000)
+    //Build a new post
+    
+    POM.buildNewPost(titulo, parrafo)
+    cy.wait(1000)
+    
+    POM.publishUpdatePP()
+    cy.wait(4000)
+    
+    //Back to return view
+    POM.returnToSectionView()
+    cy.wait(2000);
+    
+    //Go to viewer site and confirm the post is published
+    POM.viewReaderSite();
+    cy.wait(2000)
+    
+    POM.elements.getPostPageinSite(titulo).click()
+    cy.wait(3000)
+    
+    //Return to edit post
+    cy.visit(url)
+    cy.wait(2000)
+    
+    POM.goToPosts();
+    
+    POM.elements.getPPT(titulo).click()
+    cy.wait(1000);
+    
+    //Change title
+    POM.editTitlePost(titulo2);
+    cy.wait(2000);
+    
+    //Drop content 1
+    cy.get('p[data-koenig-dnd-droppable="true"]').clear();
+    cy.wait(3000);
+
+    
+    //Change content for embed YouTube URL 
+    cy.get('div[data-placeholder="Begin writing your post..."]').type('{enter}');
+    cy.get('button[aria-label="Add a card"]').click();
+    cy.get('div').contains('Vimeo').click();
+    cy.get('input[name="url"]').type(vimeolink);
+    cy.get('input[name="url"]').type('{enter}');
+    cy.wait(3000);
+
+
+    //Publish post
+    POM.publishUpdatePP()
+    
+    //Verify edited post
+    POM.returnToSectionView()
+    cy.wait(2000);
+    
+    POM.viewReaderSite();
+    cy.wait(2000)
+    
+    POM.elements.getPostPageinSite(titulo2).click()
+    cy.wait(3000)
+
+   
+  })
+
+  it('Login to ghost, create title, create content, publish and edit title.', () => {
+    cy.get('form').within(() => {
+      POM.signIn(username, password);
+    })
+    
+    cy.wait(2000)
+    //Build a new post
+    
+    POM.buildNewPost(titulo, parrafo)
+    cy.wait(1000)
+    
+    POM.publishUpdatePP()
+    cy.wait(4000)
+    
+    //Back to return view
+    POM.returnToSectionView()
+    cy.wait(2000);
+    
+    //Go to viewer site and confirm the post is published
+    POM.viewReaderSite();
+    cy.wait(2000)
+    
+    POM.elements.getPostPageinSite(titulo).click()
+    cy.wait(3000)
+    
+    //Return to edit post
+    cy.visit(url)
+    cy.wait(2000)
+    
+    POM.goToPosts();
+    
+    POM.elements.getPPT(titulo).click()
+    cy.wait(1000);
+    
+    //Change title
+    POM.editTitlePost(titulo2);
+    cy.wait(2000);
+    
+    //Drop content 1
+    cy.get('p[data-koenig-dnd-droppable="true"]').clear();
+    cy.wait(3000);
+
+    
+    //Change content for embed YouTube URL 
+    cy.get('div[data-placeholder="Begin writing your post..."]').type('{enter}');
+    cy.get('button[aria-label="Add a card"]').click();
+    cy.get('div').contains('SoundCloud').click();
+    cy.get('input[name="url"]').type(souncloudlink);
+    cy.wait(3000);
+    cy.get('input[name="url"]').type('{enter}');
+    cy.wait(3000);
+
+
+    //Publish post
+    POM.publishUpdatePP()
+    
+    //Verify edited post
+    POM.returnToSectionView()
+    cy.wait(2000);
+    
+    POM.viewReaderSite();
+    cy.wait(2000)
+    
+    POM.elements.getPostPageinSite(titulo2).click()
+    cy.wait(3000)
+
+    
   })
 
 })
