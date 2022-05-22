@@ -10,8 +10,8 @@ Cypress.on('uncaught:exception', (err) => {
 
 const POM = require("../POM/POM")
 const pollData01 = Cypress.env('poolData01');
-const username = pollData01.genericUsername;
-const password = pollData01.genericPassword;
+const username = pollData01.username;
+const password = pollData01.password;
 const titulo = pollData01.POST02;
 const titulo2 = pollData01.POST02_1;
 const parrafo = pollData01.PARRAFO;

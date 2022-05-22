@@ -15,7 +15,7 @@ function login() {
   cy.visit("/");
   cy.wait(3000);
   takeScreenshots ? POM.takeScreenShot('esc03', screenShotCount++): {};
-  cy.get('form').within(() => { POM.signIn(Cypress.env('poolData01').genericUsername, Cypress.env('poolData01').genericPassword) });
+  cy.get('form').within(() => { POM.signIn(Cypress.env('poolData01').username, Cypress.env('poolData01').password) });
   takeScreenshots ? POM.takeScreenShot('esc03', screenShotCount++): {};
   cy.wait(1000);
 }

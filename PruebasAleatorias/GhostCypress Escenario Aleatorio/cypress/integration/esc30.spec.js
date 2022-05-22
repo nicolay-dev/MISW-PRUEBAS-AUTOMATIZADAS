@@ -1,8 +1,8 @@
 const { faker } = require('@faker-js/faker');
 const POM = require("../POM/POM")
 const pollData01 = Cypress.env('poolData01');
-const username = pollData01.genericUsername;
-const password = pollData01.genericPassword;
+const username = pollData01.username;
+const password = pollData01.password;
 
 
 describe('Create Page with code injection', () => {

@@ -12,8 +12,8 @@ Cypress.on('uncaught:exception', (err) => {
 
 const POM = require("../POM/POM");
 const pollData01 = Cypress.env('poolData01');
-const username = pollData01.genericUsername;
-const password = pollData01.genericPassword;
+const username = pollData01.username;
+const password = pollData01.password;
 const titulo = faker.random.alphaNumeric(10);
 const titulo2 = faker.random.alphaNumeric(256);
 const parrafo = faker.lorem.sentences(3);
