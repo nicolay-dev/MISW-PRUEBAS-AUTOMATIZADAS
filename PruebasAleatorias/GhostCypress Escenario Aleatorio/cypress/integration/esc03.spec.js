@@ -37,7 +37,7 @@ describe('Create and delete post', () => {
   });
 
   //Isue the test fail
-  it.only('Should be able to publish a post whit text and an image', () => {
+  it('Should be able to publish a post whit text and an image', () => {
     const fakeData = {
       titulo: faker.name.findName(),
       parrafo: faker.lorem.paragraph(),
