@@ -65,7 +65,7 @@ describe('Create tag', () => {
           
         POM.elements.getPPT(this.data.seudo[sample].alphanumeric190).should('contain',this.data.seudo[sample].alphanumeric190)
     })
-        it.only('05_6-Login to ghost, create tag, validate tag creation oráculo Negativo, creación de tag con caracteres iguales a 192', function() {
+        it('05_6-Login to ghost, create tag, validate tag creation oráculo Negativo, creación de tag con caracteres iguales a 192', function() {
         cy.log ('seed', this.data.seudo[sample].seed)
         cy.get('form').within(() => {
             POM.signIn(username, password);

@@ -291,7 +291,7 @@ describe('Change name and slug', () => {
     
   })
 
-  it.only('21_6-Login to ghost, go to profile, nombre vacíos, slug válido, validate, oráculo negativo', function() {
+  it('21_6-Login to ghost, go to profile, nombre vacíos, slug válido, validate, oráculo negativo', function() {
     cy.get('form').within(() => {
       POM.signIn(username, password);
     })

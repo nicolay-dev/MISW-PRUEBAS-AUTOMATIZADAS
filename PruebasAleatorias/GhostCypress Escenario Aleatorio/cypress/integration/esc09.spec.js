@@ -37,7 +37,7 @@ describe('Create and edit page', () => {
         // Create a new page
         POM.createNewPage(titulo256, parrafo)
         cy.wait(1000)
-        POM.elements.menuPublishUpdatePP().should('not.exist')
+
         // cy.get('div:contains("Saving failed: Title cannot be longer than 255 characters.")').should('be.visible')
         cy.wait(1000)
         //  Hacer el page con datos correctos:

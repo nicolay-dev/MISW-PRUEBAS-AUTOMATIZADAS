@@ -1,6 +1,6 @@
 {
   "projectId": "End-to-End-GHOST-3-41-1",
-  "baseUrl": "http://localhost:2368/ghost/",
+  "baseUrl": "http://localhost:2369/ghost/",
   "env": {
     "poolData01": {
       "appName": "Prueba Ghost",

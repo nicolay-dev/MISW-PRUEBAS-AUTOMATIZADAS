@@ -46,7 +46,7 @@ describe('Create and edit page', () => {
         cy.wait(1000)
    
         // Edit the title of the page
-        POM.elements.getPPT(this.data.seudo[0].title).click()
+        POM.elements.getPPT(this.data.seudo[0].title).click( {force: true})
         cy.get('.gh-editor-title').type(this.data.seudo[0].titleEdit)
         cy.wait(2000);
    
@@ -59,7 +59,7 @@ describe('Create and edit page', () => {
     
             // Validate the title of the page
 
-            cy.get("h3").then(($title) => {
+            cy.get("h3",  {force: true}).then(($title) => {
                 expect($title).to.contain(`${this.data.seudo[0].title}`+`${this.data.seudo[0].titleEdit}`)
               }) // Check if the title is the same as the one we edited
          

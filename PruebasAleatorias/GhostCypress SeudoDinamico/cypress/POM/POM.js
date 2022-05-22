@@ -56,7 +56,7 @@ class shortCut{
     }
 
     goToStaff(){
-        this.elements.manageStaff().click();
+        this.elements.manageStaff().click( {force: true});
     }
 
     signOut(){

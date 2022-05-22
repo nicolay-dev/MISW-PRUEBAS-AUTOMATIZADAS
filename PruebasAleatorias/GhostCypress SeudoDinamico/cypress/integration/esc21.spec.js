@@ -61,7 +61,7 @@ describe('Change name and slug', () => {
     POM.goToStaff()
     cy.wait(1000)
     //Go back to profile
-    cy.get('.gh-badge.owner').click()
+    cy.get('.gh-badge.owner').click( {force: true})
     cy.wait(1000)
 
     cy.get(`span[class="gh-user-name mb1"]`).then(($user) => {
@@ -73,9 +73,9 @@ describe('Change name and slug', () => {
     cy.wait(1000)
     
     POM.goToStaff()
-    cy.wait(2000)
+    cy.wait(3000)
     
-    cy.get('.gh-badge.owner').click()
+    cy.get('.gh-badge.owner').click( {force: true})
     cy.wait(2000)
     //change username back for future tests
     cy.get('#user-name').clear()
@@ -148,7 +148,7 @@ describe('Change name and slug', () => {
     POM.goToStaff()
     cy.wait(1000)
     
-    cy.get('.gh-badge.owner').click()
+    cy.get('.gh-badge.owner').click( {force: true})
     cy.wait(1000)
     
     //change username and slug
@@ -164,9 +164,9 @@ describe('Change name and slug', () => {
     POM.goToPosts()
     cy.wait(1000)
     POM.goToStaff()
-    cy.wait(1000)
+    cy.wait(3000)
     //Go back to profile
-    cy.get('.gh-badge.owner').click()
+    cy.get('.gh-badge.owner').click( {force: true})
     cy.wait(1000)
 
     cy.get(`span[class="gh-user-name mb1"]`).then(($user) => {
@@ -175,9 +175,9 @@ describe('Change name and slug', () => {
     cy.xpath(`//p[normalize-space()='${url}author/${this.data.seudo[sample].slug190}']`).should('not.exist') // check if the slug is changed
 
     //Go to the staff owner page and reset the password
-    cy.wait(1000)
+    cy.wait(3000)
     
-    POM.goToStaff()
+    POM.goToStaff( {force: true})
     cy.wait(2000)
     
     cy.get('.gh-badge.owner').click()

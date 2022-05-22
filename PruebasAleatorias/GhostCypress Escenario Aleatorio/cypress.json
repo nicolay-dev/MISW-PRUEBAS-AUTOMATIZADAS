@@ -1,9 +1,9 @@
 {
   "projectId": "End-to-End-GHOST-3-41-1",
-  "baseUrl": "http://localhost:2368/ghost/",
+  "baseUrl": "http://localhost:2369/ghost/",
   "env": {
     "poolData01": {
-      "ownURL":"http://localhost:2368/ghost/",
+      "ownURL":"http://localhost:2369/ghost/",
       "appName": "Prueba Ghost",
       "username": "grupo23@uniandes.edu.co",
       "password": "Lesly870522",

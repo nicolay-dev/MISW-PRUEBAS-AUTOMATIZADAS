@@ -47,7 +47,8 @@ describe('Change email in profile', () => {
     cy.get('#user-email').type(this.data.seudo[sample].email192, { force: true })
     
     POM.elements.save().click()
-    cy.get('p:contains("Email is too long")').should('be.visible')
+    cy.wait(1000)
+    cy.get('p:contains("Please supply a valid email address")').should('be.visible')
     cy.wait(1000)
     //Colocar datos válidos para continuar la prueba
     cy.get('#user-email').clear({ force: true })
@@ -191,7 +192,7 @@ describe('Change email in profile', () => {
     //Go to the staff owner page
     POM.elements.emailInput().should('not.exist') // check if the login form is not visible
     POM.goToStaff()
-    cy.wait(1000)
+    cy.wait(3000)
     
     cy.get('.gh-badge.owner').click()
     cy.wait(1000)
@@ -211,7 +212,7 @@ describe('Change email in profile', () => {
     POM.goToPosts()
     cy.wait(1000)
     POM.goToStaff()
-    cy.wait(1000)
+    cy.wait(3000)
     //Go back to profile
     cy.get('.gh-badge.owner').click()
     cy.wait(1000)
@@ -225,7 +226,7 @@ describe('Change email in profile', () => {
     cy.wait(1000)
     
     POM.goToStaff()
-    cy.wait(2000)
+    cy.wait(3000)
     
     cy.get('.gh-badge.owner').click()
     cy.wait(2000)

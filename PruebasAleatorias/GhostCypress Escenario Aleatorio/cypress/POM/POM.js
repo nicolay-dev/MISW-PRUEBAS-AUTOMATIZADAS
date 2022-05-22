@@ -92,7 +92,7 @@ class shortCut{
     createNewPage(titulo, parrafo){
         this.elements.createPage().click();
         cy.wait(2000);
-        cy.get('textarea[placeholder="Page Title"]').type(titulo)
+        cy.get('textarea[placeholder="Page Title"]').type(titulo, { parseSpecialCharSequences: false })
         cy.wait(2000);
         cy.get("div[data-placeholder=\"Begin writing your page...\"]").type(parrafo)                  
     }

@@ -41,7 +41,7 @@ describe('Create and edit page', () => {
         cy.wait(1000)
             
         // Edit the title of the page
-        POM.elements.getPPT("(Untitled)").click()
+        POM.elements.getPPT("(Untitled)").click({force: true})
         cy.get('.gh-editor-title').type(this.data.apriori[3].title)
         cy.wait(2000);
             
