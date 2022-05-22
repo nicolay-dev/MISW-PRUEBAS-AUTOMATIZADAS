@@ -37,12 +37,23 @@
   # Preparación pruebas
     1. Descargue este reporsitorio como un .zip
     2. Descomprima todos los archivos
-      - Notará que las pruebas están distribuídas en cuatro carpetas diferentes:
+      - Notará que las pruebas están distribuídas en cinco carpetas diferentes:
         A. GhostCypress = Pruebas en Cypress para la versión 3.41.1 de Ghost
         B. GhostKraken = Pruebas en Kraken para la versión 3.41.1 de Ghost  
         C. GhostCypress4_44 = Pruebas en Cypress para la versión 4.44.0 de Ghost
         D. GhostKraken4_44 = Pruebas en Kraken para la versión 4.44.0 de Ghost 
-    3. Ubíquse en cada una de las cuatro carpetas mencionadas anteriormente (dentro de una línea de comando) e instale los paquetes necesarios utilizando el comando: npm install
+        E. PruebasAleatorias = Pruebas realizados con las tres estrategias de validación de datos. (Dirijase al siguiente titulo para su explicación) 
+    3. Ubíquese en cada una de las cuatro carpetas mencionadas anteriormente (dentro de una línea de comando) e instale los paquetes necesarios utilizando el comando: npm install
+    
+  # Pruebas con las estrategias de validación de datos 
+    1. Descargue este reporsitorio como un .zip
+    2. Descomprima todos los archivos
+      - Notará una carpeta definida como PruebasAleatorias, dentro encontrará tres carpetas, correspondientes a cada una de las estrategias de pruebas solicitadas:
+        A. GhostCypress Apriori = Pruebas en Cypress para la versión 3.41.1 de Ghost utilizando estrategia (i) pool de datos a-priori.
+        B. GhostCypress SeudoDinamico = Pruebas en Cypress para la versión 3.41.1 de Ghost utilizando estrategia (ii) pool de datos (pseudo) aleatorio dinámico.
+        C. GhostCypress Escenario Aleatorio = Pruebas en Cypress para la versión 3.41.1 de Ghost utilizando estrategia (iii) escenario aleatorio.
+ 
+    3. Ubíquese en cada una de las tres carpetas mencionadas anteriormente (dentro de una línea de comando) e instale los paquetes necesarios utilizando el comando: npm install
 
   # Ejecución pruebas
     0. Recuerde tener el servidor de Ghost corriendo para las pruebas que desee ejecutar
@@ -398,3 +409,23 @@ Permite eliminar un item del menú de navegación del sitio web que está siendo
 - Agregar Facebook Card Title
 - Publicar el post
 - Verificar que el post ha sido publicado
+
+### Escenario 22 - Cambio de Nombre de usuario y slug - Funcionalidades: Login, Editar datos de perfil
+
+- Hacer login en GHOST
+- Ir al profile
+- Cambiar el nombre de usuario, el slug 
+- Guardar
+- Ir a la página de Post
+- Regresar al profile
+- Verificar que si se haya hecho la edición.
+
+### Escenario 23 - Cambio de email de usuario - Funcionalidades: Login, Editar datos de perfil
+
+- Hacer login en GHOST
+- Ir al profile
+- Cambiar el email de usuario
+- Guardar
+- Ir a la página de Post
+- Regresar al profile
+- Verificar que si se haya hecho la edición.

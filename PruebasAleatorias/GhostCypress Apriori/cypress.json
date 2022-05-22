@@ -40,7 +40,14 @@
       "TAG19": "TAG Esc-19",
       "TAG191": "TAG Esc-19v2",
       "POST20": "Post Escenario 20",
-      "FACEBOOKC": "Titulo tarjeta de Facebook"
+      "FACEBOOKC": "Titulo tarjeta de Facebook",
+      "PAGE30":"Página escenario 30",
+      "PAGE30_1":"Página escenario 30",
+      "CODE30HEADER": "<hr/> \n<h1>HEADER ESCENARIO 30<h1/>",
+      "CODE30FOOTER": "<h1>FOOTER ESCENARIO 30<h1/>",
+      "YOUTUBELINK":"https://www.youtube.com/watch?v=jX3v3N6oN5M",
+      "VIMEOLINK":"https://vimeo.com/710119524",
+      "SOUNDCLOUD":"https://soundcloud.com/jaismir/cherry-hill-russ-split?utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing"
     },
     "poolData02": {
       "PAGE09": "",
