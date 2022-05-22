@@ -398,3 +398,23 @@ Permite eliminar un item del menú de navegación del sitio web que está siendo
 - Agregar Facebook Card Title
 - Publicar el post
 - Verificar que el post ha sido publicado
+
+### Escenario 22 - Cambio de Nombre de usuario y slug - Funcionalidades: Login, Editar datos de perfil
+
+- Hacer login en GHOST
+- Ir al profile
+- Cambiar el nombre de usuario, el slug 
+- Guardar
+- Ir a la página de Post
+- Regresar al profile
+- Verificar que si se haya hecho la edición.
+
+### Escenario 23 - Cambio de email de usuario - Funcionalidades: Login, Editar datos de perfil
+
+- Hacer login en GHOST
+- Ir al profile
+- Cambiar el email de usuario
+- Guardar
+- Ir a la página de Post
+- Regresar al profile
+- Verificar que si se haya hecho la edición.
