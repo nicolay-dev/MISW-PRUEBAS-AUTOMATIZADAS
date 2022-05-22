@@ -11,29 +11,60 @@ describe('Create tag', () => {
     beforeEach(() => {
         cy.visit("/")
         cy.wait(4000)
-        POM.takeScreenShot('esc05', count++);
+        cy.fixture('apriori').then(function (data) {
+            this.data = data
+        })
     })
-    it('Login to ghost, create tag, validate tag creation', () => {
+    it('05-Login to ghost, create tag, validate tag creation oráculo positivo datos correctos', function() {
         cy.get('form').within(() => {
             POM.signIn(username, password);
         })
-        POM.takeScreenShot('esc05', count++);
         cy.wait(2000)
         //Create a tag
-        POM.takeScreenShot('esc05', count++);
+         
         POM.goToTags()
         cy.wait(1000)
-        POM.takeScreenShot('esc05', count++);
-        POM.createNewTag(titulo)
+         
+        POM.createNewTag(this.data.apriori[2].title)
 
         cy.wait(2000)
-        POM.takeScreenShot('esc05', count++);
+         
         //Go to the tag section and validate the tag is created
         POM.goToTags()
         cy.wait(1000)
-        POM.takeScreenShot('esc05', count++);
-        POM.elements.getPPT(titulo).should('contain',titulo)
+         
+        POM.elements.getPPT(this.data.apriori[2].title).should('contain',this.data.apriori[2].title)
     })
 
+    it('05_2-Login to ghost, create tag, validate tag creation oráculo negativo tag sin nombre', function() {
+        cy.get('form').within(() => {
+            POM.signIn(username, password);
+        })
+        cy.wait(2000)
+        //Create a tag
+         
+        POM.goToTags()
+        cy.wait(1000)
+         
+        POM.elements.createTag().click();
+        cy.wait(2000);
+        // se deja vacío el título del tag
+        // cy.get('input[name="name"]').type(titulo);
+        POM.elements.save().click();
+
+        cy.wait(2000)
+        cy.get('p:contains("You must specify a name for the tag.")').should('be.visible')
+        cy.wait(1000)
+        // Colocar las condiciones para que la prueba pase
+        cy.get('input[name="name"]').type(this.data.apriori[1].title);
+        cy.contains('Retry').click();
+        cy.wait(2000)
+         
+        //Go to the tag section and validate the tag is created
+        POM.goToTags()
+        cy.wait(1000)
+         
+        POM.elements.getPPT(this.data.apriori[1].title).should('contain',this.data.apriori[1].title)
+    })
 })
 
