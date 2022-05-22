@@ -1,3 +1,5 @@
+const { faker } = require('@faker-js/faker');
+
 Cypress.on('uncaught:exception', (err) => {
   // we expect a 3rd party library error with message 'Cannot read properties of null (reading 'querySelector')'
   // and don't want to fail the test so we return false
@@ -8,45 +10,32 @@ Cypress.on('uncaught:exception', (err) => {
   // errors, so we let them fail the test
 })
 
-const POM = require("../POM/POM")
-const url = Cypress.config('baseUrl')
+const POM = require("../POM/POM");
 const pollData01 = Cypress.env('poolData01');
-const username = pollData01.username;
-const password = pollData01.password;
-const titulo = pollData01.POST02;
-const parrafo = pollData01.PARRAFO;
-let count=0;
+const username = pollData01.genericUsername;
+const password = pollData01.genericPassword;
+const titulo = faker.random.alphaNumeric(10);
+const titulo2 = faker.random.alphaNumeric(256);
+const parrafo = faker.lorem.sentences(3);
 
 describe('Create a post', () => {
   beforeEach(() => {
     cy.visit("/")
-    cy.wait(4000)
-    POM.takeScreenShot('esc02', count++);
+    cy.wait(2000)
   })
-  it('Login to ghost, change password and logout', () => {
+  it('Creates a post with long title', () => {
     cy.get('form').within(() => {
       POM.signIn(username, password);
     })
-    POM.takeScreenShot('esc02', count++);
     cy.wait(1000)
     //Build a new post
-    POM.takeScreenShot('esc02', count++);
     POM.buildNewPost(titulo, parrafo)
     cy.wait(1000)
-    POM.takeScreenShot('esc02', count++);
+    POM.editTitlePost(titulo2)
     POM.publishUpdatePP()
-    cy.wait(4000)
-    POM.takeScreenShot('esc02', count++);
-    POM.returnToSectionView()
-    //Go to viewer site and confirm the post is published
     cy.wait(2000)
-    POM.takeScreenShot('esc02', count++);
-    POM.viewReaderSite();
-    cy.wait(2000)
-    POM.takeScreenShot('esc02', count++);
-    POM.elements.getPostPageinSite(titulo).click()
-    cy.wait(3000)
-    POM.takeScreenShot('esc02', count++);
+    //Confirm post could not be published
+    cy.get(".gh-alert-content").should('exist')
 
   })
 
