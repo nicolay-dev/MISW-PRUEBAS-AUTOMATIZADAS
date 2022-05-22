@@ -40,7 +40,11 @@
       "TAG19": "TAG Esc-19",
       "TAG191": "TAG Esc-19v2",
       "POST20": "Post Escenario 20",
-      "FACEBOOKC": "Titulo tarjeta de Facebook"
+      "FACEBOOKC": "Titulo tarjeta de Facebook",
+      "PAGE30":"Página escenario 30",
+      "PAGE30_1":"Página escenario 30",
+      "CODE30HEADER": "<hr/> \n<h1>HEADER ESCENARIO 30<h1/>",
+      "CODE30FOOTER": "<h1>FOOTER ESCENARIO 30<h1/>"
     },
     "poolData02": {
       "PAGE09": "",
