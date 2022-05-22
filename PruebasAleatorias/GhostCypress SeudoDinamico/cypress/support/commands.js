@@ -67,7 +67,8 @@ Cypress.Commands.add('generateFixture', () => {
         'email192': `${faker.random.alphaNumeric(181)}@correo.com`,
         'email190': `${faker.random.alphaNumeric(179)}@correo.com`,
         'slug': `${faker.lorem.slug()}`,
-          
+        'emailspecial': `${faker.datatype.string(15)}@correo.com`,
+            
       }
     })
   })

@@ -16,7 +16,7 @@ const username = pollData01.username;
 const password = pollData01.password;
 const nombre = pollData01.NAME; 
 
-describe('Change password', () => {
+describe('Change email in profile', () => {
   beforeEach(() => {
     cy.visit("/")
     cy.wait(4000)
@@ -25,7 +25,7 @@ describe('Change password', () => {
   })
 })
     
-  it('22-Login to ghost, go to profile, change email, validate', function() {
+  it('22-Login to ghost, go to profile, change email, validate, oráculo positivo datos válidos', function() {
     cy.get('form').within(() => {
       POM.signIn(username, password);
     })
@@ -39,7 +39,7 @@ describe('Change password', () => {
     cy.get('.gh-badge.owner').click()
     cy.wait(1000)
     
-    //change username and slug
+    //change email
     cy.get('#user-email').clear()
     cy.get('#user-email').type(this.data.apriori[0].email, { force: true })
   
@@ -52,7 +52,7 @@ describe('Change password', () => {
     //Go back to profile
     cy.get('.gh-badge.owner').click()
     cy.wait(1000)
-
+    // Verificar cambio de email
     cy.get(`span[class="gh-user-email"]`).then(($user) => {
       expect($user[0].innerText).to.equal(`${this.data.apriori[0].email}`)
     }) // check if the email is changed
@@ -73,7 +73,60 @@ describe('Change password', () => {
     POM.elements.save().click()
     
   })
+  it('22_2-Login to ghost, go to profile, change email, validate, oráculo negativo email vacío', function() {
+    cy.get('form').within(() => {
+      POM.signIn(username, password);
+    })
+    cy.wait(1000)
+    
+    //Go to the staff owner page
+    POM.elements.emailInput().should('not.exist') // check if the login form is not visible
+    POM.goToStaff()
+    cy.wait(1000)
+    
+    cy.get('.gh-badge.owner').click()
+    cy.wait(1000)
+    
+    //change email
+    cy.get('#user-email').clear()
+    // dejar vacío el campo email
+    // cy.get('#user-email').type(this.data.apriori[0].email, { force: true })
+    
+    POM.elements.save().click()
+    cy.get('p:contains("Please supply a valid email address")').should('be.visible')
+    cy.wait(1000)
+    //Colocar datos válidos para continuar la prueba
+    cy.get('#user-email').type(this.data.apriori[0].email, { force: true })
+    cy.get('button span:contains("Retry")').click()
+    cy.wait(1000)
+    POM.goToPosts()
+    cy.wait(1000)
+    POM.goToStaff()
+    cy.wait(1000)
+    //Go back to profile
+    cy.get('.gh-badge.owner').click()
+    cy.wait(1000)
+    // Verificar cambio de email
+    cy.get(`span[class="gh-user-email"]`).then(($user) => {
+      expect($user[0].innerText).to.equal(`${this.data.apriori[0].email}`)
+    }) // check if the email is changed
+  
 
+    //Go to the staff owner page and reset the email
+    cy.wait(1000)
+    
+    POM.goToStaff()
+    cy.wait(2000)
+    
+    cy.get('.gh-badge.owner').click()
+    cy.wait(2000)
+    //change username back for future tests
+    cy.get('#user-email').clear()
+    cy.get('#user-email').type(username, { force: true })
+    cy.wait(1000)
+    POM.elements.save().click()
+    
+  })
 
 
 })
