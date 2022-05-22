@@ -77,8 +77,8 @@ class shortCut{
 
     buildNewPost(titulo, parrafo){
         this.elements.createPost().click();
-        cy.get('textarea[placeholder="Post Title"]').type(titulo);
-        cy.get('div[data-placeholder="Begin writing your post..."]').type(parrafo);
+        cy.get('textarea[placeholder="Post Title"]').type(titulo,{parseSpecialCharSequences: false});
+        cy.get('div[data-placeholder="Begin writing your post..."]').type(parrafo, {parseSpecialCharSequences: false});
 
     }
 
