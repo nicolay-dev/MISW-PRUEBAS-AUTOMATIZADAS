@@ -22,121 +22,27 @@
       - Cuando la instalación sea exitosa, ejecutar el siguiente comando: ghost start
       - Usando un navegador web, ir a la dirección url dada al final de la inicialización
       - Crear una cuenta (Guardar correo y contraseña creadas para futuros pasos)
-    7. Usar Ghost (4.44.0) en Docker
-      - Ir a https://docs.docker.com/desktop/windows/install/ y descargar Docker para Windows
-      - Instalar Docker con todas las opciones predeterminadas
-        - Reiniciar equipo si es necesario
-      - Inicializar el Docker
-      - En un programa de línea de comando, escriba el siguiente comando: docker run -d -e url=http://localhost:3002 -p 3002:2368 --name ghost_4.44.0 ghost:4.44.0
-      - Usando un navegador web, ir a la dirección url dada al final de la inicialización
-      - Crear una cuenta (Guardar correo y contraseña creadas para futuros pasos)
-    8. Instalar Cypress
-      - En un programa de línea de comando, escriba el siguiente comando: npm install -g cypress
-    9. Instalar Kraken
-      - En un programa de línea de comando, escriba el siguiente comando: npm install kraken-node -g
-  # Preparación pruebas
-    1. Descargue este reporsitorio como un .zip
-    2. Descomprima todos los archivos
-      - Notará que las pruebas están distribuídas en cinco carpetas diferentes:
-        A. GhostCypress = Pruebas en Cypress para la versión 3.41.1 de Ghost
-        B. GhostKraken = Pruebas en Kraken para la versión 3.41.1 de Ghost  
-        C. GhostCypress4_44 = Pruebas en Cypress para la versión 4.44.0 de Ghost
-        D. GhostKraken4_44 = Pruebas en Kraken para la versión 4.44.0 de Ghost 
-        E. PruebasAleatorias = Pruebas realizados con las tres estrategias de validación de datos. (Dirijase al siguiente titulo para su explicación) 
-    3. Ubíquese en cada una de las cuatro carpetas mencionadas anteriormente (dentro de una línea de comando) e instale los paquetes necesarios utilizando el comando: npm install
-    
+    7. Instalar Cypress
+      - En un programa de línea de comando, escriba el siguiente comando: npm install -g cypress    
   # Pruebas con las estrategias de validación de datos 
+    --->NOTA: Si desea ver las instrucciones para ejecutar las pruebas de semanas anteriores, por favor dirijirse al último commit de la respectiva semana que desee ver.
     1. Descargue este reporsitorio como un .zip
     2. Descomprima todos los archivos
       - Notará una carpeta definida como PruebasAleatorias, dentro encontrará tres carpetas, correspondientes a cada una de las estrategias de pruebas solicitadas:
         A. GhostCypress Apriori = Pruebas en Cypress para la versión 3.41.1 de Ghost utilizando estrategia (i) pool de datos a-priori.
         B. GhostCypress SeudoDinamico = Pruebas en Cypress para la versión 3.41.1 de Ghost utilizando estrategia (ii) pool de datos (pseudo) aleatorio dinámico.
         C. GhostCypress Escenario Aleatorio = Pruebas en Cypress para la versión 3.41.1 de Ghost utilizando estrategia (iii) escenario aleatorio.
- 
     3. Ubíquese en cada una de las tres carpetas mencionadas anteriormente (dentro de una línea de comando) e instale los paquetes necesarios utilizando el comando: npm install
-
   # Ejecución pruebas
     0. Recuerde tener el servidor de Ghost corriendo para las pruebas que desee ejecutar
-    1. Definir las siguientes variables en properties.json (Kraken) y cypress.json (Cypress) de cada una de los respectivos grupos de pruebas
-      - "URL": -url utilizada para cada versión de ghost-
-      - "USERNAME": -correo de su cuenta ghost-
-      - "PASSWORD": -contraseña de su cuenta ghost-
+    1. Definir las siguientes variables en cypress.json (Cypress) de cada una de los respectivos grupos de pruebas
+      - "baseUrl" y "ownURL": -url utilizada para Ghost-
+      - "username" y "genericUsername": -correo de su cuenta ghost-
+      - "password" y "genericPassword": -contraseña de su cuenta ghost-
       - "NAME": -nombre de su cuenta ghost-
       - "URL-LECTOR": -url de versión lector de ghost- (Es el localhost sin el /ghost/ al final)-
-    2. Para correr pruebas en kraken:
-      - Ubicarse en la carpeta respectiva de kraken (en una línea de comando) y ejecutar el comando npx kraken-node run
-        *** Nota: Las pruebas puede que no corran todas de una vez en window, si encuentra este problema por favor crear una carpeta de ignore y colocar todas las pruebas allí. Pase a la carpeta feature la prueba a ejecutar una por una para su ejecución.
-    3. Para correr pruebas en Cypress:
+    2. Para correr pruebas en Cypress:
       - Ubicarse en la carpeta respectiva de cypress (en una línea de comando) y ejecutar el comando cypress run (forma rápida) o cypress open -> esperar a que la consola de cypress se abra y correr pruebas individualmente o grupales con el navegador en vista.
-
-## README PARA EJECUTAR RESEMBLE.JS (KRAKEN)
-
-Instrucciones para ejecutar regresión visual
-
-##### Dependencias:
-```
-Node v14.16.1
-npm v6.14.12
-```
-1. Clonar el en repositorio
-2. Ubicarse dentro la carpeta de ‘resemble’
-3. Ejecutar:
-
-```
-npm i
-```
-
-4. Seguido de
-
-```
-node index_dev_kraken.js
-```
-
-5. Esperar la ejecución del script, al finalizar se creará un reporte html en la carpeta correspondiente a la fecha y hora de ejecución ubicado en:
-
-```
-resemble/results/<Carpeta Creada>/report.html
-```
-
-
-##### Ejemplo del reporte obtenido al ejecutar el script (Kraken):
-
-[resemble/results/2022-05-16T02.56.56.091Z/report.html](
-https://github.com/nicolay-dev/MISW-PRUEBAS-AUTOMATIZADAS/blob/9c4f5312190b52cebe21d9368b934b32f14446bf/resemble/results/2022-05-16T02.56.56.091Z/report.html)
-
-## README PARA EJECUTAR RESEMBLE.JS (CYPRESS)
-
-Instrucciones para ejecutar regresión visual
-
-##### Dependencias:
-```
-Node v14.16.1
-npm v6.14.12
-```
-1. Clonar el en repositorio
-2. Ubicarse dentro la carpeta de ‘resemble’
-3. Ejecutar:
-
-  ```
-  npm i
-  ```
-
-4. Seguido de
-
-```
-node index_dev_cypress.js
-```
-
-5. Esperar la ejecución del script, al finalizar se creará un reporte en la carpeta correspondiente a la fecha y hora de ejecución ubicado en:
-
-```
-‘/resemble/results/<Carpeta Creada>/report.html’
-```
-
-##### Ejemplo del reporte obtenido al ejecutar el script (Cypress):
-
-[resemble/results/2022-05-16T02.58.32.876Z/report.html](
-https://github.com/nicolay-dev/MISW-PRUEBAS-AUTOMATIZADAS/blob/9c4f5312190b52cebe21d9368b934b32f14446bf/resemble/results/2022-05-16T02.58.32.876Z/report.html)
 
 ## MISW-PRUEBAS-AUTOMATIZADAS-ISSUES-JN
 
