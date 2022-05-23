@@ -1,6 +1,6 @@
 {
   "projectId": "End-to-End-GHOST-3-41-1",
-  "baseUrl": "http://localhost:2369/ghost/",
+  "baseUrl": "http://localhost:2368/ghost/",
   "env": {
     "poolData01": {
       "appName": "Prueba Ghost",
@@ -8,7 +8,7 @@
       "password": "Lesly870522",
       "genericUsername": "juanc@mail123.com",
       "genericPassword": "5YNqpgy6Yuxmvxf",
-      "URLLECTOR": "http://localhost:2369/",
+      "URLLECTOR": "http://localhost:2368/",
       "NAME": "Grupo 23",
       "password2": "grupo987654",
       "POST02": "Post Escenario 2",
@@ -47,7 +47,9 @@
       "CODE30FOOTER": "<h1>FOOTER ESCENARIO 30<h1/>",
       "YOUTUBELINK":"https://www.youtube.com/watch?v=jX3v3N6oN5M",
       "VIMEOLINK":"https://vimeo.com/710119524",
-      "SOUNDCLOUD":"https://soundcloud.com/jaismir/cherry-hill-russ-split?utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing"
+      "SOUNDCLOUD":"https://soundcloud.com/jaismir/cherry-hill-russ-split?utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing",
+      "TAG31": "Tag esc-31",
+      "TAG31COLOR": "00FF00"
     },
     "poolData02": {
       "PAGE09": "",

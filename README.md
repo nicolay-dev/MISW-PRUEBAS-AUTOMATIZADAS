@@ -410,7 +410,7 @@ Permite eliminar un item del menú de navegación del sitio web que está siendo
 - Publicar el post
 - Verificar que el post ha sido publicado
 
-### Escenario 22 - Cambio de Nombre de usuario y slug - Funcionalidades: Login, Editar datos de perfil
+### Escenario 21 - Cambio de Nombre de usuario y slug - Funcionalidades: Login, Editar datos de perfil
 
 - Hacer login en GHOST
 - Ir al profile
@@ -420,7 +420,7 @@ Permite eliminar un item del menú de navegación del sitio web que está siendo
 - Regresar al profile
 - Verificar que si se haya hecho la edición.
 
-### Escenario 23 - Cambio de email de usuario - Funcionalidades: Login, Editar datos de perfil
+### Escenario 22 - Cambio de email de usuario - Funcionalidades: Login, Editar datos de perfil
 
 - Hacer login en GHOST
 - Ir al profile
@@ -429,3 +429,78 @@ Permite eliminar un item del menú de navegación del sitio web que está siendo
 - Ir a la página de Post
 - Regresar al profile
 - Verificar que si se haya hecho la edición.
+
+### Escenario 23 - Crear un post con inyección de código - Funcionalidades: Login, Crear post y Adicionar código HTML al post
+
+- Hacer login en GHOST
+- Crear post
+- Ir a Code Injection
+- Agregar código HTML
+- Publicar post
+
+### Escenario 24 - Crear un post con meta data - Funcionalidades: Login, Crear post y Adicionar meta data al post
+
+- Hacer login en GHOST
+- Crear post
+- Ir a Meta Data
+- Agregar meta data
+- Publicar post
+
+### Escenario 25 - Hacer Login - Funcionalidades: Login
+
+- Hacer login en GHOST
+
+### Escenario 26 - Crear una página con meta data - Funcionalidades: Login, Crear página y Adicionar meta data a la página
+
+- Hacer login en GHOST
+- Crear página
+- Ir a Meta Data
+- Agregar meta data
+- Publicar página
+
+### Escenario 27 - Crear una página con Twitter card - Funcionalidades: Login, Crear página y Adicionar Twitter card a la página
+
+- Hacer login en GHOST
+- Crear página
+- Ir a Twitter card
+- Agregar Twitter card
+- Publicar página
+
+### Escenario 28 - Crear una página con Facebook card - Funcionalidades: Login, Crear página y Adicionar Facebook card a la página
+
+- Hacer login en GHOST
+- Crear página
+- Ir a Facebook card
+- Agregar Facebook card
+- Publicar página
+
+### Escenario 29 - Crear una página con excerpt - Funcionalidades: Login, Crear una página, Agregar excerpt y Publicar Página
+
+- Hacer login en GHOST
+- Crear una nueva página
+- Agregar un titulo
+- Agregar un texto de prueba
+- Agregar excerpt.
+- Publicar la página.
+- Verificar que la página ha sido publicada con el excerpt
+
+### Escenario 30 - Crear Página con código HTML - Funcionalidades: Login, Crear Post y Dar inyección de código al post
+
+- Hacer login en GHOST
+- Crear un Post
+- Ir a Code Injection
+- Agregar code injection
+- Publicar post
+
+### Escenario 31 - Crear Tag con color - Funcionalidades: Login, Crear Tag y Dar color al Tag
+
+- Hacer login en GHOST
+- Crear un TAG
+- Dar color al TAG
+- Verificar que el TAG esté creado
+
+### Escenario 32 - Agregar code injection en la consola de administrador - Funcionalidades: Login, Crear header y Crear Footer
+
+- Hacer login en GHOST
+- Selecionar code_injection en la consola de administración 
+- Agregar Header/Footer

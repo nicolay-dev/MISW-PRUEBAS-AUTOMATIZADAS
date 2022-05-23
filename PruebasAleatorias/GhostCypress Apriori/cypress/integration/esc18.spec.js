@@ -12,8 +12,8 @@ const POM = require("../POM/POM")
 const url = Cypress.config('baseUrl')
 const pollData01 = Cypress.env('poolData01');
 
-const username = pollData01.genericUsername;
-const password = pollData01.genericPassword;
+const username = pollData01.username;
+const password = pollData01.password;
 const titulo = pollData01.POST18;
 const parrafo = pollData01.PARRAFO;
 
