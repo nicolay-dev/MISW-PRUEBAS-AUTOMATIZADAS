@@ -8,7 +8,6 @@ const takeScreenshots = false;
 //Username
 const username = pollData01.username;
 const password = pollData01.password;
-
 let screenShotCount = 0;
 
 describe('Create and delete post', () => {

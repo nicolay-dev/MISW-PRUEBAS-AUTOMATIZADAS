@@ -5,9 +5,8 @@ const url = Cypress.config('baseUrl')
 const pollData01 = Cypress.env('poolData01');
 const takeScreenshots = false;
 
-
-const username = pollData01.genericUsername;
-const password = pollData01.genericPassword;
+const username = pollData01.username;
+const password = pollData01.password;
 const bio = pollData01.BIOTEXT;
 let screenShotCount=0;
 

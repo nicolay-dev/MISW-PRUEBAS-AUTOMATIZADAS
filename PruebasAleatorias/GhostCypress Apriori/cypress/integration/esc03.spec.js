@@ -3,7 +3,6 @@ const POM = require("../POM/POM");
 const pollData01 = Cypress.env('poolData01');
 const takeScreenshots = false;
 
-//Username Data
 const username = pollData01.username;
 const password = pollData01.password;
 
@@ -30,7 +29,7 @@ describe('Create and delete post', () => {
   //Isue the test fail
   it('Should not be able to publish a post whit special chars in title', () => {
     const specialData = {
-      title: data.apriori[1].string191,
+      title: data.apriori[1].injection,
       content: data.apriori[1].content
     }
     buildPost(specialData);
@@ -41,7 +40,7 @@ describe('Create and delete post', () => {
   //Isue the test fail
   it('Should not be able to publish a post whit special chars in content', () => {
     const specialData = {
-      content: data.apriori[1].string191,
+      content: data.apriori[1].injection,
       title: data.apriori[1].title
     }
     buildPost(specialData);

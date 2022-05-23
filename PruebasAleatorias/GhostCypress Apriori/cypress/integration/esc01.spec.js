@@ -26,7 +26,7 @@ describe('Change password', () => {
     
 
 
-  it.only('01-Login to ghost, change password and logout oráculo positivo ', function() {
+  it('01-Login to ghost, change password and logout oráculo positivo ', function() {
     cy.get('form').within(() => {
       POM.signIn(username, password);
     })

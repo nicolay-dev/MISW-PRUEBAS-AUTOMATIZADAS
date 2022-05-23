@@ -6,8 +6,8 @@ const pollData01 = Cypress.env('poolData01');
 const takeScreenshots = false;
 
 
-const username = pollData01.genericUsername;
-const password = pollData01.genericPassword;
+const username = pollData01.username;
+const password = pollData01.password;
 const titulo = pollData01.POST07;
 const parrafo = pollData01.PARRAFO;
 const urlLector = pollData01.URLLECTOR;

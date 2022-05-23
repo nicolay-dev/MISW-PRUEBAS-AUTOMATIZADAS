@@ -43,7 +43,7 @@ describe('Create and delete post', () => {
     cy.get('p').contains("Please fill out the form to sign in.").should('exist');
   });
 
-  it.only('Negativo, no se permite ingreso con contraseña vacia', () => {
+  it('Negativo, no se permite ingreso con contraseña vacia', () => {
     let mockData = {
       username: 'username',
       password: '',
