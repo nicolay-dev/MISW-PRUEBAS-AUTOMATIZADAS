@@ -11,7 +11,7 @@ const password = pollData01.genericPassword;
 const titulo = pollData01.POST07;
 const parrafo = pollData01.PARRAFO;
 const urlLector = pollData01.URLLECTOR;
-let count = 0;
+let screenShotCount = 0;
 
 describe('Schedule a post', () => {
   beforeEach(() => {

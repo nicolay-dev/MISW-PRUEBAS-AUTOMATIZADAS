@@ -9,7 +9,7 @@ const takeScreenshots = false;
 const username = pollData01.genericUsername;
 const password = pollData01.genericPassword;
 const bio = pollData01.BIOTEXT;
-let count=0;
+let screenShotCount=0;
 
 describe('Add Bio', () => {
   beforeEach(() => {
