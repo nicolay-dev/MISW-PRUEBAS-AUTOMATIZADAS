@@ -34,7 +34,7 @@
         C. GhostCypress Escenario Aleatorio = Pruebas en Cypress para la versión 3.41.1 de Ghost utilizando estrategia (iii) escenario aleatorio.
     3. Ubíquese en cada una de las tres carpetas mencionadas anteriormente (dentro de una línea de comando) e instale los paquetes necesarios utilizando el comando: npm install
   # Ejecución pruebas
-    0. Recuerde tener el servidor de Ghost corriendo para las pruebas que desee ejecutar
+    0. Recuerde tener el servidor de Ghost corriendo para las pruebas que desee ejecutar - aquí están los (Oráculos)[https://uniandes-my.sharepoint.com/:x:/g/personal/y_joyag_uniandes_edu_co/EdxOwiq_HCVAuQo72P9U4hQBNLp8wZ-urJWu3kVzpwGmFg?e=EgGqjz] de las pruebas
     1. Definir las siguientes variables en cypress.json (Cypress) de cada una de los respectivos grupos de pruebas
       - "baseUrl" y "ownURL": -url utilizada para Ghost-
       - "username" y "genericUsername": -correo de su cuenta ghost-
