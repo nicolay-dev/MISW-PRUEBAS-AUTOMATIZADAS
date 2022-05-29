@@ -32,18 +32,19 @@
 
 Recuerde tener el servidor de Ghost corriendo para las pruebas que desee ejecutar
 
-1. Definir las siguientes variables en el archivo [cypress.json](./cypress.json)
+1. Ejecutar el comando ```npm i``` para instalar las dependencias del proyecto cypress
+
+2. Definir las siguientes variables en el archivo [cypress.json](./cypress.json)
     - "**baseUrl**" y "**ownURL**": url local utilizada para Ghost
     - "**username**" y "**genericUsername**": correo de su cuenta ghost
     - "**password**" y "**genericPassword**": contraseña de su cuenta ghost
     - "**NAME**": nombre de su cuenta ghost
     - "**URL-LECTOR**": url de versión lector de ghost (Es el localhost sin el /ghost/ al final)
 
+3. Para ejecutar las pruebas en Cypress existen dos comandos, uno para la ejecución a traves de la terminal y el otro para hacerlo a traves de una interfaz gráfica, en ambos escenarios es necesario ubicarse en la carpeta respectiva de cypress (en línea de comando) y ejecutar el comando deseado:
 
-2. Para ejecutar las pruebas en Cypress existen dos comandos, uno para la ejecución a traves de la terminal y el otro para hacerlo a traves de una interfaz gráfica, en ambos escenarios es necesario ubicarse en la carpeta respectiva de cypress (en línea de comando) y ejecutar el comando respectivo:
-
-    ```cypress run``` -> (ejecución global de las pruebas en linea de comando)
+    ```cypress run``` : ejecución global de las pruebas en linea de comando
 
     ó
 
-    ```cypress open``` -> ejecución individual o global a través de GUI (Permite ver la ejecución en tiempo real en el navegador).
+    ```cypress open``` : ejecución individual o global a través de GUI (Permite ver la ejecución en tiempo real en el navegador).
