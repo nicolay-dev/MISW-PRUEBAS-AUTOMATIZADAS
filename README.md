@@ -1,6 +1,14 @@
 # README PARA EJECUCIÓN DE PRUEBAS (Windows)
   ### Semana ocho entrega final definición de estrategia de pruebas:
   Por favor dirigirse a la carpeta **```"EstrategiaPruebas(Semana8)"```**, allí en el archivo [README](./EstrategiaPruebas(Semana8)/README.md) se encuentra la documentación de la entrega.
+
+Integrantes:
+
+-Juan Carlos Pineda: jc.pineda@uniandes.edu.co
+-Nicolay Joya G: y.joyag@uniandes.edu.co
+-Lesly Campo: ls.campo10@uniandes.edu.co
+-Luis Correa: l.correaz@uniandez.edu.co
+
   # Preparación ambiente
     1. Tener instalado una versión actual de un navegador web
       - Sugerencias: Google Chrome - Micorsoft Edge
@@ -49,21 +57,6 @@
 - Aquí están los [Oráculos](https://uniandes-my.sharepoint.com/:x:/g/personal/y_joyag_uniandes_edu_co/EdxOwiq_HCVAuQo72P9U4hQBNLp8wZ-urJWu3kVzpwGmFg?e=4gyfkE) de las pruebas
 ## MISW-PRUEBAS-AUTOMATIZADAS-ISSUES-JN
 
-REPORTE DE ISSUES PRUEBAS AUTOMATIZADAS (MISO - Uniandes)
-
-Integrantes:
-
--Juan Carlos Pineda:
-jc.pineda@uniandes.edu.co
-
--Nicolay Joya G:
-y.joyag@uniandes.edu.co
-
--Lesly Campo:
-ls.campo10@uniandes.edu.co
-
--Luis Correa:
-l.correaz@uniandez.edu.co
 
 ## Plan de pruebas
 
@@ -413,3 +406,4 @@ Permite eliminar un item del menú de navegación del sitio web que está siendo
 - Hacer login en GHOST
 - Selecionar code_injection en la consola de administración 
 - Agregar Header/Footer
+
