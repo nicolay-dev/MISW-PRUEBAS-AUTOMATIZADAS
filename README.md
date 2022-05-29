@@ -1,6 +1,6 @@
 # README PARA EJECUCIÓN DE PRUEBAS (Windows)
-  #### Semana ocho entrega final definición de estrategia de pruebas:
-  Por favor dirigirse a la carpeta **```"EstrategiaPruebas(Semana8)"```**, allí en el archivo [README.md](./EstrategiaPruebas(Semana8)/README.md) se encuentra la documentación de la entrega.
+  ### Semana ocho entrega final definición de estrategia de pruebas:
+  Por favor dirigirse a la carpeta **```"EstrategiaPruebas(Semana8)"```**, allí en el archivo [README](./EstrategiaPruebas(Semana8)/README.md) se encuentra la documentación de la entrega.
   # Preparación ambiente
     1. Tener instalado una versión actual de un navegador web
       - Sugerencias: Google Chrome - Micorsoft Edge
