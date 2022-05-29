@@ -55,8 +55,6 @@ Integrantes:
       - Ubicarse en la carpeta respectiva de cypress (en una línea de comando) y ejecutar el comando cypress run (forma rápida) o cypress open -> esperar a que la consola de cypress se abra y correr pruebas individualmente o grupales con el navegador en vista.
 
 - Aquí están los [Oráculos](https://uniandes-my.sharepoint.com/:x:/g/personal/y_joyag_uniandes_edu_co/EdxOwiq_HCVAuQo72P9U4hQBNLp8wZ-urJWu3kVzpwGmFg?e=4gyfkE) de las pruebas
-## MISW-PRUEBAS-AUTOMATIZADAS-ISSUES-JN
-
 
 ## Plan de pruebas
 
