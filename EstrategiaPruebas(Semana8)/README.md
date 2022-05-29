@@ -4,7 +4,7 @@
 A continuación el link al documento word con la definición de la estrategia de pruebas:
 [Documento](https://uniandes-my.sharepoint.com/:w:/g/personal/y_joyag_uniandes_edu_co/EUkiSR7zkPtPn0YnCL26BOwB3jUhNzFYndGcgUV6VMP6fQ?e=4PBVcW)
 
-Este documento tambien está ubicado en el repositorio: ["Estrategia de Prueba.pdf"](./EstrategiaPruebas(Semana8)/docs/Estrategia_de_Prueba.pdf)
+Este documento tambien está ubicado en el repositorio: ["Estrategia de Prueba.pdf"](https://github.com/nicolay-dev/MISW-PRUEBAS-AUTOMATIZADAS/blob/main/EstrategiaPruebas(Semana8)/docs/Estrategia_de_Prueba.pdf)
 
 #### 2. Inventario de pruebas manuales:
 A continuación el link al archivo excel con el inventario de pruebas manuales:
