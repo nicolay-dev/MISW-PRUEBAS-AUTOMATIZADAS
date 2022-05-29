@@ -23,3 +23,7 @@ Para la semana uno se tienen planeado que cada ingeniero ejecute las siguientes 
 ```
 
 El código que soporta la ejecución de las pruebas E2E en Cypress de la primera semana se enecuentra en la carpeta **```"GhostCypress_v3.41"```**. En su interior  el archivo [How_to_run_E2E](./GhostCypress_v3.41/How_to_run_E2E.md) contienen  las intrucciones para la ejecución de dichas pruebas.
+
+#### 4. Reporte de Issues:
+
+En el repositorio en el tab de [Issues](https://github.com/nicolay-dev/MISW-PRUEBAS-AUTOMATIZADAS/issues), se encuentran los defectos encontrados en el trasncurso de la ejecución de la estrategia de pruebas.
