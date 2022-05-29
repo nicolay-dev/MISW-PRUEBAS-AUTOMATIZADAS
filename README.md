@@ -2,6 +2,8 @@
   ### Semana ocho entrega final definición de estrategia de pruebas:
   Por favor dirigirse a la carpeta **```"EstrategiaPruebas(Semana8)"```**, allí en el archivo [README](./EstrategiaPruebas(Semana8)/README.md) se encuentra la documentación de la entrega.
 
+  Para mayor detalle de la estrategia de pruebas se puede consultar el documento ["Estrategia de Prueba.pdf"](https://github.com/nicolay-dev/MISW-PRUEBAS-AUTOMATIZADAS/blob/main/docs/Estrategia_de_Prueba.pdf)
+
 Integrantes:
 
 -Juan Carlos Pineda: jc.pineda@uniandes.edu.co  
