@@ -1,6 +1,6 @@
 {
   "projectId": "End-to-End-GHOST-3-41-1",
-  "baseUrl": "http://localhost:2369/ghost/",
+  "baseUrl": "http://localhost:2368/ghost/",
   "env": {
     "appName": "Prueba Ghost",
     "username": "grupo23@uniandes.edu.co",
@@ -15,7 +15,7 @@
     "POST06": "Post Escenario 6",
     "TAG06": "TAG Esc-6",
     "POST07": "Post Escenario 7",
-    "URL-LECTOR": "http://localhost:2369/",
+    "URL-LECTOR": "http://localhost:2368/",
     "POST08": "Titulo Borrador",
     "PAGE09": "Página Escenario 09",
     "PAGE09Edit": " Editada",

@@ -1,3 +1,13 @@
+Cypress.on('uncaught:exception', (err) => {
+    // we expect a 3rd party library error with message 'Cannot read properties of null (reading 'querySelector')'
+    // and don't want to fail the test so we return false
+    if (err.message.includes("Cannot read properties of null (reading 'querySelector')")) {
+      return false
+    }
+    // we still want to ensure there are no other unexpected
+    // errors, so we let them fail the test
+  })
+
 const POM = require("../POM/POM")
 const url = Cypress.config('baseUrl') 
 const username = Cypress.env('username')
@@ -46,10 +56,7 @@ describe('Create and edit page', () => {
          POM.takeScreenShot('esc09', count++);
             // Validate the title of the page
 
-            cy.get("h3").then(($title) => {
-                expect($title[0].innerText).to.equal(`${Cypress.env('PAGE09')}`+`${Cypress.env('PAGE09Edit')}`)
-              }) // Check if the title is the same as the one we edited
-              POM.takeScreenShot('esc09', count++);
+            cy.get("h3").contains(Cypress.env("PAGE09")+Cypress.env("PAGE09Edit")).should('exist')
                  
 
         })
