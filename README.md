@@ -2,7 +2,7 @@
   ### Semana ocho entrega final definición de estrategia de pruebas:
   Por favor dirigirse a la carpeta **```"EstrategiaPruebas(Semana8)"```**, allí en el archivo [README](./EstrategiaPruebas(Semana8)/README.md) se encuentra la documentación de la entrega.
 
-  Para mayor detalle de la estrategia de pruebas se puede consultar el documento ["Estrategia de Prueba.pdf"](docs/Estrategia_de_Prueba.pdf)
+  Para mayor detalle de la estrategia de pruebas se puede consultar el documento ["Estrategia de Prueba.pdf"](./EstrategiaPruebas(Semana8)/docs/Estrategia_de_Prueba.pdf)
 
 Integrantes:
 
