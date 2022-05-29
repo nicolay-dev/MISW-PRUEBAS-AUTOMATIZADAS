@@ -35,9 +35,9 @@ Recuerde tener el servidor de Ghost corriendo para las pruebas que desee ejecuta
 1. Ejecutar el comando ```npm i``` para instalar las dependencias del proyecto cypress
 
 2. Definir las siguientes variables en el archivo [cypress.json](./cypress.json)
-    - "**baseUrl**" y "**ownURL**": url local utilizada para Ghost
-    - "**username**" y "**genericUsername**": correo de su cuenta ghost
-    - "**password**" y "**genericPassword**": contraseña de su cuenta ghost
+    - "**baseUrl**": url local utilizada para Ghost
+    - "**username**": correo de su cuenta ghost
+    - "**password**": contraseña de su cuenta ghost
     - "**NAME**": nombre de su cuenta ghost
     - "**URL-LECTOR**": url de versión lector de ghost (Es el localhost sin el /ghost/ al final)
 
